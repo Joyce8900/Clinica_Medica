@@ -26,6 +26,7 @@ void informacoesProjeto() {
 void informacoesEquipe() {
   printf("\n");
   printf("###############################################################\n");
+  printf (".\n");
   printf("                   Em desenvolvimento...   \n");
   printf("##########################################################\n");
 }
