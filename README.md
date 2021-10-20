@@ -8,14 +8,14 @@
 /////////////////Orientador: Dr. Prof. Flávius Gorgônio/////////////////////
 ////////////////Caicó - Rio Grande do Norte - 10/2021////////////////////////
 
-# Escola de Idiomas Língua Solta
+## Sistema de Agendamento para Clínicas Médicas
 
 Projeto de Sistema de Agendamento para Clínicas Médicas
 
 Projeto exemplo para a Disciplina DCT1106 - Programação
 Semestre 2021.2
 
-#
+
 
 Universidade Federal do Rio Grande do Norte \
 Centro de Ensino Superior do Seridó \
