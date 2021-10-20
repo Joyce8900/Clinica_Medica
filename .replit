@@ -1,4 +1,3 @@
-# Cl-nica_M-dica
 language = "c"
 run = "enter"
 //////////////////Universidade Federal do Rio Grande do Norte///////////////
@@ -27,4 +26,6 @@ printf("   Projeto Sistema de Agendamento para Clínicas Médicas  \n");
 printf("##########################################################\n");
 
 
-}
+
+
+
