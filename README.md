@@ -10,7 +10,7 @@
 
 # Escola de Idiomas Língua Solta
 
-Projeto de Sistema de Gestão Escolar
+Projeto de Sistema de Agendamento para Clínicas Médicas
 
 Projeto exemplo para a Disciplina DCT1106 - Programação
 Semestre 2021.2
