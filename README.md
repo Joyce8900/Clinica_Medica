@@ -8,8 +8,6 @@ Projeto Sistema de Agendamento para Clínicas Médicas <br>
 Orientador: Dr. Prof. Flávius Gorgônio <br>
 Caicó - Rio Grande do Norte - 10/2021 <br>
 
-## Sistema de Agendamento para Clínicas Médicas
-
 # Projeto de Agendamento para Clínicas Médicas
 
 Projeto de Sistema de Agendamento para Clínicas Médicas
