@@ -17,7 +17,7 @@ int main(void)
 // Funções
 void informacoesProjeto()
 {
-  printf("\n");
+  printf("                                                               \n");
   printf("###############################################################\n");
   printf("         Universidade Federal do Rio Grande do Norte           \n");
   printf("         CERES - Centro de Ensino Superior do Sérido           \n");
@@ -30,7 +30,7 @@ void informacoesProjeto()
 
 void informacoesEquipe()
 {
-  printf("\n");
+  printf("                                                                                      \n");
   printf("######################################################################################\n");
   printf("                     Universidade Federal do Rio Grande do Norte                      \n");
   printf("                    CERES - Centro de Ensino Superior do Sérido                       \n");
