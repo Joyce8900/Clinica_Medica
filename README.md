@@ -18,7 +18,7 @@ Semestre 2021.2
 
 Developed by @isazvdd and @joyce8900 - Out, 2021
 
- <br>
+ <hr>
 
 ### Sistema de Agendamento para Clínicas Médicas
 
