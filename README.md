@@ -18,8 +18,6 @@ Semestre 2021.2
 
 Developed by @isazvdd and @joyce8900 - Out, 2021
 
- <hr>
-
-### Sistema de Agendamento para Clínicas Médicas
+## Sistema de Agendamento para Clínicas Médicas
 
 Programa desenvolvido por alunos da Universidade Federal do Rio Grande do Norte, UFRN, do campus do Centro de Ensino Superior do Sérido - CERES -, do curso de Bacharelado em Sistemas de Informação, para a disciplica de Programação - DCT1106. O devido programa tem a finalidade de auxiliar pacientes que necessitem agendar consultas médicas. O paciente poderá escolher entre as especialidades médicas que temos e entre o médicos de sua preferência.
