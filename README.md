@@ -1,6 +1,6 @@
 # Automação em atendimento
 
-Universidade Federal do Rio Grande do Norte
+Universidade Federal do Rio Grande do Norte <br>
 CERES - Centro de Ensino Superior do Sérido
 DCT - Departamento de Computação e Tecnologia
 Disciplina - Programação -- DCT1106
