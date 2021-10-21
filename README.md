@@ -4,7 +4,7 @@ Universidade Federal do Rio Grande do Norte <br>
 CERES - Centro de Ensino Superior do Sérido <br>
 DCT - Departamento de Computação e Tecnologia <br>
 Bacharelado em Sistemas de Informação <br>
-Disciplina - Programação -- DCT1106 <br>
+Disciplina - Programação - DCT1106 <br>
 Projeto Sistema de Agendamento para Clínicas Médicas <br>
 Orientador: Dr. Prof. Flávius Gorgônio <br>
 Caicó - Rio Grande do Norte - 10/2021 <br>
