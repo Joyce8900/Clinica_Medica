@@ -15,10 +15,10 @@ Projeto de Sistema de Agendamento para Clínicas Médicas
 Projeto exemplo para a Disciplina DCT1106 - Programação
 Semestre 2021.2
 
-Universidade Federal do Rio Grande do Norte
-Centro de Ensino Superior do Seridó
-Departamento de Computação e Tecnologia
-Bacharelado em Sistemas de Informação
+Universidade Federal do Rio Grande do Norte <br>
+Centro de Ensino Superior do Seridó <br>
+Departamento de Computação e Tecnologia <br>
+Bacharelado em Sistemas de Informação <br>
 
 Developed by @isazvdd and @joyce8900 - Out, 2021
 
