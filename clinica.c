@@ -93,5 +93,5 @@ void informacoesPrincipal(void)
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
-  printf("\n");
+  printf("                                                                               \n");
 }
