@@ -41,7 +41,7 @@ void informacoesEquipe()
   printf("                                                                                      \n");
   printf("~~~~~~~~~~~~~~~~~~~~~~ Sistema de Agendamento para Clínicas~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
   printf("///                Este projeto exemplo foi desenvolvido por:                      ///\n");
-  printf("///      Discentes : Isadora Luana Maria Gomes / Joyce Oliveira dos Santos         ///\n");
+  printf("///  Discentes : Isadora Luana Maria Gomes de Azevedo / Joyce Oliveira dos Santos  ///\n");
   printf("///   E-mails: isadora.azevedo.700@ufrn.edu.br / joyce.santos.709@ufrn.edu.br      ///\n");
   printf("///                 Redes sociais:   @isazvdd e  @Joyce8900                        ///\n");
   printf("///      Repositório: https://github.com/Joyce8900/Clinica_Medica                  ///\n");
