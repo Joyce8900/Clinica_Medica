@@ -19,15 +19,15 @@ int main(void)
 // Funções
 void informacoesProjeto(void)
 {
-  printf("                                                               \n");
-  printf("###############################################################\n");
-  printf("         Universidade Federal do Rio Grande do Norte           \n");
-  printf("         CERES - Centro de Ensino Superior do Sérido           \n");
-  printf("        DCT - Departamento de Computação e Tecnologia          \n");
-  printf("            Disciplina - Programação -- DCT1106                \n");
-  printf("    Projeto Sistema de Agendamento para Clínicas Médicas       \n");
-  printf("    Desenvolvido por: @isazvdd e  @Joyce8900 - Out, 2021       \n");
-  printf("###############################################################\n");
+  printf("                                                                                     \n");
+  printf("#####################################################################################\n");
+  printf("                 Universidade Federal do Rio Grande do Norte                         \n");
+  printf("              CERES - Centro de Ensino Superior do Sérido                            \n");
+  printf("              DCT - Departamento de Computação e Tecnologia                          \n");
+  printf("                  Disciplina - Programação -- DCT1106                                \n");
+  printf("            Projeto Sistema de Agendamento para Clínicas Médicas                     \n");
+  printf("         Desenvolvido por: @isazvdd e  @Joyce8900 - Out, 2021                        \n");
+  printf("#####################################################################################\n");
 }
 
 void informacoesEquipe(void)
@@ -88,8 +88,9 @@ void informacoesPrincipal(void)
   printf("///            1. Cadastro de pacientes                                     ///\n");
   printf("///            2. Especialidades                                            ///\n");
   printf("///            3. Equipe médica                                             ///\n");
-  printf("///            4. Agendamento de Exames                                     ///\n");
-  printf("///            5. Resultados de Exames                                      ///\n");
+  printf("///            4. Exames disponíveis                                        ///\n");
+  printf("///            5. Agendamento de Exames                                     ///\n");
+  printf("///            6. Resultados de Exames                                      ///\n");
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
