@@ -88,8 +88,9 @@ void informacoesPrincipal(void)
   printf("///            1. Cadastro de pacientes                                     ///\n");
   printf("///            2. Especialidades                                            ///\n");
   printf("///            3. Equipe médica                                             ///\n");
-  printf("///            4. Agendamento de Exames                                     ///\n");
-  printf("///            5. Resultados de Exames                                      ///\n");
+  printf("///            4. Exames disponíveis                                        ///\n");
+  printf("///            5. Agendamento de Exames                                     ///\n");
+  printf("///            6. Resultados de Exames                                      ///\n");
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
