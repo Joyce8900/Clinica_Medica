@@ -1,10 +1,14 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 // Assinatura das funções
 void informacoesProjeto(void);
 void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
+//void informacoesFuncionarios(void);
+
+
 
 // Programa Principal
 int main(void)
@@ -13,6 +17,7 @@ int main(void)
   informacoesEquipe();
   informacoesSobre();
   informacoesPrincipal();
+  //informacoesFuncionarios();
   return 0;
 }
 
