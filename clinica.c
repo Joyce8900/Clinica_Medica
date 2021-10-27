@@ -6,7 +6,7 @@ void informacoesProjeto(void);
 void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
-//void informacoesFuncionarios(void);
+void informacoesFuncionarios(void);
 
 
 
@@ -17,7 +17,7 @@ int main(void)
   informacoesEquipe();
   informacoesSobre();
   informacoesPrincipal();
-  //informacoesFuncionarios();
+  informacoesFuncionarios();
   return 0;
 }
 
@@ -96,7 +96,7 @@ void informacoesPrincipal(void)
   printf("///                                                                         ///\n");
   printf("///    = = = = = Sistema de Agendamento para Clínicas Médicas = = = = =     ///\n");
   printf("///                                                                         ///\n");
-  printf("///            1. Cadastro de pacientes                                     ///\n");
+  printf("///            1. Cadastro                                                  ///\n");
   printf("///            2. Especialidades                                            ///\n");
   printf("///            3. Equipe médica                                             ///\n");
   printf("///            4. Exames disponíveis                                        ///\n");
@@ -108,3 +108,39 @@ void informacoesPrincipal(void)
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
     getchar();
 }
+
+void informacoesFuncionarios(void)
+{
+  printf("///////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                         ///\n");
+  printf("///    = = = = = Sistema de Agendamento para Clínicas Médicas = = = = =     ///\n");
+  printf("///                                                                         ///\n");
+  printf("///                                                                         ///\n");
+  printf("///                                                                         ///\n");
+  printf("///                                                                         ///\n");
+  printf("///                                                                         ///\n");
+  printf("///                                                                         ///\n");
+  printf("///                                                                         ///\n");
+  printf("///                                                                         ///\n");
+  printf("///                                                                         ///\n");
+  printf("///////////////////////////////////////////////////////////////////////////////\n");
+  printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
+    getchar();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
