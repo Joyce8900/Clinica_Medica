@@ -33,6 +33,8 @@ void informacoesProjeto(void)
   printf("    Projeto Sistema de Agendamento para Clínicas Médicas       \n");
   printf("    Desenvolvido por: @isazvdd e  @Joyce8900 - Out, 2021       \n");
   printf("###############################################################\n");
+  printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
+    getchar();
 }
 
 void informacoesEquipe(void)
@@ -57,6 +59,8 @@ void informacoesEquipe(void)
   printf("///                                                                                ///\n");
   printf("//////////////////////////////////////////////////////////////////////////////////////\n");
   printf("                                                                                      \n");
+  printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
+    getchar();
 }
 
 void informacoesSobre(void)
@@ -72,6 +76,8 @@ void informacoesSobre(void)
   printf("          especialidades médicas que ofertadas e entre os especialistas             \n");
   printf("                               de sua preferência.                                  \n");
   printf("####################################################################################\n");
+  printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
+    getchar();
 }
 
 void informacoesPrincipal(void)
@@ -99,4 +105,6 @@ void informacoesPrincipal(void)
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
+  printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
+    getchar();
 }
