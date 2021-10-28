@@ -7,8 +7,8 @@ void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
 void informacoesCadastro(void);
-
-
+void informacaoPaciente(void);
+void informacaoCadastroPaciente(void);
 
 // Programa Principal
 int main(void)
@@ -18,6 +18,8 @@ int main(void)
   informacoesSobre();
   informacoesPrincipal();
   informacoesCadastro();
+  informacaoPaciente();
+  informacaoCadastroPaciente();
   return 0;
 }
 
@@ -34,7 +36,7 @@ void informacoesProjeto(void)
   printf("    Desenvolvido por: @isazvdd e  @Joyce8900 - Out, 2021       \n");
   printf("###############################################################\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
-    getchar();
+  getchar();
 }
 
 void informacoesEquipe(void)
@@ -60,7 +62,7 @@ void informacoesEquipe(void)
   printf("//////////////////////////////////////////////////////////////////////////////////////\n");
   printf("                                                                                      \n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
-    getchar();
+  getchar();
 }
 
 void informacoesSobre(void)
@@ -77,7 +79,7 @@ void informacoesSobre(void)
   printf("                               de sua preferência.                                  \n");
   printf("####################################################################################\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
-    getchar();
+  getchar();
 }
 
 void informacoesPrincipal(void)
@@ -106,7 +108,7 @@ void informacoesPrincipal(void)
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
-    getchar();
+  getchar();
 }
 
 void informacoesCadastro(void)
@@ -115,7 +117,7 @@ void informacoesCadastro(void)
   printf("///                                                                         ///\n");
   printf("///    = = = = = Sistema de Agendamento para Clínicas Médicas = = = = =     ///\n");
   printf("///                                                                         ///\n");
-  printf("///    = = = = =              Cadastro                        = = = = =     ///\n");
+  printf("///    = = = = =                  Cadastro                    = = = = =     ///\n");
   printf("///                                                                         ///\n");
   printf("///             1. Cadastro de novo paciente                                ///\n");
   printf("///             2. Cadastro de novo funcionario                             ///\n");
@@ -125,13 +127,95 @@ void informacoesCadastro(void)
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
-    getchar();
-
-
-
-
-
-
-
+  getchar();
 }
 
+void informacaoPaciente(void)
+{
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///           = = = = = = = = = Menu Paciente = = = = = = = = =           ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           1. Cadastrar um novo paciente                               ///\n");
+  printf("///           3. Atualizar o cadastro do paciente                         ///\n");
+  printf("///           0. Voltar ao menu anterior                                  ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  getchar();
+}
+
+void informacaoCadastroPaciente(void)
+{
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///           = = = = = = = = Cadastrar Paciente = = = = = = =            ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           Nome completo:                                              ///\n");
+  printf("///           Data de Nascimento (dd/mm/aaaa):                            ///\n");
+  printf("///           Celular:                                                    ///\n");
+  printf("///           CPF:                                                        ///\n");
+  printf("///           E-mail:                                                     ///\n");
+  printf("///           Possui alguma doença crônica:                               ///\n");
+  printf("///           Exames realizados:                                          ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+}
+
+void informacaoAtualizarCadastroPaciente(void)
+{
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
+  printf("///           = = = = = Atualizar cadastro do paciente = = = = =          ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           Nome completo:                                              ///\n");
+  printf("///           Data de Nascimento (dd/mm/aaaa):                            ///\n");
+  printf("///           Celular:                                                    ///\n");
+  printf("///           CPF:                                                        ///\n");
+  printf("///           E-mail:                                                     ///\n");
+  printf("///           Possui alguma doença crônica:                               ///\n");
+  printf("///           Exames realizados:                                          ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  getchar();
+}
