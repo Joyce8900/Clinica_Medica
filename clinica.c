@@ -7,8 +7,10 @@ void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
 void informacoesCadastro(void);
-void informacaoPaciente(void);
-void informacaoCadastroPaciente(void);
+void informacoesPaciente(void);
+void informacoesCadastroPaciente(void);
+void informacoesPesquisarPaciente(void);
+void informacoesAlterarPaciente(void);
 
 // Programa Principal
 int main(void)
@@ -18,8 +20,10 @@ int main(void)
   informacoesSobre();
   informacoesPrincipal();
   informacoesCadastro();
-  informacaoPaciente();
-  informacaoCadastroPaciente();
+  informacoesPaciente();
+  informacoesCadastroPaciente();
+  informacoesPesquisarPaciente();
+  informacoesAlterarPaciente();
   return 0;
 }
 
@@ -28,12 +32,14 @@ void informacoesProjeto(void)
 {
   printf("                                                               \n");
   printf("###############################################################\n");
+  printf("                                                               \n");
   printf("         Universidade Federal do Rio Grande do Norte           \n");
   printf("         CERES - Centro de Ensino Superior do Sérido           \n");
   printf("        DCT - Departamento de Computação e Tecnologia          \n");
   printf("             Disciplina - Programação - DCT1106                \n");
   printf("    Projeto Sistema de Agendamento para Clínicas Médicas       \n");
   printf("    Desenvolvido por: @isazvdd e  @Joyce8900 - Out, 2021       \n");
+  printf("                                                               \n");
   printf("###############################################################\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
@@ -43,16 +49,19 @@ void informacoesEquipe(void)
 {
   printf("                                                                                      \n");
   printf("######################################################################################\n");
+  printf("                                                                                      \n");
   printf("                     Universidade Federal do Rio Grande do Norte                      \n");
   printf("                    CERES - Centro de Ensino Superior do Sérido                       \n");
   printf("                   DCT - Departamento de Computação e Tecnologia                      \n");
   printf("                         Disciplina - Programação -- DCT1106                          \n");
   printf("                 Projeto Sistema de Agendamento para Clínicas Médicas                 \n");
   printf("                 Desenvolvido por: @isazvdd e  @Joyce8900 - Out, 2021                 \n");
+  printf("                                                                                      \n");
   printf("######################################################################################\n");
   printf("                                                                                      \n");
   printf("                                                                                      \n");
   printf("~~~~~~~~~~~~~~~~~~~~~~ Sistema de Agendamento para Clínicas~~~~~~~~~~~~~~~~~~~~~~~~~~~\n");
+  printf("                                                                                      \n");
   printf("///                Este projeto exemplo foi desenvolvido por:                      ///\n");
   printf("///  Discentes : Isadora Luana Maria Gomes de Azevedo / Joyce Oliveira dos Santos  ///\n");
   printf("///   E-mails: isadora.azevedo.700@ufrn.edu.br / joyce.santos.709@ufrn.edu.br      ///\n");
@@ -69,6 +78,7 @@ void informacoesSobre(void)
 {
   printf("                                                                                    \n");
   printf("####################################################################################\n");
+  printf("                                                                                    \n");
   printf("         Programa desenvolvido por alunos da Universidade Federal do Rio            \n");
   printf("          Grande do Norte, UFRN, do campus do Centro de Ensino Superior             \n");
   printf("           do Seridó - CERES -, do curso de Bacharelado em Sistemas de              \n");
@@ -77,7 +87,9 @@ void informacoesSobre(void)
   printf("         agendar consultas médicas, onde o mesmo poderá escolher entre as           \n");
   printf("          especialidades médicas que ofertadas e entre os especialistas             \n");
   printf("                               de sua preferência.                                  \n");
+  printf("                                                                                    \n");
   printf("####################################################################################\n");
+  printf("                                                                                    \n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
 }
@@ -115,14 +127,15 @@ void informacoesCadastro(void)
 {
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                         ///\n");
-  printf("///    = = = = = Sistema de Agendamento para Clínicas Médicas = = = = =     ///\n");
+  printf("///         ========================================================        ///\n");
+  printf("///         = = = = = = = = = = = = = =  = = = = = = = = = = = = = =        ///\n");
+  printf("///         = = = Sistema de Agendamento para Clínicas Médicas = = =        ///\n");
+  printf("///         = = = = = = = = = = = = = =  = = = = = = = = = = = = = =        ///\n");
+  printf("///         ========================================================        ///\n");
   printf("///                                                                         ///\n");
-  printf("///    = = = = =                  Cadastro                    = = = = =     ///\n");
   printf("///                                                                         ///\n");
   printf("///             1. Cadastro de novo paciente                                ///\n");
   printf("///             2. Cadastro de novo funcionario                             ///\n");
-  printf("///                                                                         ///\n");
-  printf("///                                                                         ///\n");
   printf("///             0. Sair                                                     ///\n");
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -130,7 +143,7 @@ void informacoesCadastro(void)
   getchar();
 }
 
-void informacaoPaciente(void)
+void informacoesPaciente(void)
 {
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -148,7 +161,9 @@ void informacaoPaciente(void)
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///           1. Cadastrar um novo paciente                               ///\n");
-  printf("///           3. Atualizar o cadastro do paciente                         ///\n");
+  printf("///           2. Atualizar o cadastro do paciente                         ///\n");
+  printf("///             2.1 Pesquisar cadastro                                    ///\n");
+  printf("///             2.2 Atualizar cadastro                                    ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -157,7 +172,7 @@ void informacaoPaciente(void)
   getchar();
 }
 
-void informacaoCadastroPaciente(void)
+void informacoesCadastroPaciente(void)
 {
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -180,6 +195,7 @@ void informacaoCadastroPaciente(void)
   printf("///           CPF:                                                        ///\n");
   printf("///           E-mail:                                                     ///\n");
   printf("///           Possui alguma doença crônica:                               ///\n");
+  printf("///           Tratamento em andamento:                                    ///\n");
   printf("///           Exames realizados:                                          ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -189,7 +205,33 @@ void informacaoCadastroPaciente(void)
   getchar();
 }
 
-void informacaoAtualizarCadastroPaciente(void)
+void informacoesPesquisarPaciente(void)
+{
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
+  printf("///           = = = = = Pesquisar cadastro do paciente = = = = =          ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           Nome completo:                                              ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+}
+
+void informacoesAlterarPaciente(void)
 {
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -207,15 +249,10 @@ void informacaoAtualizarCadastroPaciente(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  printf("///           Data de Nascimento (dd/mm/aaaa):                            ///\n");
-  printf("///           Celular:                                                    ///\n");
-  printf("///           CPF:                                                        ///\n");
-  printf("///           E-mail:                                                     ///\n");
-  printf("///           Possui alguma doença crônica:                               ///\n");
-  printf("///           Exames realizados:                                          ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
 }
