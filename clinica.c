@@ -7,6 +7,7 @@ void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
 void informacoesCadastro(void);
+void informacoesFuncionarios(void);
 void informacoesPaciente(void);
 void informacoesCadastroPaciente(void);
 void informacoesPesquisarPaciente(void);
@@ -20,6 +21,7 @@ int main(void)
   informacoesSobre();
   informacoesPrincipal();
   informacoesCadastro();
+  informacoesFuncionarios();
   informacoesPaciente();
   informacoesCadastroPaciente();
   informacoesPesquisarPaciente();
@@ -255,4 +257,55 @@ void informacoesAlterarPaciente(void)
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+
 }
+void informacoesFuncionarios(void)
+{
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///           = = = = = = = = = Painel Funcionarios = = = = = = = = =     ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///                                                                       ///\n");
+  printf("///                                                                       ///\n");
+  printf("///                                                                       ///\n");
+  printf("///            1. Currículo                                               ///\n");
+  printf("///            2. Cadastro de funcionário                                 ///\n");
+  printf("///              2.1  Atualização                                         ///\n");
+  printf("///            3. Exclusão de cadastro                                    ///\n");
+  printf("///                                                                       ///\n");
+  printf("///            0. Voltar ao menu anterior                                 ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  getchar();
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
