@@ -417,6 +417,7 @@ void informacoesPesquisarFuncionario(void)
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  
 }
 
 
