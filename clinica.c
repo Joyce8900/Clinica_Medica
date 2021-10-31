@@ -9,6 +9,7 @@ void informacoesPrincipal(void);
 void informacoesCadastro(void);
 void informacoesFuncionarios(void);
 void informacoesCurriculo(void);
+void informacoesCFuncionarios(void);
 void informacoesPaciente(void);
 void informacoesCadastroPaciente(void);
 void informacoesPesquisarPaciente(void);
@@ -24,6 +25,7 @@ int main(void)
   informacoesCadastro();
   informacoesFuncionarios();
   informacoesCurriculo();
+  informacoesCFuncionarios();
   informacoesPaciente();
   informacoesCadastroPaciente();
   informacoesPesquisarPaciente();
@@ -284,6 +286,7 @@ void informacoesFuncionarios(void)
   printf("///            2. Cadastro de funcionário                                 ///\n");
   printf("///              2.1  Atualização                                         ///\n");
   printf("///            3. Exclusão de cadastro                                    ///\n");
+  printf("///            4. Pesquisar funcionario                                   ///\n");
   printf("///                                                                       ///\n");
   printf("///            0. Voltar ao menu anterior                                 ///\n");
   printf("///                                                                       ///\n");
@@ -309,17 +312,17 @@ void informacoesCurriculo(void)
   printf("///           = = = = = = = = Currículo  = = = = = = =                    ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
-  printf("///           Nome completo:                                              ///\n");
-  printf("///           Idade:                                                      ///\n");
-  printf("///           Celular:                                                    ///\n");
-  printf("///           Endereço:                                                   ///\n");
-  printf("///           E-mail:                                                     ///\n");
-  printf("///           Histórico Educacional:                                      ///\n");
-  printf("///           Tratamento em andamento:                                    ///\n");
-  printf("///           Cargos Ocupados:                                            ///\n");
-  printf("///           Referência:                                                 ///\n");
-  printf("///           Registro Geral:                                             ///\n");
+  printf("///           1. Nome completo:                                           ///\n");
+  printf("///           2. Idade:                                                   ///\n");
+  printf("///           3. Celular:                                                 ///\n");
+  printf("///           4. Endereço:                                                ///\n");
+  printf("///           5. E-mail:                                                  ///\n");
+  printf("///           6. Histórico Educacional:                                   ///\n");
+  printf("///           7. Registro Geral:                                          ///\n");
+  printf("///           8. Cargos Ocupados:                                         ///\n");
+  printf("///           9. Referência:                                              ///\n");
   printf("///                                                                       ///\n");
+  printf("///           0. Volta ao menu anterior:                                  ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -327,8 +330,40 @@ void informacoesCurriculo(void)
   getchar();
 }
 
+void infomacoesCFuncionarios(void)
+{
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///         = = = = = = = = Cadastro Funcionarios  = = = = = = =          ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           1. Nome completo:                                           ///\n");
+  printf("///           2. Cargo Ocupado:                                           ///\n");
+  printf("///           3. Atribuições:                                             ///\n");
+  printf("///           4. Endereço:                                                ///\n");
+  printf("///           5. E-mail:                                                  ///\n");
+  printf("///           6. Registro Geral:                                          ///\n");
+  printf("///           7. Histórico:                                               ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           0. Volta ao menu anterior;                                  ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
 
-
+}
 
 
 
