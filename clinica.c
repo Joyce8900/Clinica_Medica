@@ -265,7 +265,6 @@ void informacoesAlterarPaciente(void)
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-
 }
 void informacoesFuncionarios(void)
 {
@@ -281,7 +280,7 @@ void informacoesFuncionarios(void)
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
-  printf("///           = = = = = = = = = Painel Funcionarios = = = = = = = = =     ///\n");
+  printf("///           = = = = = = = = = Painel Funcionarios = = = = = =           ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -312,7 +311,7 @@ void informacoesCurriculo(void)
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///           = = = = = = = = Currículo  = = = = = = =                    ///\n");
+  printf("///           = = = = = = = = Currículo  = = = = = = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///           1. Nome completo:                                           ///\n");
@@ -347,7 +346,7 @@ void infomacoesCFuncionarios(void)
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///         = = = = = = = = Cadastro Funcionarios  = = = = = = =          ///\n");
+  printf("///           = = = = = = = Cadastro Funcionarios  = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///           1. Nome completo:                                           ///\n");
@@ -365,7 +364,6 @@ void infomacoesCFuncionarios(void)
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-
 }
 
 void informacoesAtualizarF(void)
@@ -382,7 +380,7 @@ void informacoesAtualizarF(void)
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
-  printf("///         = = = = = Atualizar cadastro do funcionario = = = = =         ///\n");
+  printf("///           = = = = Atualizar cadastro do funcionario  = = = =           ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
@@ -407,7 +405,7 @@ void informacoesPesquisarFuncionario(void)
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
-  printf("///               = = = = = Pesquisar Funcionario  = = = = =              ///\n");
+  printf("///           = = = = = = = Pesquisar Funcionario  = = = = = = =          ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
@@ -417,21 +415,4 @@ void informacoesPesquisarFuncionario(void)
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-  
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
