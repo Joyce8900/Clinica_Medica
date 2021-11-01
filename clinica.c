@@ -7,15 +7,15 @@ void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
 void informacoesCadastro(void);
-void informacoesFuncionarios(void);
-void informacoesCurriculo(void);
-void informacoesCFuncionarios(void);
-void informacoesAtualizaF(void);
-void infomacoesPesquisarFuncionario(void);
 void informacoesPaciente(void);
 void informacoesCadastroPaciente(void);
 void informacoesPesquisarPaciente(void);
 void informacoesAlterarPaciente(void);
+void informacoesFuncionarios(void);
+void informacoesCurriculo(void);
+void informacoesCFuncionarios(void);
+void informacoesAtualizarF(void);
+void infomacoesPesquisarFuncionario(void);
 
 // Programa Principal
 int main(void)
@@ -25,15 +25,15 @@ int main(void)
   informacoesSobre();
   informacoesPrincipal();
   informacoesCadastro();
+  informacoesPaciente();
+  informacoesCadastroPaciente();
+  informacoesPesquisarPaciente();
+  informacoesAlterarPaciente();
   informacoesFuncionarios();
   informacoesCurriculo();
   informacoesCFuncionarios();
   informacoesAtualizaF();
   informacoesPesquisarFuncionario();
-  informacoesPaciente();
-  informacoesCadastroPaciente();
-  informacoesPesquisarPaciente();
-  informacoesAlterarPaciente();
   return 0;
 }
 
