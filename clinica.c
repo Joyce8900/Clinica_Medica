@@ -32,7 +32,6 @@ int main(void)
   informacoesCadastroPaciente();
   informacoesPesquisarPaciente();
   informacoesAlterarPaciente();
-
   informacoesFuncionarios();
   informacoesCurriculo();
   informacoesCFuncionarios();
@@ -324,7 +323,11 @@ void informacoesAlterarPaciente(void)
 }
 
 void informacoesFuncionarios(void)
-{
+{ 
+  
+  char opc[1];
+
+
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -350,6 +353,7 @@ void informacoesFuncionarios(void)
   printf("///                                                                       ///\n");
   printf("///            0. Voltar ao menu anterior                                 ///\n");
   printf("///                                                                       ///\n");
+  scanf("%[a-z A-Z]", &opc);
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -358,6 +362,17 @@ void informacoesFuncionarios(void)
 
 void informacoesCurriculo(void)
 {
+  char nome [20];
+  char idade [2];
+  char celular [11];
+  char endereco [20];
+  char email [15];
+  char he [2300];
+  char rg [10];
+  char co [200];
+  char ref[40];
+  char vma [4];
+
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -374,17 +389,27 @@ void informacoesCurriculo(void)
   printf("///           = = = = = = = = Currículo  = = = = = = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
-  printf("///           1. Nome completo:                                           ///\n");
-  printf("///           2. Idade:                                                   ///\n");
-  printf("///           3. Celular:                                                 ///\n");
-  printf("///           4. Endereço:                                                ///\n");
-  printf("///           5. E-mail:                                                  ///\n");
-  printf("///           6. Histórico Educacional:                                   ///\n");
-  printf("///           7. Registro Geral:                                          ///\n");
-  printf("///           8. Cargos Ocupados:                                         ///\n");
-  printf("///           9. Referência:                                              ///\n");
+  printf("///              Nome completo:                                           ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]",nome);
+  printf("///              Idade:                                                   ///\n");
+  scanf("%[0-9]",idade);
+  printf("///              Celular:                                                 ///\n");
+  scanf("%[0-9/]",celular);
+  printf("///              Endereço:                                                ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]",endereco);
+  printf("///              E-mail:                                                  ///\n");
+  scanf("%[A-Za-z@-_. 0-9]",email);
+  printf("///              Histórico Educacional:                                   ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç", he);
+  printf("///              Registro Geral:                                          ///\n");
+  scanf("%[0-9]",rg);
+  printf("///              Cargos Ocupados:                                         ///\n");
+  scanf("%[[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]",co);
+  printf("///              Referência:                                              ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9",ref);
   printf("///                                                                       ///\n");
-  printf("///           0. Volta ao menu anterior:                                  ///\n");
+  printf("///              Volta ao menu anterior:                                  ///\n");
+  scanf("%[A-Z a-z]",vma);
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -394,6 +419,15 @@ void informacoesCurriculo(void)
 
 void infomacoesCFuncionarios(void)
 {
+  char nome[29];
+  char cargo[20];
+  char atribuicoes[50];
+  char endereco[15];
+  char email[25];
+  char rg[10];
+  char historico[300];
+  char vma[5];
+
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -410,15 +444,23 @@ void infomacoesCFuncionarios(void)
   printf("///           = = = = = = = Cadastro Funcionarios  = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
-  printf("///           1. Nome completo:                                           ///\n");
-  printf("///           2. Cargo Ocupado:                                           ///\n");
-  printf("///           3. Atribuições:                                             ///\n");
-  printf("///           4. Endereço:                                                ///\n");
-  printf("///           5. E-mail:                                                  ///\n");
-  printf("///           6. Registro Geral:                                          ///\n");
-  printf("///           7. Histórico:                                               ///\n");
+  printf("///              Nome completo:                                           ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]",nome);
+  printf("///              Cargo Ocupado:                                           ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]",cargo);
+  printf("///              Atribuições:                                             ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]",atribuicoes);
+  printf("///              Endereço:                                                ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]",endereco);
+  printf("///              E-mail:                                                  ///\n");
+  scanf("%[A-Za-z@!-_. 0-9]",email);
+  printf("///              Registro Geral:                                          ///\n");
+  scanf("%[0-9]",rg);
+  printf("///              Histórico:                                               ///\n");
+  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]",historico);
   printf("///                                                                       ///\n");
-  printf("///           0. Volta ao menu anterior;                                  ///\n");
+  printf("///              Volta ao menu anterior;                                  ///\n");
+  scanf("%[A-Z a-z]",vma);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -429,6 +471,7 @@ void infomacoesCFuncionarios(void)
 
 void informacoesAtualizarF(void)
 {
+  char nome [20];
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -442,10 +485,11 @@ void informacoesAtualizarF(void)
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
-  printf("///           = = = = Atualizar cadastro do funcionario  = = = =           ///\n");
+  printf("///           = = = = Atualizar cadastro do funcionario  = = = =          ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
+  scanf("%[a-z A-Z]");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -456,6 +500,7 @@ void informacoesAtualizarF(void)
 
 void informacoesPesquisarFuncionario(void)
 {
+  char nome[25];
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -473,6 +518,7 @@ void informacoesPesquisarFuncionario(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
+  scanf("%[A-Z a-z]",nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
