@@ -325,7 +325,7 @@ void informacoesAlterarPaciente(void)
 void informacoesFuncionarios(void)
 { 
   
-  char opc[1];
+  char opc[2];
 
 
   system("clear||cls");
@@ -353,7 +353,7 @@ void informacoesFuncionarios(void)
   printf("///                                                                       ///\n");
   printf("///            0. Voltar ao menu anterior                                 ///\n");
   printf("///                                                                       ///\n");
-  scanf("%[a-z A-Z]", &opc);
+  scanf("%[0-9]", opc);
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -400,13 +400,13 @@ void informacoesCurriculo(void)
   printf("///              E-mail:                                                  ///\n");
   scanf("%[A-Za-z@-_. 0-9]",email);
   printf("///              Histórico Educacional:                                   ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç", he);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", he);
   printf("///              Registro Geral:                                          ///\n");
   scanf("%[0-9]",rg);
   printf("///              Cargos Ocupados:                                         ///\n");
   scanf("%[[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]",co);
   printf("///              Referência:                                              ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9",ref);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]",ref);
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior:                                  ///\n");
   scanf("%[A-Z a-z]",vma);
@@ -489,7 +489,7 @@ void informacoesAtualizarF(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  scanf("%[a-z A-Z]");
+  scanf("%c",nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -518,7 +518,7 @@ void informacoesPesquisarFuncionario(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  scanf("%[A-Z a-z]",nome);
+  scanf("%c",nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
