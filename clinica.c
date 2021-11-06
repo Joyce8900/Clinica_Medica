@@ -7,10 +7,12 @@ void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
 void informacoesCadastro(void);
+
 void informacoesPaciente(void);
 void informacoesCadastroPaciente(void);
 void informacoesPesquisarPaciente(void);
 void informacoesAlterarPaciente(void);
+
 void informacoesFuncionarios(void);
 void informacoesCurriculo(void);
 void informacoesCFuncionarios(void);
@@ -25,10 +27,12 @@ int main(void)
   informacoesSobre();
   informacoesPrincipal();
   informacoesCadastro();
+
   informacoesPaciente();
   informacoesCadastroPaciente();
   informacoesPesquisarPaciente();
   informacoesAlterarPaciente();
+
   informacoesFuncionarios();
   informacoesCurriculo();
   informacoesCFuncionarios();
@@ -40,6 +44,7 @@ int main(void)
 // Funções
 void informacoesProjeto(void)
 {
+  system("clear||cls");
   printf("                                                               \n");
   printf("###############################################################\n");
   printf("                                                               \n");
@@ -57,6 +62,7 @@ void informacoesProjeto(void)
 
 void informacoesEquipe(void)
 {
+  system("clear||cls");
   printf("                                                                                      \n");
   printf("######################################################################################\n");
   printf("                                                                                      \n");
@@ -86,6 +92,7 @@ void informacoesEquipe(void)
 
 void informacoesSobre(void)
 {
+  system("clear||cls");
   printf("                                                                                    \n");
   printf("####################################################################################\n");
   printf("                                                                                    \n");
@@ -106,6 +113,9 @@ void informacoesSobre(void)
 
 void informacoesPrincipal(void)
 {
+  char opc;
+
+  system("clear||cls");
   printf("\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                         ///\n");
@@ -128,6 +138,10 @@ void informacoesPrincipal(void)
   printf("///            6. Resultados de Exames                                      ///\n");
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
+  printf("///            Escolha a opção desejada: ");
+  scanf("%c", opc);
+  getchar();
+  printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
@@ -135,6 +149,9 @@ void informacoesPrincipal(void)
 
 void informacoesCadastro(void)
 {
+  char opc;
+
+  system("clear||cls");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                         ///\n");
   printf("///         ========================================================        ///\n");
@@ -148,6 +165,10 @@ void informacoesCadastro(void)
   printf("///             2. Cadastro de novo funcionario                             ///\n");
   printf("///             0. Sair                                                     ///\n");
   printf("///                                                                         ///\n");
+  printf("///             Escolha a opção desejada: ");
+  scanf("%c", opc);
+  getchar();
+  printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
@@ -155,6 +176,9 @@ void informacoesCadastro(void)
 
 void informacoesPaciente(void)
 {
+  char opc;
+
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -176,6 +200,10 @@ void informacoesPaciente(void)
   printf("///             2.2 Atualizar cadastro                                    ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
+  printf("///           Escolha a opção desejada: ");
+  scanf("%c", opc);
+  getchar();
+  printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -184,6 +212,16 @@ void informacoesPaciente(void)
 
 void informacoesCadastroPaciente(void)
 {
+  char nome[60];
+  char data[11];
+  char celular[12];
+  char cpf[12];
+  char email[60];
+  char doenca[999];
+  char trat[999];
+  char exame[999];
+
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -200,13 +238,29 @@ void informacoesCadastroPaciente(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  getchar();
   printf("///           Data de Nascimento (dd/mm/aaaa):                            ///\n");
-  printf("///           Celular:                                                    ///\n");
-  printf("///           CPF:                                                        ///\n");
+  scanf("%[0-9/]", data);
+  getchar();
+  printf("///           Celular (com ddd):                                          ///\n");
+  scanf("%[0-9/]", celular);
+  getchar();
+  printf("///           CPF (apenas números):                                       ///\n");
+  scanf("%[0-9/]", cpf);
+  getchar();
   printf("///           E-mail:                                                     ///\n");
+  scanf("%[A-Za-z@-_.]", email);
+  getchar();
   printf("///           Possui alguma doença crônica:                               ///\n");
+  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", doenca);
+  getchar();
   printf("///           Tratamento em andamento:                                    ///\n");
+  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", trat);
+  getchar();
   printf("///           Exames realizados:                                          ///\n");
+  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", exame);
+  getchar();
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -217,6 +271,7 @@ void informacoesCadastroPaciente(void)
 
 void informacoesPesquisarPaciente(void)
 {
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -243,6 +298,7 @@ void informacoesPesquisarPaciente(void)
 
 void informacoesAlterarPaciente(void)
 {
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -266,8 +322,10 @@ void informacoesAlterarPaciente(void)
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
 }
+
 void informacoesFuncionarios(void)
 {
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -297,8 +355,10 @@ void informacoesFuncionarios(void)
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
 }
+
 void informacoesCurriculo(void)
 {
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -334,6 +394,7 @@ void informacoesCurriculo(void)
 
 void infomacoesCFuncionarios(void)
 {
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -368,6 +429,7 @@ void infomacoesCFuncionarios(void)
 
 void informacoesAtualizarF(void)
 {
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -391,8 +453,10 @@ void informacoesAtualizarF(void)
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
 }
+
 void informacoesPesquisarFuncionario(void)
 {
+  system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
