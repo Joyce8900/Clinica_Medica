@@ -32,6 +32,7 @@ int main(void)
   informacoesCadastroPaciente();
   informacoesPesquisarPaciente();
   informacoesAlterarPaciente();
+
   informacoesFuncionarios();
   informacoesCurriculo();
   informacoesCFuncionarios();
@@ -112,7 +113,7 @@ void informacoesSobre(void)
 
 void informacoesPrincipal(void)
 {
-  char opc;
+  char opc[2];
 
   system("clear||cls");
   printf("\n");
@@ -139,7 +140,6 @@ void informacoesPrincipal(void)
   printf("///                                                                         ///\n");
   printf("///            Escolha a opção desejada: ");
   scanf("%c", opc);
-  getchar();
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
@@ -148,7 +148,7 @@ void informacoesPrincipal(void)
 
 void informacoesCadastro(void)
 {
-  char opc;
+  char opc[2];
 
   system("clear||cls");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -166,7 +166,6 @@ void informacoesCadastro(void)
   printf("///                                                                         ///\n");
   printf("///             Escolha a opção desejada: ");
   scanf("%c", opc);
-  getchar();
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
@@ -175,7 +174,7 @@ void informacoesCadastro(void)
 
 void informacoesPaciente(void)
 {
-  char opc;
+  char opc[2];
 
   system("clear||cls");
   printf("\n");
@@ -200,8 +199,7 @@ void informacoesPaciente(void)
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
   printf("///           Escolha a opção desejada: ");
-  scanf("%c", opc);
-  getchar();
+  scanf("%[0-9]", opc);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -238,28 +236,20 @@ void informacoesCadastroPaciente(void)
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
-  getchar();
   printf("///           Data de Nascimento (dd/mm/aaaa):                            ///\n");
   scanf("%[0-9/]", data);
-  getchar();
   printf("///           Celular (com ddd):                                          ///\n");
   scanf("%[0-9]", celular);
-  getchar();
   printf("///           CPF (apenas números):                                       ///\n");
   scanf("%[0-9]", cpf);
-  getchar();
   printf("///           E-mail:                                                     ///\n");
   scanf("%[A-Za-z@-_.]", email);
-  getchar();
   printf("///           Possui alguma doença crônica:                               ///\n");
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", doenca);
-  getchar();
   printf("///           Tratamento em andamento:                                    ///\n");
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", trat);
-  getchar();
   printf("///           Exames realizados:                                          ///\n");
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", exame);
-  getchar();
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
