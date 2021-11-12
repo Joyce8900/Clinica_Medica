@@ -12,12 +12,15 @@ void informacoesPaciente(void);
 void informacoesCadastroPaciente(void);
 void informacoesPesquisarPaciente(void);
 void informacoesAlterarPaciente(void);
+void cadastrarConsulta(void);
 
 void informacoesFuncionarios(void);
 void informacoesCurriculo(void);
 void informacoesCFuncionarios(void);
 void informacoesAtualizarF(void);
 void informacoesPesquisarFuncionario(void);
+
+void especialidades(void);
 
 // Programa Principal
 int main(void)
@@ -38,6 +41,8 @@ int main(void)
   informacoesCFuncionarios();
   informacoesAtualizarF();
   informacoesPesquisarFuncionario();
+
+  especialidades();
   return 0;
 }
 
@@ -196,6 +201,7 @@ void informacoesPaciente(void)
   printf("///           2. Atualizar o cadastro do paciente                         ///\n");
   printf("///             2.1 Pesquisar cadastro                                    ///\n");
   printf("///             2.2 Atualizar cadastro                                    ///\n");
+  printf("///           3. Cadastrar uma nova consulta                              ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
   printf("///           Escolha a opção desejada: ");
@@ -260,6 +266,8 @@ void informacoesCadastroPaciente(void)
 
 void informacoesPesquisarPaciente(void)
 {
+  char nome[60];
+
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -277,6 +285,7 @@ void informacoesPesquisarPaciente(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
+  scanf("%c", nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -287,6 +296,8 @@ void informacoesPesquisarPaciente(void)
 
 void informacoesAlterarPaciente(void)
 {
+  char nome[60];
+
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -304,8 +315,46 @@ void informacoesAlterarPaciente(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
+  scanf("%c", nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+}
+
+void cadastrarConsulta(void)
+{
+  char nome[60];
+  char consulta[2];
+  char especialidade[99];
+  char especialista[99];
+
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///           = = = = = = = = Cadastrar Paciente = = = = = = =            ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///                                                                       ///\n");
+  printf("///        Nome completo:                                                 ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
+  scanf("%[0-9]", consulta);
+  printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", especialidade);
+  printf("///        Qual o especialista que o Sr.(a) deseja consultar?             ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", especialista);
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
@@ -513,5 +562,41 @@ void informacoesPesquisarFuncionario(void)
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+}
+
+void especialidades(void)
+{
+  char opc[2];
+
+  system("clear||cls");
+  printf("\n");
+  printf("///////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                         ///\n");
+  printf("///         ========================================================        ///\n");
+  printf("///         = = = = = = = = = = = = = =  = = = = = = = = = = = = = =        ///\n");
+  printf("///         = = = Sistema de Agendamento para Clínicas Médicas = = =        ///\n");
+  printf("///         = = = = = = = = = = = = = =  = = = = = = = = = = = = = =        ///\n");
+  printf("///         ========================================================        ///\n");
+  printf("///                                                                         ///\n");
+  printf("///////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                         ///\n");
+  printf("///         = = = = = = = = Especialidades médicas = = = = = = = = =        ///\n");
+  printf("///                                                                         ///\n");
+  printf("///            1. Clínico Geral                                             ///\n");
+  printf("///            2. Dermatologista                                            ///\n");
+  printf("///            3. Cardiologista                                             ///\n");
+  printf("///            4. Pediatra                                                  ///\n");
+  printf("///            5. Endocrinologista                                          ///\n");
+  printf("///            6. Oftalmologista                                            ///\n");
+  printf("///            7. Otorrinolaringologista                                    ///\n");
+  printf("///            8. Psiquiatria                                               ///\n");
+  printf("///            0. Sair                                                      ///\n");
+  printf("///                                                                         ///\n");
+  printf("///            Escolha a opção desejada: ");
+  scanf("%c", opc);
+  printf("///                                                                         ///\n");
+  printf("///////////////////////////////////////////////////////////////////////////////\n");
+  printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
 }
