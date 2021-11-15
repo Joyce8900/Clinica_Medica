@@ -6,19 +6,28 @@ void informacoesProjeto(void);
 void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
+
 void informacoesCadastro(void);
 void informacoesPaciente(void);
 void informacoesCadastroPaciente(void);
 void informacoesPesquisarPaciente(void);
 void informacoesAlterarPaciente(void);
 void cadastrarConsulta(void);
+
 void informacoesFuncionarios(void);
 void informacoesCurriculo(void);
 void informacoesCFuncionarios(void);
 void informacoesAtualizarF(void);
 void informacoesPesquisarFuncionario(void);
-void equipe (void);
+
+void equipe(void);
+
 void exames(void);
+void examesDisponiveis(void);
+void examesSolicitar(void);
+void examesAcompanhar(void);
+void examesResultados(void);
+
 // Programa Principal
 int main(void)
 {
@@ -26,18 +35,28 @@ int main(void)
   informacoesEquipe();
   informacoesSobre();
   informacoesPrincipal();
+
   informacoesCadastro();
   informacoesPaciente();
   informacoesCadastroPaciente();
   informacoesPesquisarPaciente();
   informacoesAlterarPaciente();
+  cadastrarConsulta();
+
   informacoesFuncionarios();
   informacoesCurriculo();
   informacoesCFuncionarios();
   informacoesAtualizarF();
   informacoesPesquisarFuncionario();
+
   equipe();
+
   exames();
+  exames();
+  examesDisponiveis();
+  examesSolicitar();
+  examesAcompanhar();
+  examesResultados();
   return 0;
 }
 
@@ -519,7 +538,7 @@ void informacoesAtualizarF(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  scanf("%c", nome);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -548,7 +567,7 @@ void informacoesPesquisarFuncionario(void)
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  scanf("%c", nome);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -556,8 +575,6 @@ void informacoesPesquisarFuncionario(void)
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
 }
-
-
 
 void equipe(void)
 {
@@ -581,7 +598,7 @@ void equipe(void)
   printf("///               Dr. Gustavo Santos                                        ///\n");
   printf("///               Dra. Vivian Duarte                                        ///\n");
   printf("///               Dra. Débora Queiroz                                       ///\n");
-  printf("///            2. Dermatologista                                            ///\n");  
+  printf("///            2. Dermatologista                                            ///\n");
   printf("///               Dr. Fábio Guedes                                          ///\n");
   printf("///               Dra. Yana Léda                                            ///\n");
   printf("///            3. Cardiologista                                             ///\n");
@@ -605,7 +622,7 @@ void equipe(void)
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///            Escolha a opção desejada:                                    ///\n");
-  scanf("%c", opc);
+  scanf("%[0-9]", opc);
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
@@ -634,7 +651,7 @@ void exames(void)
   printf("///                                                                       ///\n");
   printf("///           1. Exames disponiveis                                       ///\n");
   printf("///           2. Solicitar exames médicos                                 ///\n");
-  printf("///           3. Acompanhar andamento, e prazos                           ///\n");
+  printf("///           3. Acompanhar andamento e prazos                            ///\n");
   printf("///           4. Resultados                                               ///\n");
   printf("///                                                                       ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
@@ -645,5 +662,101 @@ void exames(void)
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  getchar();
+}
+
+void examesSolicitar(void)
+{
+  char nome[60];
+
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+  printf("///          = = = = = = = = Solicitar exames = = = = = = = = =           ///\n");
+  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+  printf("///                                                                       ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           Nome completo:                                              ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  printf("///                                                                       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+}
+
+void examesAcompanhar(void)
+{
+  char nome[60];
+
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+  printf("///          = = = = = = = Acompanhar andamento = = = = = = = =           ///\n");
+  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+  printf("///                                                                       ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           Nome completo:                                              ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  printf("///                                                                       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+}
+
+void examesResultado(void)
+{
+  char nome[60];
+
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+  printf("///          = = = = = = = = = = Resultados = = = = = = = = = =           ///\n");
+  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+  printf("///                                                                       ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           Nome completo:                                              ///\n");
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  printf("///                                                                       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
 }
