@@ -18,6 +18,7 @@ void informacoesCFuncionarios(void);
 void informacoesAtualizarF(void);
 void informacoesPesquisarFuncionario(void);
 void equipe (void);
+void exames(void);
 // Programa Principal
 int main(void)
 {
@@ -36,6 +37,7 @@ int main(void)
   informacoesAtualizarF();
   informacoesPesquisarFuncionario();
   equipe();
+  exames();
   return 0;
 }
 
@@ -129,11 +131,8 @@ void informacoesPrincipal(void)
   printf("///    = = = = = Sistema de Agendamento para Clínicas Médicas = = = = =     ///\n");
   printf("///                                                                         ///\n");
   printf("///            1. Cadastro                                                  ///\n");
-  printf("///            2. Especialidades                                            ///\n");
-  printf("///            3. Equipe médica                                             ///\n");
-  printf("///            4. Exames disponíveis                                        ///\n");
-  printf("///            5. Agendamento de Exames                                     ///\n");
-  printf("///            6. Resultados de Exames                                      ///\n");
+  printf("///            2. Equipe médica e Especialidades                            ///\n");
+  printf("///            3. Exames                                                    ///\n");
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///            Escolha a opção desejada: ");
@@ -610,5 +609,41 @@ void equipe(void)
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
+  getchar();
+}
+
+void exames(void)
+{
+  char opc[2];
+
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///           = = = = = = = = =     Exames    = = = = = = = = =           ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           1. Exames disponiveis                                       ///\n");
+  printf("///           2. Solicitar exames médicos                                 ///\n");
+  printf("///           3. Acompanhar andamento, e prazos                           ///\n");
+  printf("///           4. Resultados                                               ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           0. Voltar ao menu anterior                                  ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           Escolha a opção desejada: ");
+  scanf("%[0-9]", opc);
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
 }
