@@ -7,21 +7,17 @@ void informacoesEquipe(void);
 void informacoesSobre(void);
 void informacoesPrincipal(void);
 void informacoesCadastro(void);
-
 void informacoesPaciente(void);
 void informacoesCadastroPaciente(void);
 void informacoesPesquisarPaciente(void);
 void informacoesAlterarPaciente(void);
 void cadastrarConsulta(void);
-
 void informacoesFuncionarios(void);
 void informacoesCurriculo(void);
 void informacoesCFuncionarios(void);
 void informacoesAtualizarF(void);
 void informacoesPesquisarFuncionario(void);
-
-void especialidades(void);
-
+void equipe (void);
 // Programa Principal
 int main(void)
 {
@@ -30,19 +26,16 @@ int main(void)
   informacoesSobre();
   informacoesPrincipal();
   informacoesCadastro();
-
   informacoesPaciente();
   informacoesCadastroPaciente();
   informacoesPesquisarPaciente();
   informacoesAlterarPaciente();
-
   informacoesFuncionarios();
   informacoesCurriculo();
   informacoesCFuncionarios();
   informacoesAtualizarF();
   informacoesPesquisarFuncionario();
-
-  especialidades();
+  equipe();
   return 0;
 }
 
@@ -565,7 +558,9 @@ void informacoesPesquisarFuncionario(void)
   getchar();
 }
 
-void especialidades(void)
+
+
+void equipe(void)
 {
   char opc[2];
 
@@ -581,19 +576,36 @@ void especialidades(void)
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                         ///\n");
-  printf("///         = = = = = = = = Especialidades médicas = = = = = = = = =        ///\n");
+  printf("///         = = = = = = = =     Equipe médica      = = = = = = = = =        ///\n");
   printf("///                                                                         ///\n");
   printf("///            1. Clínico Geral                                             ///\n");
-  printf("///            2. Dermatologista                                            ///\n");
+  printf("///               Dr. Gustavo Santos                                        ///\n");
+  printf("///               Dra. Vivian Duarte                                        ///\n");
+  printf("///               Dra. Débora Queiroz                                       ///\n");
+  printf("///            2. Dermatologista                                            ///\n");  
+  printf("///               Dr. Fábio Guedes                                          ///\n");
+  printf("///               Dra. Yana Léda                                            ///\n");
   printf("///            3. Cardiologista                                             ///\n");
+  printf("///               Dr. Thiago Midlej                                         ///\n");
+  printf("///               Dra. Kamilla Morbeck                                      ///\n");
   printf("///            4. Pediatra                                                  ///\n");
+  printf("///               Dra. Isabelly Lopes                                       ///\n");
+  printf("///               Dr. Reginaldo Freire                                      ///\n");
   printf("///            5. Endocrinologista                                          ///\n");
+  printf("///               Dra. Marília Cardoso                                      ///\n");
+  printf("///               Dr. Octávio Neto                                          ///\n");
   printf("///            6. Oftalmologista                                            ///\n");
+  printf("///               Dra. Débora Fernandes                                     ///\n");
+  printf("///               Dr. Cláudio Albuquerque                                   ///\n");
   printf("///            7. Otorrinolaringologista                                    ///\n");
+  printf("///               Dra. Juliana Simões                                       ///\n");
+  printf("///               Dr. Marcus Galvão                                         ///\n");
   printf("///            8. Psiquiatria                                               ///\n");
+  printf("///               Dr. Marcelo Modesto                                       ///\n");
+  printf("///               Dr. Lucas Farnese                                         ///\n");
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
-  printf("///            Escolha a opção desejada: ");
+  printf("///            Escolha a opção desejada:                                    ///\n");
   scanf("%c", opc);
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
