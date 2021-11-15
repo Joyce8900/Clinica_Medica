@@ -155,7 +155,7 @@ void informacoesPrincipal(void)
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///            Escolha a opção desejada: ");
-  scanf("%c", opc);
+  scanf("%[0-9]", opc);
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
@@ -181,7 +181,7 @@ void informacoesCadastro(void)
   printf("///             0. Sair                                                     ///\n");
   printf("///                                                                         ///\n");
   printf("///             Escolha a opção desejada: ");
-  scanf("%c", opc);
+  scanf("%[0-9]", opc);
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
