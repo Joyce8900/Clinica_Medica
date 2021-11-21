@@ -5,8 +5,8 @@
 void menuProjeto(void);
 void menuEquipe(void);
 void menuSobre(void);
-void menuPrincipal(void);
 
+char menuprincipal(void);
 void menuCadastro(void);
 void menuPaciente(void);
 void menuCadastroPaciente(void);
@@ -22,7 +22,7 @@ void menuPesquisarFuncionario(void);
 
 void equipe(void);
 
-void exames(void);
+void menuExames(void);
 void examesDisponiveis(void);
 void examesSolicitar(void);
 void examesAcompanhar(void);
@@ -67,17 +67,17 @@ int main(void)
 
   do
   {
-    modulo = principal();
+    modulo = menuprincipal();
     switch (modulo)
     {
     case '1':
-      moduloCadastro();
+      menuCadastro();
       break;
     case '2':
-      moduloMedica();
+      menuFuncionarios();
       break;
     case '3':
-      moduloExames();
+      menuExames();
       break;
     case 0:
       break;
@@ -159,7 +159,7 @@ void menuSobre(void)
   getchar();
 }
 
-void menuPrincipal(void)
+char menuPrincipal(void)
 {
   char opc[2];
 
@@ -189,6 +189,7 @@ void menuPrincipal(void)
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
+  return opc;
 }
 
 void menuCadastro(void)
@@ -401,19 +402,22 @@ void cadastrarConsulta(void)
   getchar();
 }
 
-void moduloCadastro(void)
-{
-  char modulo;
-  do
-  {
-    modulo = menuCadastro();
-    switch (modulo)
-    {
-    case '1':
-      cadas
-    }
-  }
-}
+// char moduloCadastro(void)
+// {
+//   char modulo;
+//   do
+//   {
+//     modulo = menuCadastro();
+//     switch (modulo)
+//     {
+//     case '1':
+//       menuPaciente();
+//       break;
+//     case '2':
+//       menuFuncionarios();
+//     }
+//   } while (modulo != '0');
+// }
 
 void menuFuncionarios(void)
 {
@@ -672,7 +676,7 @@ void equipe(void)
   getchar();
 }
 
-void exames(void)
+void menuExames(void)
 {
   char opc[2];
 
