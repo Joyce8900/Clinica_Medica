@@ -2,23 +2,23 @@
 #include <stdlib.h>
 
 // Assinatura das funções
-void informacoesProjeto(void);
-void informacoesEquipe(void);
-void informacoesSobre(void);
-void informacoesPrincipal(void);
+void menuProjeto(void);
+void menuEquipe(void);
+void menuSobre(void);
+void menuPrincipal(void);
 
-void informacoesCadastro(void);
-void informacoesPaciente(void);
-void informacoesCadastroPaciente(void);
-void informacoesPesquisarPaciente(void);
-void informacoesAlterarPaciente(void);
+void menuCadastro(void);
+void menuPaciente(void);
+void menuCadastroPaciente(void);
+void menuPesquisarPaciente(void);
+void menuAlterarPaciente(void);
 void cadastrarConsulta(void);
 
-void informacoesFuncionarios(void);
-void informacoesCurriculo(void);
-void informacoesCFuncionarios(void);
-void informacoesAtualizarF(void);
-void informacoesPesquisarFuncionario(void);
+void menuFuncionarios(void);
+void menuCurriculo(void);
+void menuCFuncionarios(void);
+void menuAtualizarF(void);
+void menuPesquisarFuncionario(void);
 
 void equipe(void);
 
@@ -31,23 +31,23 @@ void examesResultados(void);
 // Programa Principal
 // int main(void)
 // {
-//   informacoesProjeto();
-//   informacoesEquipe();
-//   informacoesSobre();
-//   informacoesPrincipal();
+//   menuProjeto();
+//   menuEquipe();
+//   menuSobre();
+//   menuPrincipal();
 
-//   informacoesCadastro();
-//   informacoesPaciente();
-//   informacoesCadastroPaciente();
-//   informacoesPesquisarPaciente();
-//   informacoesAlterarPaciente();
+//   menuCadastro();
+//   menuPaciente();
+//   menuCadastroPaciente();
+//   menuPesquisarPaciente();
+//   menuAlterarPaciente();
 //   cadastrarConsulta();
 
-//   informacoesFuncionarios();
-//   informacoesCurriculo();
-//   informacoesCFuncionarios();
-//   informacoesAtualizarF();
-//   informacoesPesquisarFuncionario();
+//   menuFuncionarios();
+//   menuCurriculo();
+//   menuCFuncionarios();
+//   menuAtualizarF();
+//   menuPesquisarFuncionario();
 
 //   equipe();
 
@@ -70,13 +70,13 @@ int main(void)
     modulo = principal();
     switch (modulo)
     {
-    case 1:
+    case '1':
       moduloCadastro();
       break;
-    case 2:
+    case '2':
       moduloMedica();
       break;
-    case 3:
+    case '3':
       moduloExames();
       break;
     case 0:
@@ -90,7 +90,7 @@ int main(void)
 }
 
 // Funções
-void informacoesProjeto(void)
+void menuProjeto(void)
 {
   system("clear||cls");
   printf("                                                               \n");
@@ -108,7 +108,7 @@ void informacoesProjeto(void)
   getchar();
 }
 
-void informacoesEquipe(void)
+void menuEquipe(void)
 {
   system("clear||cls");
   printf("                                                                                      \n");
@@ -138,7 +138,7 @@ void informacoesEquipe(void)
   getchar();
 }
 
-void informacoesSobre(void)
+void menuSobre(void)
 {
   system("clear||cls");
   printf("                                                                                    \n");
@@ -159,7 +159,7 @@ void informacoesSobre(void)
   getchar();
 }
 
-void informacoesPrincipal(void)
+void menuPrincipal(void)
 {
   char opc[2];
 
@@ -191,7 +191,7 @@ void informacoesPrincipal(void)
   getchar();
 }
 
-void informacoesCadastro(void)
+void menuCadastro(void)
 {
   char opc[2];
 
@@ -217,7 +217,7 @@ void informacoesCadastro(void)
   getchar();
 }
 
-void informacoesPaciente(void)
+void menuPaciente(void)
 {
   char opc[2];
 
@@ -253,7 +253,7 @@ void informacoesPaciente(void)
   getchar();
 }
 
-void informacoesCadastroPaciente(void)
+void menuCadastroPaciente(void)
 {
   char nome[60];
   char data[11];
@@ -304,7 +304,7 @@ void informacoesCadastroPaciente(void)
   getchar();
 }
 
-void informacoesPesquisarPaciente(void)
+void menuPesquisarPaciente(void)
 {
   char nome[60];
 
@@ -334,7 +334,7 @@ void informacoesPesquisarPaciente(void)
   getchar();
 }
 
-void informacoesAlterarPaciente(void)
+void menuAlterarPaciente(void)
 {
   char nome[60];
 
@@ -401,7 +401,21 @@ void cadastrarConsulta(void)
   getchar();
 }
 
-void informacoesFuncionarios(void)
+void moduloCadastro(void)
+{
+  char modulo;
+  do
+  {
+    modulo = menuCadastro();
+    switch (modulo)
+    {
+    case '1':
+      cadas
+    }
+  }
+}
+
+void menuFuncionarios(void)
 {
 
   char opc[2];
@@ -438,7 +452,7 @@ void informacoesFuncionarios(void)
   getchar();
 }
 
-void informacoesCurriculo(void)
+void menuCurriculo(void)
 {
   char nome[20];
   char idade[2];
@@ -547,7 +561,7 @@ void infomacoesCFuncionarios(void)
   getchar();
 }
 
-void informacoesAtualizarF(void)
+void menuAtualizarF(void)
 {
   char nome[20];
   system("clear||cls");
@@ -576,7 +590,7 @@ void informacoesAtualizarF(void)
   getchar();
 }
 
-void informacoesPesquisarFuncionario(void)
+void menuPesquisarFuncionario(void)
 {
   char nome[25];
   system("clear||cls");
