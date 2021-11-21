@@ -29,34 +29,63 @@ void examesAcompanhar(void);
 void examesResultados(void);
 
 // Programa Principal
+// int main(void)
+// {
+//   informacoesProjeto();
+//   informacoesEquipe();
+//   informacoesSobre();
+//   informacoesPrincipal();
+
+//   informacoesCadastro();
+//   informacoesPaciente();
+//   informacoesCadastroPaciente();
+//   informacoesPesquisarPaciente();
+//   informacoesAlterarPaciente();
+//   cadastrarConsulta();
+
+//   informacoesFuncionarios();
+//   informacoesCurriculo();
+//   informacoesCFuncionarios();
+//   informacoesAtualizarF();
+//   informacoesPesquisarFuncionario();
+
+//   equipe();
+
+//   exames();
+//   exames();
+//   examesDisponiveis();
+//   examesSolicitar();
+//   examesAcompanhar();
+//   examesResultados();
+//   return 0;
+// }
+
+// Programa principal
 int main(void)
 {
-  informacoesProjeto();
-  informacoesEquipe();
-  informacoesSobre();
-  informacoesPrincipal();
+  char modulo;
 
-  informacoesCadastro();
-  informacoesPaciente();
-  informacoesCadastroPaciente();
-  informacoesPesquisarPaciente();
-  informacoesAlterarPaciente();
-  cadastrarConsulta();
-
-  informacoesFuncionarios();
-  informacoesCurriculo();
-  informacoesCFuncionarios();
-  informacoesAtualizarF();
-  informacoesPesquisarFuncionario();
-
-  equipe();
-
-  exames();
-  exames();
-  examesDisponiveis();
-  examesSolicitar();
-  examesAcompanhar();
-  examesResultados();
+  do
+  {
+    modulo = principal();
+    switch (modulo)
+    {
+    case 1:
+      moduloCadastro();
+      break;
+    case 2:
+      moduloMedica();
+      break;
+    case 3:
+      moduloExames();
+      break;
+    case 0:
+      break;
+    default:
+      printf("Opção inválida!\n");
+    }
+  } while (modulo != '0');
+  printf("Fim!\n");
   return 0;
 }
 
