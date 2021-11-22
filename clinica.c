@@ -7,7 +7,7 @@ void menuEquipe(void);
 void menuSobre(void);
 
 char menuprincipal(void);
-void menuCadastro(void);
+char menuCadastro(void);
 void menuPaciente(void);
 void menuCadastroPaciente(void);
 void menuPesquisarPaciente(void);
@@ -86,6 +86,7 @@ int main(void)
     }
   } while (modulo != '0');
   printf("Fim!\n");
+  char modulo;
   return 0;
 }
 
@@ -218,7 +219,22 @@ void menuCadastro(void)
   getchar();
 }
 
-void menuPaciente(void)
+//Funções cadastro
+void menuCadastro (void)
+ {
+  char opcao;
+  do {
+    opcao = menuCadastro ();
+      switch (opcao) {
+        case  ' 1 ' : menuPaciente ();
+              break;
+        case  ' 2 ' : menuFuncionarios ();
+                break;
+} 		
+ while (opcao != '0');
+}
+
+char menuPaciente(void)
 {
   char opc[2];
 
