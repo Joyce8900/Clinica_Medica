@@ -765,9 +765,13 @@ void menuExames (void)
   do {
     opcao = menuExames ();
       switch (opcao) {
-        case  ' 1 ' : examesSolicitar ();
+        case  ' 1 ' : examesDisponiveis ();
               break;
-        case  ' 2 ' :  ();
+        case  ' 2 ' : examesSolicitar ();
+              break;
+        case ' 3 ' : examesAcompanhar ();
+                break;
+        case ' 4 ' : examesResultados ();
                 break;
 } 		
  while (opcao != '0');
@@ -793,10 +797,10 @@ void examesDisponiveis(void);
   printf("///        = = = = = = = = = Exames Disponiveis      = = = = = = =        ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
-  printf("///           1. Exames disponiveis                                       ///\n");
-  printf("///           2. Solicitar exames médicos                                 ///\n");
-  printf("///           3. Acompanhar andamento e prazos                            ///\n");
-  printf("///           4. Resultados                                               ///\n");
+  printf("///           1. Exames de sangue                                         ///\n");
+  printf("///           2. Exames patologicos                                       ///\n");
+  printf("///           3. exames neurológicos                                      ///\n");
+  printf("///           4. Exames de imagem                                         ///\n");
   printf("///                                                                       ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
