@@ -216,11 +216,11 @@ void menuCadastro(void)
 }
 
 //Funções cadastro
-void menuCadastro (void)
+void moduloCadastro (void)
  {
   char opcao;
   do {
-    opcao = menuCadastro ();
+    opcao = moduloCadastro ();
       switch (opcao) {
         case  ' 1 ' : menuPaciente ();
               break;
@@ -266,11 +266,11 @@ char menuPaciente(void)
 }
 
 //Funcao Paciente
-void menuPaciente (void)
+void modulopaciente (void)
  {
   char opcao;
   do {
-    opcao = menuFuncionarios ();
+    opcao = modulopaciente ();
       switch (opcao) {
         case  ' 1 ' : menuCadastroPaciente ();
               break;
@@ -487,11 +487,11 @@ void menuFuncionarios(void)
 }
 
 //Funcao Funcionarios
-void menuFuncionarios (void)
+void moduloFuncionarios (void)
  {
   char opcao;
   do {
-    opcao = menuFuncionarios ();
+    opcao = moduloFuncionarios ();
       switch (opcao) {
         case  ' 1 ' : menuCurriculo ();
               break;
@@ -759,11 +759,11 @@ void menuExames(void)
 }
 
 //Funções exames
-void menuExames (void)
+void moduloExames (void)
  {
   char opcao;
   do {
-    opcao = menuExames ();
+    opcao = moduloExames ();
       switch (opcao) {
         case  ' 1 ' : examesDisponiveis ();
               break;
