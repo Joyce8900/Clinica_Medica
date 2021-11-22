@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <unistd.h>
 // Assinatura das funções
 void menuProjeto(void);
 void menuEquipe(void);
@@ -63,17 +63,17 @@ int main(void)
 
   do
   {
-    modulo = menuprincipal();
+    modulo = moduloprincipal();
     switch (modulo)
     {
     case '1':
-      menuCadastro();
+      moduloCadastro();
       break;
     case '2':
-      menuFuncionarios();
+      moduloFuncionarios();
       break;
     case '3':
-      menuExames();
+      moduloExames();
       break;
     case 0:
       break;
