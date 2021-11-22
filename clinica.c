@@ -35,22 +35,18 @@ void examesResultados(void);
 //   menuEquipe();
 //   menuSobre();
 //   menuPrincipal();
-
 //   menuCadastro();
 //   menuPaciente();
 //   menuCadastroPaciente();
 //   menuPesquisarPaciente();
 //   menuAlterarPaciente();
 //   cadastrarConsulta();
-
 //   menuFuncionarios();
 //   menuCurriculo();
 //   menuCFuncionarios();
 //   menuAtualizarF();
 //   menuPesquisarFuncionario();
-
 //   equipe();
-
 //   exames();
 //   exames();
 //   examesDisponiveis();
@@ -209,8 +205,8 @@ void menuCadastro(void)
   printf("///                                                                         ///\n");
   printf("///             1. Cadastro de novo paciente                                ///\n");
   printf("///             2. Cadastro de novo funcionario                             ///\n");
-  printf("///             0. Sair                                                     ///\n");
   printf("///                                                                         ///\n");
+  printf("///             0. Sair                                                     ///\n");
   printf("///             Escolha a opção desejada: ");
   scanf("%[0-9]", opc);
   printf("///                                                                         ///\n");
@@ -256,9 +252,8 @@ char menuPaciente(void)
   printf("///                                                                       ///\n");
   printf("///           1. Cadastrar um novo paciente                               ///\n");
   printf("///           2. Atualizar o cadastro do paciente                         ///\n");
-  printf("///             2.1 Pesquisar cadastro                                    ///\n");
-  printf("///             2.2 Atualizar cadastro                                    ///\n");
-  printf("///           3. Cadastrar uma nova consulta                              ///\n");
+  printf("///           3. Pesquisar cadastro                                       ///\n");
+  printf("///           4. Cadastrar uma nova consulta                              ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
   printf("///           Escolha a opção desejada: ");
@@ -268,6 +263,25 @@ char menuPaciente(void)
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
+}
+
+//Funcao Paciente
+void menuPaciente (void)
+ {
+  char opcao;
+  do {
+    opcao = menuFuncionarios ();
+      switch (opcao) {
+        case  ' 1 ' : menuCadastroPaciente ();
+              break;
+        case  ' 2 ' : menuAlterarPaciente ();
+                break;
+        case '3': menuPesquisarPaciente  ();
+                break;
+        case '4': cadastrarConsulta ();
+                break;
+} 		
+ while (opcao != '0');
 }
 
 void menuCadastroPaciente(void)
@@ -401,7 +415,7 @@ void cadastrarConsulta(void)
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///           = = = = = = = = Cadastrar Paciente = = = = = = =            ///\n");
+  printf("///           = = = = = = = = Cadastrar Consulta = = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///        Nome completo:                                                 ///\n");
@@ -460,7 +474,7 @@ void menuFuncionarios(void)
   printf("///                                                                       ///\n");
   printf("///            1. Currículo                                               ///\n");
   printf("///            2. Cadastro de funcionário                                 ///\n");
-  printf("///              2.1  Atualização                                         ///\n");
+  printf("///                                                                       ///\n");
   printf("///            3. Pesquisar funcionario                                   ///\n");
   printf("///                                                                       ///\n");
   printf("///            0. Voltar ao menu anterior                                 ///\n");
@@ -471,6 +485,22 @@ void menuFuncionarios(void)
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
 }
+
+//Funcao Funcionarios
+void menuFuncionarios (void)
+ {
+  char opcao;
+  do {
+    opcao = menuFuncionarios ();
+      switch (opcao) {
+        case  ' 1 ' : menuCurriculo ();
+              break;
+        case  ' 2 ' : infomacoesCFuncionarios ();
+                break;
+} 		
+ while (opcao != '0');
+}
+
 
 void menuCurriculo(void)
 {
@@ -710,6 +740,57 @@ void menuExames(void)
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
   printf("///           = = = = = = = = =     Exames    = = = = = = = = =           ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           1. Exames disponiveis                                       ///\n");
+  printf("///           2. Solicitar exames médicos                                 ///\n");
+  printf("///           3. Acompanhar andamento e prazos                            ///\n");
+  printf("///           4. Resultados                                               ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           0. Voltar ao menu anterior                                  ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           Escolha a opção desejada: ");
+  scanf("%[0-9]", opc);
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  getchar();
+}
+
+//Funções exames
+void menuExames (void)
+ {
+  char opcao;
+  do {
+    opcao = menuExames ();
+      switch (opcao) {
+        case  ' 1 ' : examesSolicitar ();
+              break;
+        case  ' 2 ' :  ();
+                break;
+} 		
+ while (opcao != '0');
+}
+
+void examesDisponiveis(void);
+{
+  char opc[2];
+
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///        = = = = = = = = = Exames Disponiveis      = = = = = = =        ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///           1. Exames disponiveis                                       ///\n");
