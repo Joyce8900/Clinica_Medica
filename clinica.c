@@ -3,6 +3,11 @@
 #include <unistd.h>
 
 // Assinatura das funções
+char moduloPrincipal(void);
+char moduloCadastro(void);
+char moduloFuncionarios(void);
+char moduloExames(void);
+
 void menuProjeto(void);
 void menuEquipe(void);
 void menuSobre(void);
@@ -28,34 +33,6 @@ void examesDisponiveis(void);
 void examesSolicitar(void);
 void examesAcompanhar(void);
 void examesResultados(void);
-
-// Programa Principal
-// int main(void)
-// {
-//   menuProjeto();
-//   menuEquipe();
-//   menuSobre();
-//   menuPrincipal();
-//   menuCadastro();
-//   menuPaciente();
-//   menuCadastroPaciente();
-//   menuPesquisarPaciente();
-//   menuAlterarPaciente();
-//   cadastrarConsulta();
-//   menuFuncionarios();
-//   menuCurriculo();
-//   menuCFuncionarios();
-//   menuAtualizarF();
-//   menuPesquisarFuncionario();
-//   equipe();
-//   exames();
-//   exames();
-//   examesDisponiveis();
-//   examesSolicitar();
-//   examesAcompanhar();
-//   examesResultados();
-//   return 0;
-// }
 
 // Programa principal
 int main(void)
@@ -186,6 +163,7 @@ char menuPrincipal(void)
 	printf("///////////////////////////////////////////////////////////////////////////////\n");
 	printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
 	getchar();
+	return 0;
 }
 
 //Função Principal
@@ -235,6 +213,7 @@ char menuCadastro(void)
 	printf("///////////////////////////////////////////////////////////////////////////////\n");
 	printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
 	getchar();
+	return 0;
 }
 
 char moduloCadastro(void)
@@ -318,6 +297,7 @@ char moduloPaciente(void)
 		}
 
 	} while (opcao != '0');
+	return 0;
 }
 
 void menuCadastroPaciente(void)
