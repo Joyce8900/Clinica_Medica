@@ -788,6 +788,7 @@ char moduloExames(void)
 		}
 
 	} while (opcao != '0');
+	return 0;
 }
 
 void examesDisponiveis(void)
