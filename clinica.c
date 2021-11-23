@@ -295,7 +295,7 @@ void menuPaciente(void)
 }
 
 //Funcao Paciente
-void moduloPaciente(void)
+char moduloPaciente(void)
 {
 	char opcao;
 	do
@@ -505,7 +505,7 @@ void menuFuncionarios(void)
 }
 
 //Funcao Funcionarios
-void moduloFuncionarios(void)
+char moduloFuncionarios(void)
 {
 	char opcao;
 	do
@@ -785,7 +785,7 @@ void menuExames(void)
 }
 
 //Funções exames
-void moduloExames(void)
+char moduloExames(void)
 {
 	char opcao;
 	do
