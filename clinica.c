@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+#include "paciente.c"
+#include "paciente.h"
 
 // Assinatura das funções
 char moduloPrincipal(void);
@@ -12,7 +14,7 @@ void menuProjeto(void);
 void menuEquipe(void);
 void menuSobre(void);
 
-char menuPrincipal(void);
+// char menuPrincipal(void);
 // char menuCadastro(void);
 // void menuPaciente(void);
 // void menuCadastroPaciente(void);
