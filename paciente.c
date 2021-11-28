@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "paciente.h"
+#include "funcionarios.h"
 
 char menuCadastro(void)
 {
