@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "bibliotecaCM.h"
 
 /*código com referências do site:
@@ -55,4 +54,35 @@ int validarData(int dia, int mes, int ano) {
     return 0;
 
   return 1;
+}
+
+/* baseado no código de Flávius Gorgonio
+github.com/flgorgonio/linguasolta
+*/
+
+int  validarFone ( char * fone) {
+  int tam;
+  tam = strlen (fone);
+  if (tam! = 11 ) {
+    return  0 ;
+  }
+  para ( int i = 0 ; i <tam; i ++) {
+    if (! ehDigito (fone [i])) {
+        return  0 ;
+    }
+  }
+  return  1 ;
+}
+
+/* baseado no código de Flávius Gorgonio
+github.com/flgorgonio/linguasolta
+*/
+
+int validarNome(char* nome) {
+  for (int i=0; nome[i]!='\0'; i++) {
+    if (!ehLetra(nome[i])) {
+      return 0;
+    }
+  }
+	return 1;
 }
