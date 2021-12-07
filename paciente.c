@@ -1,9 +1,12 @@
-#include "paciente.h"
-#include "funcionarios.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
+#include "funcionarios.h"
+#include "paciente.h"
 #include <bibliotecaCM.h>
+
 char menuCadastro(void) {
   char opc[2];
 

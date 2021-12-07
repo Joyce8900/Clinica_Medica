@@ -2,7 +2,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
+
 #include <bibliotecaCM.h>
+
 void menuFuncionarios(void) {
 
   char opc[2];
@@ -121,7 +123,7 @@ void infomacoesCFuncionarios(void) {
   char atribuicoes[50];
   char endereco[15];
   char email[25];
-  char rg[10];
+  char cpf[12];
   char historico[300];
   char vma[5];
 
@@ -151,8 +153,8 @@ void infomacoesCFuncionarios(void) {
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", endereco);
   printf("///              E-mail:                                                  ///\n");
   scanf("%[A-Za-z@!-_. 0-9]", email);
-  printf("///              Registro Geral:                                          ///\n");
-  scanf("%[0-9]", rg);
+  printf("///              CPF:                                                     ///\n");
+  scanf("%[0-9]", cpf);
   printf("///              Histórico:                                               ///\n");
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", historico);
   printf("///                                                                       ///\n");
