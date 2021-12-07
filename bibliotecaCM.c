@@ -9,6 +9,24 @@
 github.com/flgorgonio/linguasolta
 */
 
+int ehDigito(char c) {
+  if (c >= '0' && c <= '9') {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
+int ehLetra(char c) {
+  if (c >= 'A' && c <= 'Z') {
+    return 1;
+  } else if (c >= 'a' && c <= 'z') {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+
 int bissexto(int ano) {
   if ((ano % 4 == 0) && (ano % 100 != 0)) {
     return 1;
@@ -46,10 +64,10 @@ github.com/flgorgonio/linguasolta
 int validarFone(char *fone) {
   int tam;
   tam = strlen(fone);
-  if (tam ! = 11) {
+  if (tam != 11) {
     return 0;
   }
-  para(int i = 0; i < tam; i++) {
+  for (int i = 0; i < tam; i++) {
     if (!ehDigito(fone[i])) {
       return 0;
     }
@@ -97,8 +115,8 @@ int validarCPF(char cpf[])
     else
     /// digito 2--------------------------------------------------
     {
-      or (i = 0, j = 11; i < strlen(cpf) - 1; i++, j--) /// multiplica os números de 11 a 2 e soma os resultados dentro de digito2
-          digito2 += (cpf[i] - 48) * j;
+      for (i = 0, j = 11; i < strlen(cpf) - 1; i++, j--) /// multiplica os números de 11 a 2 e soma os resultados dentro de digito2
+        digito2 += (cpf[i] - 48) * j;
       digito2 %= 11;
       if (digito2 < 2)
         digito2 = 0;

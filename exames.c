@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-#include <bibliotecaCM.h>
+#include "bibliotecaCM.h"
 
 void menuExames(void) {
   char opc[2];
