@@ -3,7 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include <bibliotecaCM.h>
 char menuCadastro(void) {
   char opc[2];
 

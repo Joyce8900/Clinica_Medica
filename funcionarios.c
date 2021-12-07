@@ -2,7 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
+#include <bibliotecaCM.h>
 void menuFuncionarios(void) {
 
   char opc[2];
