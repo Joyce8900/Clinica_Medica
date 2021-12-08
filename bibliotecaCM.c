@@ -85,7 +85,9 @@ github.com/flgorgonio/linguasolta
 int validarNome(char *nome) {
   for (int i = 0; nome[i] != '\0'; i++) {
     if (!ehLetra(nome[i])) {
-      return 0;
+      return 1;
+    else{
+      printf("%s não é valido", *nome);
     }
   }
   return 1;
