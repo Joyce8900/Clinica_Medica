@@ -118,6 +118,14 @@ void menuCadastroPaciente(void) {
   char doenca[999];
   char trat[999];
   char exame[999];
+  char validNome;
+  char validData;
+  char validFone;
+  char validCPF;
+  char validEmail;
+  char validDoenca;
+  char validTrat;
+  char validExame;
 
   system("clear||cls");
   printf("\n");
@@ -136,10 +144,10 @@ void menuCadastroPaciente(void) {
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  scanf("%s", nome);
   getchar();
 
-  validNome = validarNome(nome);
+  validNome = validarNome(char *nome);
   if ((validNome) == 1) {
     printf("Nome válido!");
   } else {
@@ -150,7 +158,7 @@ void menuCadastroPaciente(void) {
   scanf("%[0-9/]", data);
   getchar();
 
-  validData = validarData(data);
+  validData = validarData(char *data);
   if ((validData) == 1) {
     printf("Data válida!");
   } else {
@@ -161,7 +169,7 @@ void menuCadastroPaciente(void) {
   scanf("%[0-9]", celular);
   getchar();
 
-  validFone = validarFone(cpf);
+  validFone = validarFone(char *celular);
   if ((validFone) == 1) {
     printf("Telefone válido!");
   } else {
@@ -172,7 +180,7 @@ void menuCadastroPaciente(void) {
   scanf("%[0-9]", cpf);
   getchar();
 
-  validCPF = validarCPF(cpf);
+  validCPF = validarCPF(char *cpf);
   if ((validCPF) == 1) {
     printf("CPF válido!");
   } else {
@@ -183,7 +191,7 @@ void menuCadastroPaciente(void) {
   scanf("%[A-Za-z@-_.]", email);
   getchar();
 
-  validEmail = validarEmail(email);
+  validEmail = validarEmail(char *email);
   if ((validEmail) == 1) {
     printf("E-mail válido!");
   } else {
@@ -194,7 +202,7 @@ void menuCadastroPaciente(void) {
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", doenca);
   getchar();
 
-  validDoenca = validarDoenca(doenca);
+  validDoenca = validarDoenca(char *doenca);
   if ((validDoenca) == 1) {
     printf("Dígitos válidos");
   } else {
@@ -205,7 +213,7 @@ void menuCadastroPaciente(void) {
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", trat);
   getchar();
 
-  validTrat = validarTrat(trat);
+  validTrat = validarTrat(char *trat);
   if ((validTrat) == 1) {
     printf("Dígitos válidos");
   } else {
@@ -216,7 +224,7 @@ void menuCadastroPaciente(void) {
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", exame);
   getchar();
 
-  validExame = validarExame(exame);
+  validExame = validarExame(char *exame);
   if ((validExame) == 1) {
     printf("Dígitos válidos");
   } else {
@@ -233,6 +241,7 @@ void menuCadastroPaciente(void) {
 
 void menuPesquisarPaciente(void) {
   char nome[60];
+  char validNome;
 
   system("clear||cls");
   printf("\n");
@@ -254,7 +263,7 @@ void menuPesquisarPaciente(void) {
   scanf("%c", nome);
   getchar();
 
-  validNome = validarNome(nome);
+  validNome = validarNome(char *nome);
   if ((validNome) == 1) {
     printf("Nome válido!");
   } else {
@@ -271,6 +280,7 @@ void menuPesquisarPaciente(void) {
 
 void menuAlterarPaciente(void) {
   char nome[60];
+  char validNome;
 
   system("clear||cls");
   printf("\n");
@@ -292,7 +302,7 @@ void menuAlterarPaciente(void) {
   scanf("%c", nome);
   getchar();
 
-  validNome = validarNome(nome);
+  validNome = validarNome(char *nome);
   if ((validNome) == 1) {
     printf("Nome válido!");
   } else {
@@ -312,6 +322,10 @@ void cadastrarConsulta(void) {
   char consulta[2];
   char especialidade[99];
   char especialista[99];
+  char validNome;
+  char validConsulta;
+  char validEspecialidade;
+  char validEspecialista;
 
   system("clear||cls");
   printf("\n");
@@ -333,7 +347,7 @@ void cadastrarConsulta(void) {
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
   getchar();
 
-  validNome = validarNome(nome);
+  validNome = validarNome(char *nome);
   if ((validNome) == 1) {
     printf("Nome válido!");
   } else {
@@ -344,7 +358,7 @@ void cadastrarConsulta(void) {
   scanf("%[0-9]", consulta);
   getchar();
 
-  validConsulta = validarConsulta(consulta);
+  validConsulta = validarConsulta(char *consulta);
   if ((validConsulta) == 1) {
     printf("Digitos válidos!");
   } else {
@@ -355,7 +369,7 @@ void cadastrarConsulta(void) {
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", especialidade);
   getchar();
 
-  validEspecialidade = validarConsulta(especialidade);
+  validEspecialidade = validarConsulta(char *especialidade);
   if ((validEspecialidade) == 1) {
     printf("Dígitos válidos!");
   } else {
@@ -366,7 +380,7 @@ void cadastrarConsulta(void) {
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", especialista);
   getchar();
 
-  validEspecialista = validarConsulta(especialista);
+  validEspecialista = validarConsulta(char *especialista);
   if ((validEspecialista) == 1) {
     printf("Dígitos válidos!");
   } else {

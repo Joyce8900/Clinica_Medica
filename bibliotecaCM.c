@@ -93,7 +93,7 @@ int validarNome(char *nome) {
 
 //*Baseado em http://wurthmann.blogspot.com/2012/12/funcao-em-linguagem-c-validador-de-cpf.html
 
-int validarCPF(char cpf[])
+int validarCPF(char *cpf[])
 
 {
   int i, j, digito1 = 0, digito2 = 0;
