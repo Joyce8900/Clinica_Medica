@@ -46,7 +46,10 @@ int validarData(int dia, int mes, int ano) {
       maiorDia = 29;
     else
       maiorDia = 28;
-  } else if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+  } else if (mes == 4 ||
+             mes == 6 ||
+             mes == 9 ||
+             mes == 11) {
     maiorDia = 30;
   } else
     maiorDia = 31;
@@ -124,6 +127,72 @@ int validarCPF(char cpf[])
         digito2 = 11 - digito2;
       if ((cpf[10] - 48) != digito2)
         return 0; /// se o digito 2 não for o mesmo que o da validação CPF é inválido
+    }
+  }
+  return 1;
+}
+
+int validarEmail(char *email) {
+  int tam = strlen(email);
+  char *eMail;
+  for (int i = 0; i < tam; i++) {
+    if (eMail == "[a-z A-Z 0-9 _ @ . ^\n]") {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+}
+
+int validarDoenca(char *doenca) {
+  for (int i = 0; doenca[i] != '\0'; i++) {
+    if (!ehLetra(doenca[i])) {
+      return 0;
+    }
+  }
+  return 1;
+}
+
+int validarTrat(char *trat) {
+  for (int i = 0; trat[i] != '\0'; i++) {
+    if (!ehLetra(trat[i])) {
+      return 0;
+    }
+  }
+  return 1;
+}
+
+int validarExame(char *exame) {
+  for (int i = 0; exame[i] != '\0'; i++) {
+    if (!ehLetra(exame[i])) {
+      return 0;
+    }
+  }
+  return 1;
+}
+
+int validarConsulta(char *consulta) {
+  for (int i = 0; consulta[i] != '\0'; i++) {
+    if (!ehLetra(consulta[i])) {
+      return 0;
+    }
+  }
+  return 1;
+}
+
+int validarEspecialidade(char *especialidade) {
+  for (int i = 0; especialidade[i] != '\0'; i++) {
+    if (!ehLetra(especialidade[i])) {
+      return 0;
+    }
+  }
+  return 1;
+}
+
+int validarEspecialista(char *especialista) {
+  for (int i = 0; especialista[i] != '\0'; i++) {
+    if (!ehLetra(especialista[i])) {
+      return 0;
     }
   }
   return 1;
