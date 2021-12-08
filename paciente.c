@@ -1,9 +1,11 @@
-#include "paciente.h"
-#include "funcionarios.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include <bibliotecaCM.h>
+
+#include "bibliotecaCM.h"
+#include "funcionarios.h"
+#include "paciente.h"
+
 char menuCadastro(void) {
   char opc[2];
 
@@ -135,20 +137,92 @@ void menuCadastroPaciente(void) {
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  getchar();
+
+  validNome = validarNome(nome);
+  if ((validNome) == 1) {
+    printf("Nome válido!");
+  } else {
+    printf("Nome inválido. Tente novamente!");
+  }
+
   printf("///           Data de Nascimento (dd/mm/aaaa):                            ///\n");
   scanf("%[0-9/]", data);
+  getchar();
+
+  validData = validarData(data);
+  if ((validData) == 1) {
+    printf("Data válida!");
+  } else {
+    printf("Data inválida. Tente novamente!");
+  }
+
   printf("///           Celular (com ddd):                                          ///\n");
   scanf("%[0-9]", celular);
+  getchar();
+
+  validFone = validarFone(cpf);
+  if ((validFone) == 1) {
+    printf("Telefone válido!");
+  } else {
+    printf("Telefone inválido. Tente novamente!");
+  }
+
   printf("///           CPF (apenas números):                                       ///\n");
   scanf("%[0-9]", cpf);
+  getchar();
+
+  validCPF = validarCPF(cpf);
+  if ((validCPF) == 1) {
+    printf("CPF válido!");
+  } else {
+    printf("CPF inválido. Tente novamente!");
+  }
+
   printf("///           E-mail:                                                     ///\n");
   scanf("%[A-Za-z@-_.]", email);
+  getchar();
+
+  validEmail = validarEmail(email);
+  if ((validEmail) == 1) {
+    printf("E-mail válido!");
+  } else {
+    printf("E-mail inválido. Tente novamente!");
+  }
+
   printf("///           Possui alguma doença crônica:                               ///\n");
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", doenca);
+  getchar();
+
+  validDoenca = validarDoenca(doenca);
+  if ((validDoenca) == 1) {
+    printf("Dígitos válidos");
+  } else {
+    printf("Dígitos inválidos! Digite apenas letras!");
+  }
+
   printf("///           Tratamento em andamento:                                    ///\n");
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", trat);
+  getchar();
+
+  validTrat = validarTrat(trat);
+  if ((validTrat) == 1) {
+    printf("Dígitos válidos");
+  } else {
+    printf("Dígitos inválidos! Digite apenas letras!");
+  }
+
   printf("///           Exames realizados:                                          ///\n");
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", exame);
+  getchar();
+
+  validExame = validarExame(exame);
+  if ((validExame) == 1) {
+    printf("Dígitos válidos");
+  } else {
+    printf("Dígitos inválidos! Digite apenas letras!");
+  }
+
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -178,6 +252,15 @@ void menuPesquisarPaciente(void) {
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
   scanf("%c", nome);
+  getchar();
+
+  validNome = validarNome(nome);
+  if ((validNome) == 1) {
+    printf("Nome válido!");
+  } else {
+    printf("Nome inválido. Tente novamente!");
+  }
+
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -207,6 +290,15 @@ void menuAlterarPaciente(void) {
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
   scanf("%c", nome);
+  getchar();
+
+  validNome = validarNome(nome);
+  if ((validNome) == 1) {
+    printf("Nome válido!");
+  } else {
+    printf("Nome inválido. Tente novamente!");
+  }
+
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -239,12 +331,48 @@ void cadastrarConsulta(void) {
   printf("///                                                                       ///\n");
   printf("///        Nome completo:                                                 ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  getchar();
+
+  validNome = validarNome(nome);
+  if ((validNome) == 1) {
+    printf("Nome válido!");
+  } else {
+    printf("Nome inválido. Tente novamente!");
+  }
+
   printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
   scanf("%[0-9]", consulta);
+  getchar();
+
+  validConsulta = validarConsulta(consulta);
+  if ((validConsulta) == 1) {
+    printf("Digitos válidos!");
+  } else {
+    printf("Dígitos inválidos! Digite apenas letras!");
+  }
+
   printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", especialidade);
+  getchar();
+
+  validEspecialidade = validarConsulta(especialidade);
+  if ((validEspecialidade) == 1) {
+    printf("Dígitos válidos!");
+  } else {
+    printf("Dígitos inválidos! Digite apenas letras!");
+  }
+
   printf("///        Qual o especialista que o Sr.(a) deseja consultar?             ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", especialista);
+  getchar();
+
+  validEspecialista = validarConsulta(especialista);
+  if ((validEspecialista) == 1) {
+    printf("Dígitos válidos!");
+  } else {
+    printf("Dígitos inválidos! Digite apenas letras!");
+  }
+
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");

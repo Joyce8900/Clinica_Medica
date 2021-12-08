@@ -1,6 +1,12 @@
 // validação de datas
 int bissexto(int);
-int validaFone(int);
 int validarData(int, int, int);
-int validaNome (char);
-int validaCPF (int);
+
+// validação de telefone
+int validaFone(int);
+
+// validação de nome
+int validaNome(char);
+
+// validação de CPF
+int validaCPF(int);
