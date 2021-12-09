@@ -1,39 +1,39 @@
 // validação de dígitos
-int ehDigito(char *);
+int ehDigito(char c);
 
 // validação de letras
-int ehLetra(char *);
+int ehLetra(char c);
 
 // validação de datas
 int bissexto(int);
-int validarData(int);
+int validarData(int, int, int);
 
 // validação de telefone
-int validarFone(char);
+int validarFone(char *);
 
 // validação de nome
 int validarNome(char *);
 
 // validação de CPF
-int validarCPF(char);
+int validarCPF(char *);
 
 // validação de E-mail
-int validarEmail(char);
+int validarEmail(char *);
 
 // validação de Doenças
-int validarDoenca(char);
+int validarDoenca(char *);
 
 // validação de Tratamento
-int validarTrat(char);
+int validarTrat(char *);
 
 // validação de Exames
-int validarExame(char);
+int validarExame(char *);
 
 // validação de Consultas
-int validarConsulta(char);
+int validarConsulta(char *);
 
 // validação de Especialidade
-int validarEspecialidade(char);
+int validarEspecialidade(char *);
 
 // validação de Especilista
-int validarEspecialista(int);
+int validarEspecialista(char *);

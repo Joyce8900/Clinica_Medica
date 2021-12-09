@@ -85,9 +85,10 @@ github.com/flgorgonio/linguasolta
 int validarNome(char *nome) {
   for (int i = 0; nome[i] != '\0'; i++) {
     if (!ehLetra(nome[i])) {
-      return 1;
-    else{
-      printf("%s não é valido", *nome);
+      printf("Nome válido!");
+      return 0;
+    } else {
+      printf("Nome não é valido");
     }
   }
   return 1;
@@ -95,7 +96,7 @@ int validarNome(char *nome) {
 
 //*Baseado em http://wurthmann.blogspot.com/2012/12/funcao-em-linguagem-c-validador-de-cpf.html
 
-int validarCPF(char *cpf[])
+int validarCPF(char *cpf)
 
 {
   int i, j, digito1 = 0, digito2 = 0;
@@ -138,7 +139,7 @@ int validarEmail(char *email) {
   int tam = strlen(email);
   char *eMail;
   for (int i = 0; i < tam; i++) {
-    if (eMail == "[a-z A-Z 0-9 _ @ . ^\n]") {
+    if ((eMail) = "[a-z A-Z 0-9 _ @ . ^\n]") {
       return 1;
     } else {
       return 0;
