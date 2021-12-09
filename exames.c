@@ -1,9 +1,9 @@
-#include "exames.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 #include "bibliotecaCM.h"
+#include "exames.h"
 
 void menuExames(void) {
   char opc[2];
@@ -100,6 +100,7 @@ void examesDisponiveis(void) {
 
 void examesSolicitar(void) {
   char nome[60];
+  char validNome;
 
   system("clear||cls");
   printf("\n");
@@ -120,6 +121,15 @@ void examesSolicitar(void) {
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  getchar();
+
+  validNome = validarNome(nome);
+  if ((validNome) == 1) {
+    printf("Nome válido!");
+  } else {
+    printf("Nome inválido. Tente novamente!");
+  }
+
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -131,6 +141,7 @@ void examesSolicitar(void) {
 
 void examesAcompanhar(void) {
   char nome[60];
+  char validNome;
 
   system("clear||cls");
   printf("\n");
@@ -151,6 +162,15 @@ void examesAcompanhar(void) {
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  getchar();
+
+  validNome = validarNome(nome);
+  if ((validNome) == 1) {
+    printf("Nome válido!");
+  } else {
+    printf("Nome inválido. Tente novamente!");
+  }
+
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -182,6 +202,15 @@ void examesResultados(void) {
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  getchar();
+
+  validNome = validarNome(nome);
+  if ((validNome) == 1) {
+    printf("Nome válido!");
+  } else {
+    printf("Nome inválido. Tente novamente!");
+  }
+
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
