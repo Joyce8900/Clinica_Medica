@@ -1,9 +1,11 @@
-#include "funcionarios.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
 
 #include "bibliotecaCM.h"
+#include "exames.h"
+#include "funcionarios.h"
+#include "paciente.h"
 
 void menuFuncionarios(void) {
 
