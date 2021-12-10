@@ -37,7 +37,7 @@ int bissexto(int ano) {
   }
 }
 
-int validarData(int dia, int mes, int ano) {
+int validarDat(int dia, int mes, int ano) {
   int maiorDia;
   if (ano < 0 || mes < 1 || mes > 12)
     return 0;
@@ -139,12 +139,13 @@ int validarEmail(char *email) {
   int tam = strlen(email);
   char *eMail;
   for (int i = 0; i < tam; i++) {
-    if (eMail = "[a-z A-Z 0-9 _ @ . \n]") {
-      return 1;
+    if ((eMail) = "[a-z A-Z 0-9 _ @ . \n]") {
+      return 0;
     } else {
       return 0;
     }
   }
+  return 1;
 }
 
 int validarDoenca(char *doenca) {

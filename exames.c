@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 
 #include "bibliotecaCM.h"
@@ -182,6 +183,7 @@ void examesAcompanhar(void) {
 
 void examesResultados(void) {
   char nome[60];
+  char validNome;
 
   system("clear||cls");
   printf("\n");
