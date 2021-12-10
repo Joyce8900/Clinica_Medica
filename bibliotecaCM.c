@@ -139,7 +139,7 @@ int validarEmail(char *email) {
   int tam = strlen(email);
   char *eMail;
   for (int i = 0; i < tam; i++) {
-    if ((eMail) = "[a-z A-Z 0-9 _ @ . \n]") {
+    if (((eMail) = "[a-z A-Z 0-9 _ @ . \n]")) {
       return 0;
     } else {
       return 0;
