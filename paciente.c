@@ -149,69 +149,64 @@ void menuCadastroPaciente(void) {
   scanf("%s", nome);
   getchar();
 
- do {
-		printf("///           Nome (apenas letras): ");
-		scanf("%[^\n]", moduloPaciente->paciente);
-		getchar();
-	} while (!validarNome(moduloPaciente->paciente));
+  do {
+      printf("///           Nome (apenas letras): ");
+      scanf("%[^\n]", menuCadastroPaciente->paciente);
+      getchar();
+    } while (!validarNome(menuCadastroPaciente->paciente));
 
-do {
-		printf("///           Data (apenas números): ");
-		scanf("%[^\n]", moduloPaciente->paciente);
-		getchar();
-	} while (!validarData(moduloPaciente->paciente));
-  
+  do {
+      printf("///           Data (apenas números): ");
+      scanf("%[^\n]", menuCadastroPaciente->paciente);
+      getchar();
+    } while (!validarData(moduloPaciente->paciente));
+    
 
-do {
-		printf("///           Telefone (apenas números): ");
-		scanf("%[^\n]", moduloPaciente->paciente);
-		getchar();
-	} while (!validarFone(moduloPaciente->paciente));
-  
+  do {
+      printf("///           Telefone (apenas números): ");
+      scanf("%[^\n]", menuCadastroPaciente->paciente);
+      getchar();
+    } while (!validarFone(menuCadastroPaciente->paciente));
+    
 
- do {
-		printf("///           CPF (apenas números): ");
-		scanf("%[^\n]", moduloPaciente->paciente);
-		getchar();
-	} while (!validarCPF(moduloPaciente->paciente));
-  
-do {
-		printf("///           Email : ");
-		scanf("%[^\n]", moduloPaciente->paciente);
-		getchar();
-	} while (!validarEmail(moduloPaciente->paciente));
+  do {
+      printf("///           CPF (apenas números): ");
+      scanf("%[^\n]", menuCadastroPaciente->paciente);
+      getchar();
+    } while (!validarCPF(menuCadastroPaciente->paciente));
+    
+  do {
+      printf("///           Email : ");
+      scanf("%[^\n]", menuCadastroPaciente->paciente);
+      getchar();
+    } while (!validarEmail(menuCadastroPaciente->paciente));
 
-do {
-		printf("///           Possui alguma doença? (apenas letras): ");
-		scanf("%[^\n]", moduloPaciente->paciente);
-		getchar();
-	} while (!validarDoenca(moduloPaciente->paciente));
+  do {
+      printf("///           Possui alguma doença? (apenas letras): ");
+      scanf("%[^\n]", menuCadastroPaciente->paciente);
+      getchar();
+    } while (!validarDoenca(menuCadastroPaciente->paciente));
 
-do {
-		printf("///           Tratamento em andamento: (apenas letras): ");
-		scanf("%[^\n]", moduloPaciente->paciente);
-		getchar();
-	} while (!validarTrat(moduloPaciente->paciente));
+  do {
+      printf("///           Tratamento em andamento: (apenas letras): ");
+      scanf("%[^\n]", menuCadastroPaciente->paciente);
+      getchar();
+    } while (!validarTrat(menuCadastroPaciente->paciente));
 
-  
-  printf("///           Exames realizados:                                          ///\n");
-  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", exame);
-  getchar();
+  do {
+      printf("///           Exames Realizados: (apenas letras): ");
+      scanf("%[^\n]", menuCadastroPaciente->paciente);
+      getchar();
+    } while (!validarExame(menuCadastroPaciente->paciente));
+    
 
-  validExame = validarExame(exame);
-  if ((validExame) == 1) {
-    printf("Dígitos válidos");
-  } else {
-    printf("Dígitos inválidos! Digite apenas letras!");
+    printf("///                                                                       ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+    getchar();
   }
-
-  printf("///                                                                       ///\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("\n");
-  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
-  getchar();
-}
 
 void menuPesquisarPaciente(void) {
   char nome[60];
@@ -233,24 +228,23 @@ void menuPesquisarPaciente(void) {
   printf("///           = = = = = Pesquisar cadastro do paciente = = = = =          ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
-  printf("///           Nome completo:                                              ///\n");
-  scanf("%c", nome);
-  getchar();
+    // printf("///           Nome completo:                                              ///\n");
+    // scanf("%c", nome);
+    // getchar();
 
-  validNome = validarNome(nome);
-  if ((validNome) == 1) {
-    printf("Nome válido!");
-  } else {
-    printf("Nome inválido. Tente novamente!");
+  do {
+      printf("///           Nome completo: (apenas letras): ");
+      scanf("%[^\n]", menuPesquisarPaciente->Pesqpaciente);
+      getchar();
+    } while (!validarNome(menuPesquisarPaciente->Pesqpaciente));
+
+    printf("///                                                                       ///\n");
+    printf("/////////////////////////////////////////////////////////////////////////////\n");
+    printf("\n");
+    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+    printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+    getchar();
   }
-
-  printf("///                                                                       ///\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("\n");
-  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
-  getchar();
-}
 
 void menuAlterarPaciente(void) {
   char nome[60];
@@ -272,16 +266,16 @@ void menuAlterarPaciente(void) {
   printf("///           = = = = = Atualizar cadastro do paciente = = = = =          ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
-  printf("///           Nome completo:                                              ///\n");
-  scanf("%c", nome);
-  getchar();
+    // printf("///           Nome completo:                                              ///\n");
+    // scanf("%c", nome);
+    // getchar();
 
-  validNome = validarNome(nome);
-  if ((validNome) == 1) {
-    printf("Nome válido!");
-  } else {
-    printf("Nome inválido. Tente novamente!");
-  }
+  do {
+      printf("///           Nome completo: (apenas letras): ");
+      scanf("%[^\n]", menuAlterarPaciente->Altpaciente);
+      getchar();
+  } while (!validarNome(menuAlterarPaciente->Altpaciente));
+
 
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -317,50 +311,34 @@ void cadastrarConsulta(void) {
   printf("///           = = = = = = = = Cadastrar Consulta = = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
-  printf("///        Nome completo:                                                 ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  // printf("///        Nome completo:                                                 ///\n");
+  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
   getchar();
 
-  validNome = validarNome(nome);
-  if ((validNome) == 1) {
-    printf("Nome válido!");
-  } else {
-    printf("Nome inválido. Tente novamente!");
-  }
 
+do {
+      printf("///           Nome completo: (apenas letras): ");
+      scanf("%[^\n]", cadastrarConsulta->Cadpaciente);
+      getchar();
+  } while (!validarNome(cadastrarConsulta->Cadpaciente));
+
+do {
   printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
   scanf("%[0-9]", consulta);
   getchar();
+  } while (!ehDigito(cadastrarConsulta->Cadpaciente));
 
-  validConsulta = validarConsulta(consulta);
-  if ((validConsulta) == 1) {
-    printf("Digitos válidos!");
-  } else {
-    printf("Dígitos inválidos! Digite apenas letras!");
-  }
-
+do {
   printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", especialidade);
   getchar();
+  } while (!validarConsulta(cadastrarConsulta->Cadpaciente));
 
-  validEspecialidade = validarConsulta(especialidade);
-  if ((validEspecialidade) == 1) {
-    printf("Dígitos válidos!");
-  } else {
-    printf("Dígitos inválidos! Digite apenas letras!");
-  }
-
+ do {
   printf("///        Qual o especialista que o Sr.(a) deseja consultar?             ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", especialista);
   getchar();
-
-  validEspecialista = validarConsulta(especialista);
-  if ((validEspecialista) == 1) {
-    printf("Dígitos válidos!");
-  } else {
-    printf("Dígitos inválidos! Digite apenas letras!");
-  }
-
+  } while (!validarEspecialidade(cadastrarConsulta->Cadpaciente));
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
