@@ -149,79 +149,51 @@ void menuCadastroPaciente(void) {
   scanf("%s", nome);
   getchar();
 
-  validNome = validarNome(nome);
-  if ((validNome) == 1) {
-    printf("Nome válido!");
-  } else {
-    printf("Nome inválido. Tente novamente!");
-  }
+ do {
+		printf("///           Nome (apenas letras): ");
+		scanf("%[^\n]", moduloPaciente->paciente);
+		getchar();
+	} while (!validarNome(moduloPaciente->paciente));
 
-  printf("///           Data de Nascimento (dd/mm/aaaa):                            ///\n");
-  scanf("%[0-9/]", data);
-  getchar();
+do {
+		printf("///           Data (apenas números): ");
+		scanf("%[^\n]", moduloPaciente->paciente);
+		getchar();
+	} while (!validarData(moduloPaciente->paciente));
+  
 
-  validData = validarData(data);
-  if ((validData) == 1) {
-    printf("Data válida!");
-  } else {
-    printf("Data inválida. Tente novamente!");
-  }
+do {
+		printf("///           Telefone (apenas números): ");
+		scanf("%[^\n]", moduloPaciente->paciente);
+		getchar();
+	} while (!validarFone(moduloPaciente->paciente));
+  
 
-  printf("///           Celular (com ddd):                                          ///\n");
-  scanf("%[0-9]", celular);
-  getchar();
+ do {
+		printf("///           CPF (apenas números): ");
+		scanf("%[^\n]", moduloPaciente->paciente);
+		getchar();
+	} while (!validarCPF(moduloPaciente->paciente));
+  
+do {
+		printf("///           Email : ");
+		scanf("%[^\n]", moduloPaciente->paciente);
+		getchar();
+	} while (!validarEmail(moduloPaciente->paciente));
 
-  validFone = validarFone(celular);
-  if ((validFone) == 1) {
-    printf("Telefone válido!");
-  } else {
-    printf("Telefone inválido. Tente novamente!");
-  }
+do {
+		printf("///           Possui alguma doença? (apenas letras): ");
+		scanf("%[^\n]", moduloPaciente->paciente);
+		getchar();
+	} while (!validarDoenca(moduloPaciente->paciente));
 
-  printf("///           CPF (apenas números):                                       ///\n");
-  scanf("%[0-9]", cpf);
-  getchar();
+do {
+		printf("///           Tratamento em andamento: (apenas letras): ");
+		scanf("%[^\n]", moduloPaciente->paciente);
+		getchar();
+	} while (!validarTrat(moduloPaciente->paciente));
 
-  validCPF = validarCPF(cpf);
-  if ((validCPF) == 1) {
-    printf("CPF válido!");
-  } else {
-    printf("CPF inválido. Tente novamente!");
-  }
-
-  printf("///           E-mail:                                                     ///\n");
-  scanf("%[A-Za-z@-_.]", email);
-  getchar();
-
-  validEmail = validarEmail(email);
-  if ((validEmail) == 1) {
-    printf("E-mail válido!");
-  } else {
-    printf("E-mail inválido. Tente novamente!");
-  }
-
-  printf("///           Possui alguma doença crônica:                               ///\n");
-  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", doenca);
-  getchar();
-
-  validDoenca = validarDoenca(doenca);
-  if ((validDoenca) == 1) {
-    printf("Dígitos válidos");
-  } else {
-    printf("Dígitos inválidos! Digite apenas letras!");
-  }
-
-  printf("///           Tratamento em andamento:                                    ///\n");
-  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", trat);
-  getchar();
-
-  validTrat = validarTrat(trat);
-  if ((validTrat) == 1) {
-    printf("Dígitos válidos");
-  } else {
-    printf("Dígitos inválidos! Digite apenas letras!");
-  }
-
+  
   printf("///           Exames realizados:                                          ///\n");
   scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", exame);
   getchar();
