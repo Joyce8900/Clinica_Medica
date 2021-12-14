@@ -35,7 +35,10 @@ void menuFuncionarios(void) {
   printf("///                                                                       ///\n");
   printf("///            0. Voltar ao menu anterior                                 ///\n");
   printf("///                                                                       ///\n");
-  scanf("%[0-9]", opc);
+  do {
+  scanf("%[0-9]", opc -> opcao);
+  getchar();
+  } while (!ehDigito(menuFuncionarios->mFuncionarios));
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -91,26 +94,76 @@ void menuCurriculo(void) {
   printf("///           = = = = = = = = Currículo  = = = = = = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
-  printf("///              Nome completo:                                           ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
-  printf("///              Idade:                                                   ///\n");
-  scanf("%[0-9]", idade);
-  printf("///              Celular:                                                 ///\n");
-  scanf("%[0-9/]", celular);
+  // printf("///              Nome completo:                                           ///\n");
+  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  do {
+      printf("///           Nome completo: (apenas letras): ");
+      scanf("%[^\n]", nome->nome);
+      getchar();
+  } while (!validarNome(menuCurriculo->mCurriculo));
+
+  // printf("///              Idade:                                                   ///\n");
+  // scanf("%[0-9]", idade);
+
+do {
+      printf("///           Idade (apenas números): ");
+      scanf("%[^\n]", idade->idade);
+      getchar();
+    } while (!validarData(menuCurriculo->mCurriculo));
+
+  // printf("///              Celular:                                                 ///\n");
+  // scanf("%[0-9/]", celular);
+
+do {
+      printf("///           Telefone (apenas números): ");
+      scanf("%[^\n]", celular->celular);
+      getchar();
+    } while (!validarFone(menuCurriculo->mCurriculo));
+    
+
   printf("///              Endereço:                                                ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", endereco);
-  printf("///              E-mail:                                                  ///\n");
-  scanf("%[A-Za-z@-_. 0-9]", email);
-  printf("///              Histórico Educacional:                                   ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", he);
-  printf("///              Registro Geral:                                          ///\n");
-  scanf("%[0-9]", rg);
-  printf("///              Cargos Ocupados:                                         ///\n");
-  scanf("%[[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", co);
-  printf("///              Referência:                                              ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", ref);
+  // printf("///              E-mail:                                                  ///\n");
+  // scanf("%[A-Za-z@-_. 0-9]", email);
+  do {
+      printf("///           Email : ");
+      scanf("%[^\n]", email->email);
+      getchar();
+    } while (!validarEmail(menuCurriculo->mCurriculo));
+  // printf("///              Histórico Educacional:                                   ///\n");
+  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", he);
+  do{
+    print("/// Historico educacional (Apenas letras!)                                              ");
+    scanf("%[^\n]", he->historico);
+    getchar();
+    } while (!ehLetra(menuCurriculo->Mcurriculo));
+    
+  // printf("///              Registro Geral:                                          ///\n");
+  // scanf("%[0-9]", rg);
+   do {
+  scanf("%[0-9]", rg -> RG);
+  getchar();
+  } while (!ehDigito(menuCurriculo->mCurriculo));
+
+  // printf("///              Cargos Ocupados:                                         ///\n");
+  // scanf("%[[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", co);
+
+do{
+    print("/// Cargos Ocupados (Apenas letras!)                                              ");
+    scanf("%[^\n]", co->Cargos);
+    getchar();
+    } while (!ehLetra(menuCurriculo->Mcurriculo));
+
+  // printf("///              Referência:                                              ///\n");
+  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", ref);
+  do{
+    print("/// Referencia: (Apenas letras!)                                              ");
+    scanf("%[^\n]", ref->Ref);
+    getchar();
+    } while (!ehLetra(menuCurriculo->Mcurriculo));
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior:                                  ///\n");
+  
   scanf("%[A-Z a-z]", vma);
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
