@@ -9,11 +9,9 @@ struct paciente {
   char doenca[999];
   char trat[999];
   char exame[999];
+};
 
-}
-
-char
-menuPrincipal(void);
+char menuPrincipal(void);
 char menuCadastro(void);
 void menuPaciente(void);
 void menuCadastroPaciente(void);
