@@ -9,6 +9,8 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
+typedef struct exames Exames;
+
 void menuExames(void) {
   char opc[2];
 
