@@ -6,7 +6,7 @@
 #include "exames.h"
 #include "funcionarios.h"
 #include "paciente.h"
-
+typedef struct funcionarios Funcionarios
 void menuFuncionarios(void) {
 
   char opc[2];
