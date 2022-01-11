@@ -7,9 +7,9 @@
 #include "exames.h"
 #include "funcionarios.h"
 #include "paciente.h"
-
-char menuCadastro(void) {
-  char opc[2];
+typedef struct aluno Aluno; 
+  char menuCadastro(void) {
+    char opc[2];
 
   system("clear||cls");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
