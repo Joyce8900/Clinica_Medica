@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
 #include "bibliotecaCM.h"
 
 /* baseado no código de Flávius Gorgonio
