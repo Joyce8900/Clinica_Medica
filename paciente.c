@@ -8,10 +8,10 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct aluno Aluno;
+typedef struct paciente Paciente;
 
 char menuCadastro(void) {
-  char opc[2];
+  char opc;
 
   system("clear||cls");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -271,7 +271,7 @@ void menuAlterarPaciente(void) {
 
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", menuAlterarPaciente->Altpaciente);
+    scanf("%[^\n]", (menuAlterarPaciente->Altpaciente);
     getchar();
   } while (!validarNome(menuAlterarPaciente->Altpaciente));
 

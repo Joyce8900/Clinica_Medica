@@ -8,6 +8,13 @@ struct funcionarios {
   char email[30];
   char historico[300];
   char vma[5];
+  char idade [6];
+  char celular [11];
+  char he [2300];
+  char rg [10];
+  char co [200];
+  char ref [40];
+  //char vma [4];
 };
 
 char menuPrincipal(void);

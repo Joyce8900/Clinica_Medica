@@ -32,7 +32,7 @@ char moduloFuncionarios(void) {
 
 void menuFuncionarios(void) {
 
-  char opc[2];
+  char opc;
 
   system("clear||cls");
   printf("\n");
@@ -59,26 +59,40 @@ void menuFuncionarios(void) {
   printf("///            0. Voltar ao menu anterior                                 ///\n");
   printf("///                                                                       ///\n");
   do {
-    scanf("%[0-9]", opc->opcao);
+    //scanf("%[0-9]", opc->opcao);
+    scanf("%c", &opc);
     getchar();
-  } while (!ehDigito(menuFuncionarios->mFuncionarios));
+  } while (!ehDigito(opc));
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
-}
+};
 
 void menuCurriculo(void) {
-  char nome[20];
-  char idade[2];
-  char celular[11];
-  char endereco[20];
-  char email[15];
-  char he[2300];
-  char rg[10];
-  char co[200];
-  char ref[40];
-  char vma[4];
+  char nome;//[20];
+  char idade;//[2];
+  char celular;//[11];
+  char endereco;//[20];
+  char email;//[15];
+  char he;//[2300];
+  char rg;//[10];
+  char co;//[200];
+  char ref;//[40];
+  // char vma [4];
+//Criar uma variavel struct
+//Funcinarios* func;
+//alocar espaço com malloc
+//fun (Funcionarios*) malloc (sizeof(fun));
+//fun -> nome;
+
+
+
+void preencheCurriculo (struct funcionarios*);
+{
+  funcionarios* func;
+  func = (funcionarios*) malloc(sizeof(funcionarios)); /* data */
+};
 
   system("clear||cls");
   printf("\n");
@@ -100,27 +114,27 @@ void menuCurriculo(void) {
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", nome->nome);
+    scanf("%[^\n]", func->nome);
     getchar();
-  } while (!validarNome(menuCurriculo->mCurriculo));
+  } while (!validarNome(func->nome));
 
   // printf("///              Idade:                                                   ///\n");
   // scanf("%[0-9]", idade);
 
   do {
     printf("///           Idade (apenas números): ");
-    scanf("%[^\n]", idade->idade);
+    scanf("%[^\n]", func->idade);
     getchar();
-  } while (!validarData(menuCurriculo->mCurriculo));
+  } while (!validarData(func->idade));
 
   // printf("///              Celular:                                                 ///\n");
   // scanf("%[0-9/]", celular);
 
   do {
     printf("///           Telefone (apenas números): ");
-    scanf("%[^\n]", celular->celular);
+    scanf("%[^\n]", func->celular);
     getchar();
-  } while (!validarFone(menuCurriculo->mCurriculo));
+  } while (!validarFone(func->celular));
 
   printf("///              Endereço:                                                ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", endereco);
@@ -128,40 +142,40 @@ void menuCurriculo(void) {
   // scanf("%[A-Za-z@-_. 0-9]", email);
   do {
     printf("///           Email : ");
-    scanf("%[^\n]", email->email);
+    scanf("%[^\n]", func->email);
     getchar();
-  } while (!validarEmail(menuCurriculo->mCurriculo));
+  } while (!validarEmail(func->email));
   // printf("///              Histórico Educacional:                                   ///\n");
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", he);
   do {
     printf("/// Historico educacional (Apenas letras!)                                              ");
-    scanf("%[^\n]", he->historico);
+    scanf("%[^\n]", func->he);
     getchar();
-  } while (!ehLetra(menuCurriculo->Mcurriculo));
+  } while (!ehLetra(func->he));
 
   // printf("///              Registro Geral:                                          ///\n");
   // scanf("%[0-9]", rg);
   do {
-    scanf("%[0-9]", rg->RG);
+    scanf("%[0-9]", func->RG);
     getchar();
-  } while (!ehDigito(menuCurriculo->mCurriculo));
+  } while (!ehDigito(func->RG));
 
   // printf("///              Cargos Ocupados:                                         ///\n");
   // scanf("%[[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", co);
 
   do {
     printf("/// Cargos Ocupados (Apenas letras!)                                              ");
-    scanf("%[^\n]", co->Cargos);
+    scanf("%[^\n]", func->Cargos);
     getchar();
-  } while (!ehLetra(menuCurriculo->Mcurriculo));
+  } while (!ehLetra(func->Cargos));
 
   // printf("///              Referência:                                              ///\n");
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", ref);
   do {
-    print("/// Referencia: (Apenas letras!)                                              ");
-    scanf("%[^\n]", ref->Ref);
+    printf("/// Referencia: (Apenas letras!)                                              ");
+    scanf("%[^\n]", func->Ref);
     getchar();
-  } while (!ehLetra(menuCurriculo->Mcurriculo));
+  } while (!ehLetra(func->Ref));
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior:                                  ///\n");
 
@@ -171,17 +185,17 @@ void menuCurriculo(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-}
+};
 
 void infomacoesCFuncionarios(void) {
-  char nome[29];
-  char cargo[20];
-  char atribuicoes[50];
-  char endereco[15];
-  char email[25];
-  char cpf[12];
-  char historico[300];
-  char vma[5];
+  char nome;//[35];
+  char cargo;//[20];
+  char atribuicoes;//[50];
+  char endereco;//[15];
+  char email;//[25];
+  char cpf;//[12];
+  char historico;//[300];
+  char vma;//[5];
 
   system("clear||cls");
   printf("\n");
@@ -222,10 +236,10 @@ void infomacoesCFuncionarios(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-}
+};
 
 void menuAtualizarF(void) {
-  char nome[20];
+  char nome;
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -253,7 +267,7 @@ void menuAtualizarF(void) {
 }
 
 void menuPesquisarFuncionario(void) {
-  char nome[25];
+  char nome;
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -281,7 +295,7 @@ void menuPesquisarFuncionario(void) {
 }
 
 void equipe(void) {
-  char opc[2];
+  char opc;
 
   system("clear||cls");
   printf("\n");
