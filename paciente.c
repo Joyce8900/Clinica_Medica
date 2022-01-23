@@ -8,7 +8,15 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
+<<<<<<< Updated upstream
 typedef struct paciente Paciente;
+=======
+// struct paciente {
+//   char nome[];
+//   char cargo[];
+//   int cpf[];
+// };
+>>>>>>> Stashed changes
 
 char menuCadastro(void) {
   char opc;
@@ -114,6 +122,7 @@ char moduloPaciente(void) {
 }
 
 void menuCadastroPaciente(void) {
+<<<<<<< Updated upstream
   char nome[60];
   char data[11];
   char celular[12];
@@ -122,6 +131,16 @@ void menuCadastroPaciente(void) {
   char doenca[999];
   char trat[999];
   char exame[999];
+=======
+  // char nome[60];
+  // char data[11];
+  // char celular[12];
+  // char cpf[12];
+  // char email[60];
+  // char doenca[999];
+  // char trat[999];
+  // char exame[999];
+>>>>>>> Stashed changes
   // char validNome;
   // char validData;
   // char validFone;
@@ -208,7 +227,11 @@ void menuCadastroPaciente(void) {
 }
 
 void menuPesquisarPaciente(void) {
+<<<<<<< Updated upstream
   char nome[60];
+=======
+  // char nome[60];
+>>>>>>> Stashed changes
   // char validNome;
 
   system("clear||cls");
@@ -246,8 +269,13 @@ void menuPesquisarPaciente(void) {
 }
 
 void menuAlterarPaciente(void) {
+<<<<<<< Updated upstream
   char nome[60];
   // char validNome;
+=======
+  // char nome[60];
+  //  char validNome;
+>>>>>>> Stashed changes
 
   system("clear||cls");
   printf("\n");
@@ -271,7 +299,11 @@ void menuAlterarPaciente(void) {
 
   do {
     printf("///           Nome completo: (apenas letras): ");
+<<<<<<< Updated upstream
     scanf("%[^\n]", (menuAlterarPaciente->Altpaciente);
+=======
+    scanf("%[^\n]", menuAlterarPaciente->Altpaciente);
+>>>>>>> Stashed changes
     getchar();
   } while (!validarNome(menuAlterarPaciente->Altpaciente));
 
@@ -284,10 +316,17 @@ void menuAlterarPaciente(void) {
 }
 
 void cadastrarConsulta(void) {
+<<<<<<< Updated upstream
   char nome[60];
   char consulta[2];
   char especialidade[99];
   char especialista[99];
+=======
+  // char nome[60];
+  // char consulta[2];
+  // char especialidade[99];
+  // char especialista[99];
+>>>>>>> Stashed changes
   // char validNome;
   // char validConsulta;
   // char validEspecialidade;
