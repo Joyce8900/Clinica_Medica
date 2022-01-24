@@ -1,13 +1,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <unistd.h>
-
 #include "bibliotecaCM.h"
 #include "exames.h"
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct funcionarios Funcionarios;
+typedef struct funcionarios;
 
 // Funcao Funcionarios
 char moduloFuncionarios(void) {
@@ -69,30 +68,55 @@ void menuFuncionarios(void) {
   getchar();
 };
 
-void menuCurriculo(void) {
-  char nome;//[20];
-  char idade;//[2];
-  char celular;//[11];
-  char endereco;//[20];
-  char email;//[15];
-  char he;//[2300];
-  char rg;//[10];
-  char co;//[200];
-  char ref;//[40];
-  // char vma [4];
-//Criar uma variavel struct
-//Funcinarios* func;
-//alocar espaço com malloc
-//fun (Funcionarios*) malloc (sizeof(fun));
-//fun -> nome;
+// void menuCurriculo(void) {
+//   char nome;//[20];
+//   char idade;//[2];
+//   char celular;//[11];
+//   char endereco;//[20];
+//   char email;//[15];
+//   char he;//[2300];
+//   char rg;//[10];
+//   char co;//[200];
+//   char ref;//[40];
+//   // char vma [4];
+// //Criar uma variavel struct
+// //Funcinarios* func;
+// //alocar espaço com malloc
+// //fun (Funcionarios*) malloc (sizeof(fun));
+// //fun -> nome;
 
+struct Funcionarios{
+  char* nome;
+  char* idade;
+  char* celular;
+  char* email;
+  char* he;
+  char* rg;
+  char* co;
+  char* ref;
+  char* vma;
+  char* cargos;
+  char* atribuicoes;
+  char*endereco;
+  };
 
+// void preencheCurriculo (struct funcionarios*);
+// {
+//   funcionarios* func;
+//   func = (funcionarios*) malloc(sizeof(funcionarios)); /* data */
+// };
 
-void preencheCurriculo (struct funcionarios*);
+struct curriculo
 {
-  funcionarios* func;
-  func = (funcionarios*) malloc(sizeof(funcionarios)); /* data */
+  char*nome;
+  char*cargo;
+  char*atribuicoes;
+  char*endereco;
+  char*email;
+  char*historico;
+  char*vma;
 };
+void menuCurriculo (struct curriculo*);{
 
   system("clear||cls");
   printf("\n");
@@ -114,27 +138,27 @@ void preencheCurriculo (struct funcionarios*);
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", func->nome);
+    scanf("%[^\n]", curriculo->nome);
     getchar();
-  } while (!validarNome(func->nome));
+  } while (!validarNome( curriculo ->nome));
 
   // printf("///              Idade:                                                   ///\n");
   // scanf("%[0-9]", idade);
 
   do {
     printf("///           Idade (apenas números): ");
-    scanf("%[^\n]", func->idade);
+    scanf("%[^\n]", curriculo->idade);
     getchar();
-  } while (!validarData(func->idade));
+  } while (!validarData(curriculo->idade));
 
   // printf("///              Celular:                                                 ///\n");
   // scanf("%[0-9/]", celular);
 
   do {
     printf("///           Telefone (apenas números): ");
-    scanf("%[^\n]", func->celular);
+    scanf("%[^\n]", curriculo->celular);
     getchar();
-  } while (!validarFone(func->celular));
+  } while (!validarFone(curriculo->celular));
 
   printf("///              Endereço:                                                ///\n");
   scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", endereco);
@@ -142,44 +166,44 @@ void preencheCurriculo (struct funcionarios*);
   // scanf("%[A-Za-z@-_. 0-9]", email);
   do {
     printf("///           Email : ");
-    scanf("%[^\n]", func->email);
+    scanf("%[^\n]", curriculo->email);
     getchar();
-  } while (!validarEmail(func->email));
+  } while (!validarEmail(curriculo->email));
   // printf("///              Histórico Educacional:                                   ///\n");
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", he);
   do {
     printf("/// Historico educacional (Apenas letras!)                                              ");
-    scanf("%[^\n]", func->he);
+    scanf("%[^\n]", curriculo->he);
     getchar();
-  } while (!ehLetra(func->he));
+  } while (!ehLetra(curriculo->he));
 
   // printf("///              Registro Geral:                                          ///\n");
   // scanf("%[0-9]", rg);
   do {
-    scanf("%[0-9]", func->RG);
+    scanf("%[0-9]", curriculo->rg);
     getchar();
-  } while (!ehDigito(func->RG));
+  } while (!ehDigito(curriculo->rg));
 
   // printf("///              Cargos Ocupados:                                         ///\n");
   // scanf("%[[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", co);
 
   do {
     printf("/// Cargos Ocupados (Apenas letras!)                                              ");
-    scanf("%[^\n]", func->Cargos);
+    scanf("%[^\n]", curriculo->cargos);
     getchar();
-  } while (!ehLetra(func->Cargos));
+  } while (!ehLetra(curriculo->cargos));
 
   // printf("///              Referência:                                              ///\n");
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", ref);
   do {
     printf("/// Referencia: (Apenas letras!)                                              ");
-    scanf("%[^\n]", func->Ref);
+    scanf("%[^\n]", curriculo->ref);
     getchar();
-  } while (!ehLetra(func->Ref));
+  } while (!ehLetra(curriculo->ref));
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior:                                  ///\n");
 
-  scanf("%[A-Z a-z]", vma);
+  scanf("%[A-Z a-z]", curriculo->vma);
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -187,15 +211,27 @@ void preencheCurriculo (struct funcionarios*);
   getchar();
 };
 
-void infomacoesCFuncionarios(void) {
-  char nome;//[35];
-  char cargo;//[20];
-  char atribuicoes;//[50];
-  char endereco;//[15];
-  char email;//[25];
-  char cpf;//[12];
-  char historico;//[300];
-  char vma;//[5];
+// void infomacoesCFuncionarios(void) {
+//   char nome;//[35];
+//   char cargo;//[20];
+//   char atribuicoes;//[50];
+//   char endereco;//[15];
+//   char email;//[25];
+//   char cpf;//[12];
+//   char historico;//[300];
+//   char vma;//[5];
+// struct curriculo
+// {
+//   char*nome;
+//   char*cargo;
+//   char*atribuicoes;
+//   char*endereco;
+//   char*email;
+//   char*historico;
+//   char*vma;
+// };
+void menuCfucionarios (struct funcionarios);{
+
 
   system("clear||cls");
   printf("\n");
@@ -214,22 +250,22 @@ void infomacoesCFuncionarios(void) {
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///              Nome completo:                                           ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", Funcionarios-> nome);
   printf("///              Cargo Ocupado:                                           ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", cargo);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", Funcionarios-> cargo);
   printf("///              Atribuições:                                             ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", atribuicoes);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", Funcionarios-> atribuicoes);
   printf("///              Endereço:                                                ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", endereco);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", Funcionarios-> endereco);
   printf("///              E-mail:                                                  ///\n");
-  scanf("%[A-Za-z@!-_. 0-9]", email);
+  scanf("%[A-Za-z@!-_. 0-9]", Funcionarios-> email);
   printf("///              CPF:                                                     ///\n");
   scanf("%[0-9]", cpf);
   printf("///              Histórico:                                               ///\n");
-  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", historico);
+  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]",Funcionarios-> historico);
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior;                                  ///\n");
-  scanf("%[A-Z a-z]", vma);
+  scanf("%[A-Z a-z]", Funcionarios-> vma);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -264,7 +300,7 @@ void menuAtualizarF(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-}
+};
 
 void menuPesquisarFuncionario(void) {
   char nome;
@@ -292,7 +328,7 @@ void menuPesquisarFuncionario(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-}
+};
 
 void equipe(void) {
   char opc;
@@ -344,4 +380,4 @@ void equipe(void) {
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-}
+};
