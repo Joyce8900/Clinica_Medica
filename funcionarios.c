@@ -116,7 +116,7 @@ struct curriculo
   char*historico;
   char*vma;
 };
-void menuCurriculo (struct curriculo*);{
+void menuCurriculo (struct curriculo*curriculo);{
 
   system("clear||cls");
   printf("\n");
@@ -230,7 +230,7 @@ void menuCurriculo (struct curriculo*);{
 //   char*historico;
 //   char*vma;
 // };
-void menuCfucionarios (struct funcionarios);{
+void menuCfucionarios (struct funcionarios*funcionarios);{
 
 
   system("clear||cls");
