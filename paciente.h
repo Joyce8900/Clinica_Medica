@@ -1,15 +1,23 @@
 // Assinatura das funções
-typedef struct paciente Paciente;
-struct paciente {
-  char nome[60];
-  char data[11];
-  char celular[12];
-  char cpf[12];
-  char email[60];
-  char doenca[999];
-  char trat[999];
-  char exame[999];
-};
+typedef struct paciente *Paciente;
+struct Paciente {
+  char *nome;
+  char *data;
+  char *celular;
+  char *cpf;
+  char *email;
+  char *doenca;
+  char *trat;
+  char *exame;
+} * pac;
+
+typedef struct consulta *Consulta;
+struct Consulta {
+  char *nome;
+  char *consulta;
+  char *especialidade;
+  char *especialista;
+} * cons;
 
 char menuPrincipal(void);
 char menuCadastro(void);
