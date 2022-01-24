@@ -86,18 +86,18 @@ void menuFuncionarios(void) {
 // //fun -> nome;
 
 struct Funcionarios{
-  char* nome;
-  char* idade;
-  char* celular;
-  char* email;
-  char* he;
-  char* rg;
-  char* co;
-  char* ref;
-  char* vma;
-  char* cargos;
-  char* atribuicoes;
-  char*endereco;
+  char* nome[20];
+  char* idade[2];
+  char* celular[11];
+  char* email[15];
+  char* he[2300];
+  char* rg[10];
+  char* co[200];
+  char* ref[40];
+  char* vma[40];
+  char* cargos[20];
+  char* atribuicoes[50];
+  char*endereco[15];
   };
 
 // void preencheCurriculo (struct funcionarios*);
@@ -108,13 +108,13 @@ struct Funcionarios{
 
 struct curriculo
 {
-  char*nome;
-  char*cargo;
-  char*atribuicoes;
-  char*endereco;
-  char*email;
-  char*historico;
-  char*vma;
+  char*nome[20];
+  char*cargo[20];
+  char*atribuicoes[50];
+  char*endereco[15];
+  char*email[15];
+  char*historico[20];
+  char*vma[4];
 };
 void menuCurriculo (struct curriculo*curriculo);{
 

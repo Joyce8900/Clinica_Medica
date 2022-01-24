@@ -34,7 +34,7 @@ char menuCadastro(void) {
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
   return 0;
-}
+};
 
 char moduloCadastro(void) {
   char opcao;
@@ -53,7 +53,7 @@ char moduloCadastro(void) {
     return 0;
   } while (opcao != '0');
   return 0;
-}
+};
 
 void menuPaciente(void) {
   char opc[2];
@@ -87,7 +87,7 @@ void menuPaciente(void) {
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
-}
+};
 
 // Funcao Paciente
 char moduloPaciente(void) {
@@ -107,21 +107,21 @@ char moduloPaciente(void) {
     case '4':
       cadastrarConsulta();
       break;
-    }
+    };
 
   } while (opcao != '0');
   return 0;
-}
+};
 
-void menuCadastroPaciente(void) {
-  char nome[60];
-  char data[11];
-  char celular[12];
-  char cpf[12];
-  char email[60];
-  char doenca[999];
-  char trat[999];
-  char exame[999];
+// void menuCadastroPaciente(void) {
+//   char nome[60];
+//   char data[11];
+//   char celular[12];
+//   char cpf[12];
+//   char email[60];
+//   char doenca[999];
+//   char trat[999];
+//   char exame[999];
   // char validNome;
   // char validData;
   // char validFone;
@@ -130,6 +130,22 @@ void menuCadastroPaciente(void) {
   // char validDoenca;
   // char validTrat;
   // char validExame;
+
+struct paciente {
+  char*nome;
+  char*data;
+  char*telefone;
+  char*cpf;
+  char*email;
+  char*doenca;
+  char*trat;
+  char*exames;
+
+};
+
+void menuCadastroPaciente (struct paciente*Cpaciente);{
+
+
 
   system("clear||cls");
   printf("\n");
@@ -153,51 +169,51 @@ void menuCadastroPaciente(void) {
 
   do {
     printf("///           Nome (apenas letras): ");
-    scanf("%[^\n]", menuCadastroPaciente->paciente);
+    scanf("%[^\n]", Cpaciente->nome);
     getchar();
-  } while (!validarNome(menuCadastroPaciente->paciente));
+  } while (!validarNome(Cpaciente->nome));
 
   do {
     printf("///           Data (apenas números): ");
-    scanf("%[^\n]", menuCadastroPaciente->paciente);
+    scanf("%[^\n]", Cpaciente->data);
     getchar();
-  } while (!validarData(moduloPaciente->paciente));
+  } while (!validarData(Cpaciente->data));
 
   do {
     printf("///           Telefone (apenas números): ");
-    scanf("%[^\n]", menuCadastroPaciente->paciente);
+    scanf("%[^\n]", Cpaciente->telefone);
     getchar();
-  } while (!validarFone(menuCadastroPaciente->paciente));
+  } while (!validarFone(Cpaciente->telefone));
 
   do {
     printf("///           CPF (apenas números): ");
-    scanf("%[^\n]", menuCadastroPaciente->paciente);
+    scanf("%[^\n]", Cpaciente->cpf);
     getchar();
-  } while (!validarCPF(menuCadastroPaciente->paciente));
+  } while (!validarCPF(Cpaciente->cpf));
 
   do {
     printf("///           Email : ");
-    scanf("%[^\n]", menuCadastroPaciente->paciente);
+    scanf("%[^\n]", Cpaciente->email);
     getchar();
-  } while (!validarEmail(menuCadastroPaciente->paciente));
+  } while (!validarEmail(Cpaciente->email);
 
   do {
     printf("///           Possui alguma doença? (apenas letras): ");
-    scanf("%[^\n]", menuCadastroPaciente->paciente);
+    scanf("%[^\n]", paciente->doenca);
     getchar();
-  } while (!validarDoenca(menuCadastroPaciente->paciente));
+  } while (!validarDoenca(Cpaciente->doenca));
 
   do {
     printf("///           Tratamento em andamento: (apenas letras): ");
-    scanf("%[^\n]", menuCadastroPaciente->paciente);
+    scanf("%[^\n]", Cpaciente->trat);
     getchar();
-  } while (!validarTrat(menuCadastroPaciente->paciente));
+  } while (!validarTrat(Cpaciente->trat));
 
   do {
     printf("///           Exames Realizados: (apenas letras): ");
-    scanf("%[^\n]", menuCadastroPaciente->paciente);
+    scanf("%[^\n]", Cpaciente->exame);
     getchar();
-  } while (!validarExame(menuCadastroPaciente->paciente));
+  } while (!validarExame(Cpaciente->exame));
 
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -205,7 +221,7 @@ void menuCadastroPaciente(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-}
+};
 
 void menuPesquisarPaciente(void) {
   char nome[60];
@@ -243,7 +259,7 @@ void menuPesquisarPaciente(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-}
+};
 
 void menuAlterarPaciente(void) {
   char nome[60];
@@ -277,7 +293,7 @@ void menuAlterarPaciente(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-}
+};
 
 void cadastrarConsulta(void) {
   char nome[60];
@@ -336,4 +352,4 @@ void cadastrarConsulta(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-}
+};
