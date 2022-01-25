@@ -6,7 +6,7 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct funcionarios;
+typedef struct funcionarios Func;
 
 // Funcao Funcionarios
 char moduloFuncionarios(void) {
@@ -85,7 +85,7 @@ void menuFuncionarios(void) {
 // //fun (Funcionarios*) malloc (sizeof(fun));
 // //fun -> nome;
 
-struct Funcionarios{
+struct Func{
   char* nome[20];
   char* idade[2];
   char* celular[11];
@@ -106,6 +106,21 @@ struct Funcionarios{
 //   func = (funcionarios*) malloc(sizeof(funcionarios)); /* data */
 // };
 
+// struct curriculo
+// {
+//   char*nome[20];
+//   char*cargo[20];
+//   char*atribuicoes[50];
+//   char*endereco[15];
+//   char*email[15];
+//   char*historico[20];
+//   char*vma[4];
+
+typedef struct menucurriculo;
+
+
+void menuCurriculo (struct curriculo*curriculo);{
+
 struct curriculo
 {
   char*nome[20];
@@ -115,8 +130,7 @@ struct curriculo
   char*email[15];
   char*historico[20];
   char*vma[4];
-};
-void menuCurriculo (struct curriculo*curriculo);{
+}
 
   system("clear||cls");
   printf("\n");
@@ -209,7 +223,7 @@ void menuCurriculo (struct curriculo*curriculo);{
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-};
+}
 
 // void infomacoesCFuncionarios(void) {
 //   char nome;//[35];
