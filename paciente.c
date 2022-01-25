@@ -117,23 +117,6 @@ char moduloPaciente(void) {
   return 0;
 };
 
-// void menuCadastroPaciente(void) {
-//   char nome[60];
-//   char data[11];
-//   char celular[12];
-//   char cpf[12];
-//   char email[60];
-//   char doenca[999];
-//   char trat[999];
-//   char exame[999];
-// char validNome;
-// char validData;
-// char validFone;
-// char validCPF;
-// char validEmail;
-// char validDoenca;
-// char validTrat;
-// char validExame;
 void menuCadastroPaciente(struct Paciente *pac) {
 
   pac = (Paciente *)malloc(sizeof(Paciente));
@@ -147,73 +130,74 @@ void menuCadastroPaciente(struct Paciente *pac) {
     char *doenca;
     char *trat;
     char *exames;
-  };
+  }
+};
 
-  void menuCadastroPaciente(struct paciente * pac);
-  {
+void menuCadastroPaciente(struct paciente *pac);
+{
 
-    system("clear||cls");
-    printf("\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                       ///\n");
-    printf("///        ========================================================       ///\n");
-    printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-    printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
-    printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-    printf("///        ========================================================       ///\n");
-    printf("///                                                                       ///\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                       ///\n");
-    printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-    printf("///           = = = = = = = = Cadastrar Paciente = = = = = = =            ///\n");
-    printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-    printf("///                                                                       ///\n");
-    do {
-      printf("///           Nome completo(apenas letras): ");
-      scanf("%[^\n]", pac->nome);
-      getchar();
-    } while (!validarNome(pac->nome));
-
-    do {
-      printf("///           Data (apenas números): ");
-      scanf("%[^\n]", pac->data);
-      getchar();
-    } while (!validarData(pac->data));
-
-    do {
-      printf("///           Telefone (apenas números): ");
-      scanf("%[^\n]", pac->telefone);
-      getchar();
-    } while (!validarFone(pac->telefone));
-
-    do {
-      printf("///           CPF (apenas números): ");
-      scanf("%[^\n]", pac->cpf);
-      getchar();
-    } while (!validarCPF(pac->cpf));
-
-    do {
-      printf("///           Email : ");
-      scanf("%[^\n]", pac->email);
-      getchar();
-  } while (!validarEmail(pac->email);
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///           = = = = = = = = Cadastrar Paciente = = = = = = =            ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///                                                                       ///\n");
+  do {
+    printf("///           Nome completo(apenas letras): ");
+    scanf("%[^\n]", pac->nome);
+    getchar();
+  } while (!validarNome(pac->nome));
 
   do {
-      printf("///           Possui alguma doença? (apenas letras): ");
-      scanf("%[^\n]", paciente->doenca);
-      getchar();
+    printf("///           Data (apenas números): ");
+    scanf("%[^\n]", pac->data);
+    getchar();
+  } while (!validarData(pac->data));
+
+  do {
+    printf("///           Telefone (apenas números): ");
+    scanf("%[^\n]", pac->telefone);
+    getchar();
+  } while (!validarFone(pac->telefone));
+
+  do {
+    printf("///           CPF (apenas números): ");
+    scanf("%[^\n]", pac->cpf);
+    getchar();
+  } while (!validarCPF(pac->cpf));
+
+  do {
+    printf("///           Email : ");
+    scanf("%[^\n]", pac->email);
+    getchar();
+  } while (!validarEmail(pac->email));
+
+  do {
+    printf("///           Possui alguma doença? (apenas letras): ");
+    scanf("%[^\n]", paciente->doenca);
+    getchar();
   } while (!validarDoenca(pac->doenca));
 
   do {
-      printf("///           Tratamento em andamento: (apenas letras): ");
-      scanf("%[^\n]", pac->trat);
-      getchar();
+    printf("///           Tratamento em andamento: (apenas letras): ");
+    scanf("%[^\n]", pac->trat);
+    getchar();
   } while (!validarTrat(pac->trat));
 
   do {
-      printf("///           Exames Realizados: (apenas letras): ");
-      scanf("%[^\n]", pac->exame);
-      getchar();
+    printf("///           Exames Realizados: (apenas letras): ");
+    scanf("%[^\n]", pac->exame);
+    getchar();
   } while (!validarExame(pac->exame));
 
   printf("///                                                                       ///\n");
@@ -222,115 +206,115 @@ void menuCadastroPaciente(struct Paciente *pac) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-  };
+};
 
-  void menuPesquisarPaciente(void) {
+void menuPesquisarPaciente(void) {
 
-    system("clear||cls");
-    printf("\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                       ///\n");
-    printf("///        ========================================================       ///\n");
-    printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-    printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
-    printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-    printf("///        ========================================================       ///\n");
-    printf("///                                                                       ///\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                       ///\n");
-    printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
-    printf("///           = = = = = Pesquisar cadastro do paciente = = = = =          ///\n");
-    printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
-    printf("///                                                                       ///\n");
-    do {
-      printf("///           Nome completo: (apenas letras): ");
-      scanf("%[^\n]", pac->nome);
-      getchar();
-    } while (!validarNome(pac->nome));
-
-    printf("///                                                                       ///\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
+  printf("///           = = = = = Pesquisar cadastro do paciente = = = = =          ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
+  printf("///                                                                       ///\n");
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", pac->nome);
     getchar();
-  };
+  } while (!validarNome(pac->nome));
 
-  void menuAlterarPaciente(struct Paciente * pac) {
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+};
 
-    pac = (Paciente *)malloc(sizeof(Paciente));
+void menuAlterarPaciente(struct Paciente *pac) {
 
-    system("clear||cls");
-    printf("\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                       ///\n");
-    printf("///        ========================================================       ///\n");
-    printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-    printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
-    printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-    printf("///        ========================================================       ///\n");
-    printf("///                                                                       ///\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                       ///\n");
-    printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
-    printf("///           = = = = = Atualizar cadastro do paciente = = = = =          ///\n");
-    printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
-    printf("///                                                                       ///\n");
-    do {
-      printf("///           Nome completo: (apenas letras): ");
-      scanf("%[^\n]", (pac->nome));
-    } while (!validarNome(pac->nome));
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  pac = (Paciente *)malloc(sizeof(Paciente));
+
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
+  printf("///           = = = = = Atualizar cadastro do paciente = = = = =          ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
+  printf("///                                                                       ///\n");
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", (pac->nome));
+  } while (!validarNome(pac->nome));
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+};
+
+void cadastrarConsulta(struct Consulta *cons) {
+
+  cons = (Consulta *)malloc(sizeof(Consulta));
+
+  system("clear||cls");
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///           = = = = = = = = Cadastrar Consulta = = = = = = =            ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///                                                                       ///\n");
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", cons->nome);
     getchar();
-  };
+  } while (!validarNome(cons->nome));
 
-  void cadastrarConsulta(struct Consulta * cons) {
-
-    cons = (Consulta *)malloc(sizeof(Consulta));
-
-    system("clear||cls");
-    printf("\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                       ///\n");
-    printf("///        ========================================================       ///\n");
-    printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-    printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
-    printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-    printf("///        ========================================================       ///\n");
-    printf("///                                                                       ///\n");
-    printf("/////////////////////////////////////////////////////////////////////////////\n");
-    printf("///                                                                       ///\n");
-    printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-    printf("///           = = = = = = = = Cadastrar Consulta = = = = = = =            ///\n");
-    printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-    printf("///                                                                       ///\n");
-    do {
-      printf("///           Nome completo: (apenas letras): ");
-      scanf("%[^\n]", cons->nome);
-      getchar();
-    } while (!validarNome(cons->nome));
-
-    do {
-      printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
-      scanf("%[0-9]", cons->consulta);
-      getchar();
-    } while (!ehDigito(cons->consulta));
-
-    do {
-      printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ///\n");
-      scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", cons->especialidade);
-      getchar();
-    } while (!validarConsulta(cons->especialidade));
-
-    do {
-      printf("///        Qual o especialista que o Sr.(a) deseja consultar?             ///\n");
-      scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", cons->especialista);
-      getchar();
-    } while (!validarEspecialidade(cons->especialista));
-    printf("\n");
-    printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-    printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  do {
+    printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
+    scanf("%[0-9]", cons->consulta);
     getchar();
-  };
+  } while (!ehDigito(cons->consulta));
+
+  do {
+    printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ///\n");
+    scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", cons->especialidade);
+    getchar();
+  } while (!validarConsulta(cons->especialidade));
+
+  do {
+    printf("///        Qual o especialista que o Sr.(a) deseja consultar?             ///\n");
+    scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", cons->especialista);
+    getchar();
+  } while (!validarEspecialidade(cons->especialista));
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+  getchar();
+};
