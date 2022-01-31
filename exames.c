@@ -106,8 +106,7 @@ void examesDisponiveis(void) {
 
 void examesSolicitar(void) {
   char nome[60];
-  char validNome;
-
+  
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -125,16 +124,15 @@ void examesSolicitar(void) {
   printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
-  printf("///           Nome completo:                                              ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
-  getchar();
+  // printf("///           Nome completo:                                              ///\n");
+  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  // getchar();
 
-  validNome = validarNome(nome);
-  if ((validNome) == 1) {
-    printf("Nome válido!");
-  } else {
-    printf("Nome inválido. Tente novamente!");
-  }
+do {
+  printf("///           Nome completo: (apenas letras): ");
+  scanf("%[^\n]", Exames->nome);
+  getchar();
+} while (!validarNome( Exames ->nome));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -147,7 +145,6 @@ void examesSolicitar(void) {
 
 void examesAcompanhar(void) {
   char nome[60];
-  char validNome;
 
   system("clear||cls");
   printf("\n");
@@ -166,16 +163,15 @@ void examesAcompanhar(void) {
   printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
-  printf("///           Nome completo:                                              ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
-  getchar();
+  // printf("///           Nome completo:                                              ///\n");
+  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  // getchar();
 
-  validNome = validarNome(nome);
-  if ((validNome) == 1) {
-    printf("Nome válido!");
-  } else {
-    printf("Nome inválido. Tente novamente!");
-  }
+do {
+  printf("///           Nome completo: (apenas letras): ");
+  scanf("%[^\n]", Exames->nome);
+  getchar();
+} while (!validarNome( Exames ->nome));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -188,7 +184,7 @@ void examesAcompanhar(void) {
 
 void examesResultados(void) {
   char nome[60];
-  char validNome;
+  
 
   system("clear||cls");
   printf("\n");
@@ -207,17 +203,14 @@ void examesResultados(void) {
   printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
-  printf("///           Nome completo:                                              ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
-  getchar();
-
-  validNome = validarNome(nome);
-  if ((validNome) == 1) {
-    printf("Nome válido!");
-  } else {
-    printf("Nome inválido. Tente novamente!");
-  }
-
+  // printf("///           Nome completo:                                              ///\n");
+  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  // getchar();
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", Exames->nome);
+    getchar();
+  } while (!validarNome( Exames ->nome));
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
