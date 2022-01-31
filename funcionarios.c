@@ -29,6 +29,27 @@ char moduloFuncionarios(void) {
   return 0;
 }
 
+
+void menuCfuncionario(void) {
+	Func* func;
+
+	func = telaCadastrarFuncionarios();
+	gravarFuncionarios(func);
+	free(func);
+}
+
+void menuPesquisarFuncionario(void) {
+	Funcionarios* func;
+	char* nome;
+
+	cpf = menuCfuncionario();
+	func = buscarFuncionarios(nome);
+	exibirFuncionario(func);
+	free(func); 
+	free(func);
+}
+
+
 void menuFuncionarios(void) {
 
   char opc;
@@ -244,8 +265,9 @@ struct curriculo
 //   char*historico;
 //   char*vma;
 // };
-void menuCfucionarios (struct funcionarios*funcionarios);{
-
+Funcionarios*telaCadastrarFuncionarios(void){
+    Funcionarios*func;
+    func = (Funcionarios*) malloc(sizeof(Funcionarios));
 
   system("clear||cls");
   printf("\n");
@@ -264,29 +286,60 @@ void menuCfucionarios (struct funcionarios*funcionarios);{
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///              Nome completo:                                           ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", Funcionarios-> nome);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", func-> nome);
   printf("///              Cargo Ocupado:                                           ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", Funcionarios-> cargo);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", func-> cargo);
   printf("///              Atribuições:                                             ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", Funcionarios-> atribuicoes);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", func-> atribuicoes);
   printf("///              Endereço:                                                ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", Funcionarios-> endereco);
+  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", func-> endereco);
   printf("///              E-mail:                                                  ///\n");
-  scanf("%[A-Za-z@!-_. 0-9]", Funcionarios-> email);
+  scanf("%[A-Za-z@!-_. 0-9]", func-> email);
   printf("///              CPF:                                                     ///\n");
-  scanf("%[0-9]", cpf);
+  scanf("%[0-9]", func-> cpf);
   printf("///              Histórico:                                               ///\n");
-  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]",Funcionarios-> historico);
+  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]",func-> historico);
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior;                                  ///\n");
-  scanf("%[A-Z a-z]", Funcionarios-> vma);
+  scanf("%[A-Z a-z]", func-> vma);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  delay(1);
+	return func;
 };
+
+void telaErroArquivoFuncionario(void) {
+	limpaTela();
+	printf("\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          Sistema de Agendamento para Clínicas Médicas                 ///\n");
+	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+	printf("///          ===================================================          ///\n");
+	printf("///           Developed by  @ @isazvdd e  @Joyce8900 - Out, 2021          ///\n");
+	printf("///                                                                       ///\n");
+	printf("/////////////////////////////////////////////////////////////////////////////\n");
+	printf("///                                                                       ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = = = = = = =  Ops! Ocorreu em erro = = = = = =             ///\n");
+	printf("///           = = =  Não foi possível acessar o arquivo = = =             ///\n");
+	printf("///           = = = com informações sobre os professores  = =             ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///           = =  Pedimos desculpas pelos inconvenientes = =             ///\n");
+	printf("///           = = =  mas este programa será finalizado! = = =             ///\n");
+	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+	printf("///                                                                       ///\n");
+	printf("\n\nTecle ENTER para continuar!\n\n");
+	getchar();
+	exit(1);
+}
+
 
 void menuAtualizarF(void) {
   char nome;
@@ -316,8 +369,10 @@ void menuAtualizarF(void) {
   getchar();
 };
 
-void menuPesquisarFuncionario(void) {
-  char nome;
+char* telaPesquisarFuncionarios(void) {
+	char* nome;
+	nome = (char*) malloc(29*sizeof(char));
+
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -342,6 +397,8 @@ void menuPesquisarFuncionario(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  delay(1);
+	return nome;
 };
 
 void equipe(void) {
@@ -395,3 +452,33 @@ void equipe(void) {
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
 };
+
+
+
+
+void gravarFuncionarios(Funcionarios* func) {
+	FILE* fp;
+
+	fp = fopen("funcionarios.dat", "ab");
+	if (fp == NULL) {
+		telaErroArquivoFuncionarios();
+	}
+	fwrite(prf, sizeof(Funcionarios), 1, fp);
+	fclose(fp);
+}
+
+void exibirFuncionarios(Funcionarios* func) {
+
+	if (func == NULL) {
+		printf("\n= = = Funcionario Inexistente = = =\n");
+	} else {
+		printf("\n= = = Funcionario Cadastrado = = =\n");
+		printf("CPF: %s\n", func->cpf);
+		printf("Nome: %s\n", func->nome);
+		printf("Endereço eletrônico: %s\n", func->email);
+		printf("Atribuicoes: %s\n", func->atribuicoes);
+		printf("Cargo: %s\n", func->cargo);
+	}
+	printf("\n\nTecle ENTER para continuar!\n\n");
+	getchar();
+}

@@ -17,6 +17,14 @@ struct funcionarios {
   //char vma [4];
 };
 
+
+Professor* telaCadastrarFuncionarios ( void );
+char * telaPesquisarFuncionarios ( void );
+// void  telaAtualizarProfessor ( void );
+// void  tela ExcluirProfessor ( void );
+void  gravarFuncionarios (Funcionarios*);
+
+
 char menuPrincipal(void);
 void menuFuncionarios(void);
 void menuCurriculo(void);
