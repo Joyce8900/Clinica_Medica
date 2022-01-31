@@ -18,11 +18,10 @@ struct funcionarios {
 };
 
 
-Professor* telaCadastrarFuncionarios ( void );
+Funcionarios* telaCadastrarFuncionarios ( void );
 char * telaPesquisarFuncionarios ( void );
-// void  telaAtualizarProfessor ( void );
-// void  tela ExcluirProfessor ( void );
-void  gravarFuncionarios (Funcionarios*);
+void gravarFuncionarios (Funcionarios*);
+void gravarCurriculo (Funcionarios*);
 
 
 char menuPrincipal(void);

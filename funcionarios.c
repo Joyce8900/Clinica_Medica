@@ -153,6 +153,14 @@ struct curriculo
   char*vma[4];
 }
 
+void cadastrarCurriculo(void) {
+	Funcionarios *func;
+
+	func = menuCurriculo();
+	gravarCurriculo(func);
+	free(func);
+
+
   system("clear||cls");
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -244,6 +252,8 @@ struct curriculo
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  delay(1);
+  return func;
 }
 
 // void infomacoesCFuncionarios(void) {
@@ -481,4 +491,16 @@ void exibirFuncionarios(Funcionarios* func) {
 	}
 	printf("\n\nTecle ENTER para continuar!\n\n");
 	getchar();
+}
+
+
+void gravarCurriculo(Funcionarios* func) {
+	FILE* fp;
+
+	fp = fopen("curriculos.dat", "ab");
+	if (fp == NULL) {
+		telaErroArquivoFuncionario();
+	}
+	fwrite(aln, sizeof(Funcionarios), 1, fp);
+	fclose(fp);
 }
