@@ -38,21 +38,20 @@ char menuExames(void) {
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
   printf("///           Escolha a opção desejada: ");
-
   do {
     scanf("%c", &opc);
     getchar();
   } while (!ehDigito(opc));
-
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
+  return opc;
 }
 
 // Funções exames
-char moduloExames(void) {
+void moduloExames(void) {
   char opcao;
   do {
     opcao = moduloExames();
@@ -112,6 +111,7 @@ char examesDisponiveis(void) {
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
+  return opc;
 }
 
 Exames *examesSolicitar(char *) {
@@ -149,6 +149,7 @@ Exames *examesSolicitar(char *) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  return exa;
 }
 
 Exames *examesAcompanhar(char *) {
@@ -186,6 +187,7 @@ Exames *examesAcompanhar(char *) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  return exa;
 }
 
 Exames *examesResultados(char *) {
@@ -223,4 +225,5 @@ Exames *examesResultados(char *) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  return exa;
 }
