@@ -1,12 +1,20 @@
+#include "bibliotecaCM.h"
 #include <locale.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "bibliotecaCM.h"
 
 /* baseado no código de Flávius Gorgonio
 github.com/flgorgonio/linguasolta
 */
+
+void delay(int segundos) {
+  int tempo = 1000 * segundos;
+  clock_t inicio = clock();
+  while (clock() < inicio + tempo) {
+    // não faz nada, apenas gasta tempo
+  }
+}
 
 int ehDigito(char c) {
   if (c >= '0' && c <= '9') {
@@ -199,4 +207,10 @@ int validarEspecialista(char *especialista) {
     }
   }
   return 1;
+}
+
+void limpaTela(void) {
+  if (system("clear") || system("cls")) {
+    // limpa a tela, Linux, Mac e Windows
+  }
 }

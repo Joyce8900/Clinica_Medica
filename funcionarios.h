@@ -1,28 +1,36 @@
 // Assinaturas da função
-typedef struct funcionarios Funcionarios;
-struct funcionarios {
-  char nome[29];
-  char cargo[20];
-  char atribuicoes[50];
-  char endereco[150];
-  char email[30];
-  char historico[300];
-  char vma[5];
-  char idade [6];
-  char celular [11];
-  char he [2300];
-  char rg [10];
-  char co [200];
-  char ref [40];
-  //char vma [4];
+typedef struct funcionarios *Funcionarios;
+struct Funcionarios {
+  char *nome;
+  char *cargos;
+  char *atribuicoes;
+  char *endereco;
+  char *email;
+  char *historico;
+  char *vma;
+  char *idade;
+  char *celular;
+  char *he;
+  char *rg;
+  char *co;
+  char *ref;
+} * Func;
+
+typedef struct menucurriculo;
+struct curriculo {
+  char *nome;
+  char *cargo;
+  char *atribuicoes;
+  char *endereco;
+  char *email;
+  char *historico;
+  char *vma;
 };
 
-
-Funcionarios* telaCadastrarFuncionarios ( void );
-char * telaPesquisarFuncionarios ( void );
-void gravarFuncionarios (Funcionarios*);
-void gravarCurriculo (Funcionarios*);
-
+Funcionarios *telaCadastrarFuncionarios(void);
+char *telaPesquisarFuncionarios(void);
+void gravarFuncionarios(Funcionarios *);
+void gravarCurriculo(Funcionarios *);
 
 char menuPrincipal(void);
 void menuFuncionarios(void);

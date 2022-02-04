@@ -22,7 +22,7 @@ struct Consulta {
 char menuPrincipal(void);
 char menuCadastro(void);
 void menuPaciente(void);
-void menuCadastroPaciente(void);
-void menuPesquisarPaciente(void);
-void menuAlterarPaciente(void);
-void cadastrarConsulta(void);
+char menuCadastroPaciente(void);
+char menuPesquisarPaciente(void);
+void menuAlterarPaciente(struct Paciente *pac);
+void cadastrarConsulta(struct Consulta *cons);

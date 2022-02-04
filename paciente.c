@@ -27,33 +27,29 @@ char moduloCadastro(void) {
   return 0;
 }
 
+char menuCadastroPaciente(void) {
+  Paciente *pac;
 
-
-void menuCadastroPaciente(void) {
-	Paciente* pac;
-
-	pac = menuCadastroPacienter();
-	gravarPaciente(pac);
-	free(pac);
+  pac = menuCadastroPaciente();
+  gravarPaciente(pac);
+  free(pac);
 }
 
+char menuPesquisarPaciente(void) {
+  Paciente *pac;
+  char *nome;
 
-void menuPesquisarPaciente(void) {
-	Paciente* pac;
-	char* nome;
-
-	nome = ();
-	pac = buscarPaciente(nome);
-	exibirPaciente(pac);
-	free(pac); 
-	free(pac);
+  nome = ();
+  pac = buscarPaciente(nome);
+  exibirPaciente(pac);
+  free(pac);
+  free(pac);
 }
-
 
 char menuCadastro(void) {
   char opc;
 
-  system("clear||cls");
+  limpaTela();
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                         ///\n");
   printf("///         ========================================================        ///\n");
@@ -82,7 +78,7 @@ char menuCadastro(void) {
 void menuPaciente(void) {
   char opc;
 
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -145,27 +141,25 @@ void menuCadastroPaciente(struct Paciente *pac) {
 
   pac = (Paciente *)malloc(sizeof(Paciente));
 
-  struct paciente {
-    char *nome;
-    char *data;
-    char *telefone;
-    char *cpf;
-    char *email;
-    char *doenca;
-    char *trat;
-    char *exames;
-  }
+  // struct paciente {
+  //   char *nome;
+  //   char *data;
+  //   char *telefone;
+  //   char *cpf;
+  //   char *email;
+  //   char *doenca;
+  //   char *trat;
+  //   char *exames;
+  // }
 };
 
+Paciente *menuCadastroPaciente(void) {
+  Paciente *pac;
+  pac = (Paciente *)malloc(sizeof(Paciente));
 
-Paciente* menuCadastroPaciente(void) {
-	Paciente* pac;
-	pac = (Paciente*) malloc(sizeof(Paciente));
+  // void menuCadastroPaciente(struct Paciente *pac);
 
-// void menuCadastroPaciente(struct Paciente *pac);
-
-
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -228,8 +222,8 @@ Paciente* menuCadastroPaciente(void) {
     scanf("%[^\n]", pac->exame);
     getchar();
   } while (!validarExame(pac->exame));
-   getchar();
-    pac->status = True;
+  getchar();
+  pac->status = True;
 
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -240,7 +234,6 @@ Paciente* menuCadastroPaciente(void) {
   delay(1);
 };
 
-
 // void menuPesquisarPaciente(void) {
 // 	Paciente* pac;
 // 	char* nome;
@@ -248,15 +241,15 @@ Paciente* menuCadastroPaciente(void) {
 // 	nome = ();
 // 	pac = buscarPaciente(nome);
 // 	exibirPaciente(pac);
-// 	free(pac); 
+// 	free(pac);
 // 	free(pac);
 // }
 
 void menuPesquisarPaciente(void) {
-  char* nome;
-	nome = (char*) malloc(29*sizeof(char));
+  char *nome;
+  nome = (char *)malloc(29 * sizeof(char));
 
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -288,40 +281,39 @@ void menuPesquisarPaciente(void) {
 };
 
 void telaErroArquivoPaciente(void) {
-	limpaTela();
-	printf("\n");
-	printf("/////////////////////////////////////////////////////////////////////////////\n");
-	printf("///                                                                       ///\n");
-	printf("///          ===================================================          ///\n");
-	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-	printf("///          Sistema de Agendamento para Clínicas Médicas                 ///\n");
-	printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
-	printf("///          ===================================================          ///\n");
-	printf("///           Developed by  @ @isazvdd e  @Joyce8900 - Out, 2021          ///\n");
-	printf("///                                                                       ///\n");
-	printf("/////////////////////////////////////////////////////////////////////////////\n");
-	printf("///                                                                       ///\n");
-	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-	printf("///           = = = = = = =  Ops! Ocorreu em erro = = = = = =             ///\n");
-	printf("///           = = =  Não foi possível acessar o arquivo = = =             ///\n");
-	printf("///           = = = com informações sobre os professores  = =             ///\n");
-	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-	printf("///           = =  Pedimos desculpas pelos inconvenientes = =             ///\n");
-	printf("///           = = =  mas este programa será finalizado! = = =             ///\n");
-	printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-	printf("///                                                                       ///\n");
-	printf("\n\nTecle ENTER para continuar!\n\n");
-	getchar();
-	exit(1);
+
+  limpaTela();
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///          ===================================================          ///\n");
+  printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+  printf("///          Sistema de Agendamento para Clínicas Médicas                 ///\n");
+  printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+  printf("///          ===================================================          ///\n");
+  printf("///           Developed by  @ @isazvdd e  @Joyce8900 - Out, 2021          ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///           = = = = = = =  Ops! Ocorreu em erro = = = = = =             ///\n");
+  printf("///           = = =  Não foi possível acessar o arquivo = = =             ///\n");
+  printf("///           = = = com informações sobre os professores  = =             ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///           = =  Pedimos desculpas pelos inconvenientes = =             ///\n");
+  printf("///           = = =  mas este programa será finalizado! = = =             ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///                                                                       ///\n");
+  printf("\n\nTecle ENTER para continuar!\n\n");
+  getchar();
+  exit(1);
 }
-
-
 
 void menuAlterarPaciente(struct Paciente *pac) {
 
   pac = (Paciente *)malloc(sizeof(Paciente));
 
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -349,9 +341,7 @@ void menuAlterarPaciente(struct Paciente *pac) {
 
 void cadastrarConsulta(struct Consulta *cons) {
 
-  
-
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -397,35 +387,32 @@ void cadastrarConsulta(struct Consulta *cons) {
   delay(1);
 };
 
+Paciente *buscarPaciente(char *nome) {
+  FILE *fp;
+  Paciente *pac;
 
-
-Paciente* buscarPaciente(char* nome) {
-	FILE* fp;
-	Paciente* pac;
-
-	pac = (Paciente*) malloc(sizeof(Paciente));
-	fp = fopen("paciente.dat", "rb");
-	if (fp == NULL) {
-		telaErroArquivoPaciente();
-	}
-	while(fread(pac, sizeof(Paciente), 1, fp)) {
-		if ((strcmp(pac->cpf, nome) == 0) && (pac->status == True)) {
-			fclose(fp);
-			return pac;
-		}
-	}
-	fclose(fp);
-	return NULL;
+  pac = (Paciente *)malloc(sizeof(Paciente));
+  fp = fopen("paciente.dat", "rb");
+  if (fp == NULL) {
+    telaErroArquivoPaciente();
+  }
+  while (fread(pac, sizeof(Paciente), 1, fp)) {
+    if ((strcmp(pac->cpf, nome) == 0) && (pac->status == True)) {
+      fclose(fp);
+      return pac;
+    }
+  }
+  fclose(fp);
+  return NULL;
 }
 
-void gravarPaciente(Paciente* pac) {
-	FILE* fp;
+void gravarPaciente(Paciente *pac) {
+  FILE *fp;
 
-	fp = fopen("paciente.dat", "ab");
-	if (fp == NULL) {
-		telaErroArquivoPaciente();
-	}
-	fwrite(pac, sizeof(Paciente), 1, fp);
-	fclose(fp);
+  fp = fopen("paciente.dat", "ab");
+  if (fp == NULL) {
+    telaErroArquivoPaciente();
+  }
+  fwrite(pac, sizeof(Paciente), 1, fp);
+  fclose(fp);
 }
-
