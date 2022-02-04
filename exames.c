@@ -9,12 +9,12 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct exames Exames;
+typedef struct exames *Exames;
 
-void menuExames(void) {
-  char opc[2];
+char menuExames(void) {
+  char opc;
 
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -38,7 +38,12 @@ void menuExames(void) {
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
   printf("///           Escolha a opção desejada: ");
-  scanf("%[0-9]", opc);
+
+  do {
+    scanf("%c", &opc);
+    getchar();
+  } while (!ehDigito(opc));
+
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -70,10 +75,10 @@ char moduloExames(void) {
   return 0;
 }
 
-void examesDisponiveis(void) {
-  char opc[2];
+char examesDisponiveis(void) {
+  char opc;
 
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -96,7 +101,12 @@ void examesDisponiveis(void) {
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
   printf("///           Escolha a opção desejada: ");
-  scanf("%[0-9]", opc);
+
+  do {
+    scanf("%c", &opc);
+    getchar();
+  } while (!ehDigito(opc));
+
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -104,10 +114,11 @@ void examesDisponiveis(void) {
   getchar();
 }
 
-void examesSolicitar(void) {
-  char nome[60];
-  
-  system("clear||cls");
+Exames *examesSolicitar(char *) {
+  char *nome;
+  exa = (Exames *)malloc(sizeof(Exames));
+
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -124,15 +135,12 @@ void examesSolicitar(void) {
   printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
-  // printf("///           Nome completo:                                              ///\n");
-  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
-  // getchar();
 
-do {
-  printf("///           Nome completo: (apenas letras): ");
-  scanf("%[^\n]", Exames->nome);
-  getchar();
-} while (!validarNome( Exames ->nome));
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", Exames->nome);
+    getchar();
+  } while (!validarNome(Exames->nome));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -143,10 +151,11 @@ do {
   getchar();
 }
 
-void examesAcompanhar(void) {
-  char nome[60];
+Exames *examesAcompanhar(char *) {
+  char *nome;
+  exa = (Exames *)malloc(sizeof(Exames));
 
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -163,15 +172,12 @@ void examesAcompanhar(void) {
   printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
-  // printf("///           Nome completo:                                              ///\n");
-  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
-  // getchar();
 
-do {
-  printf("///           Nome completo: (apenas letras): ");
-  scanf("%[^\n]", Exames->nome);
-  getchar();
-} while (!validarNome( Exames ->nome));
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", Exames->nome);
+    getchar();
+  } while (!validarNome(Exames->nome));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -182,11 +188,11 @@ do {
   getchar();
 }
 
-void examesResultados(void) {
-  char nome[60];
-  
+Exames *examesResultados(char *) {
+  char *nome;
+  exa = (Exames *)malloc(sizeof(Exames));
 
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
@@ -203,14 +209,13 @@ void examesResultados(void) {
   printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
-  // printf("///           Nome completo:                                              ///\n");
-  // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
-  // getchar();
+
   do {
     printf("///           Nome completo: (apenas letras): ");
     scanf("%[^\n]", Exames->nome);
     getchar();
-  } while (!validarNome( Exames ->nome));
+  } while (!validarNome(Exames->nome));
+
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");

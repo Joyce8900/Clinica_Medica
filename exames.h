@@ -1,11 +1,12 @@
-typedef struct exames Exames;
-struct exames {
-  char nome[60];
-};
+typedef struct exames *Exames;
+struct Exames {
+  char *nome;
+} * exa;
 
 // Assinatura das funções
-void menuExames(void);
-void examesDisponiveis(void);
-void examesSolicitar(void);
-void examesAcompanhar(void);
-void examesResultados(void);
+char menuExames(void);
+char examesDisponiveis(void);
+
+Exames *examesSolicitar(void);
+Exames *examesAcompanhar(void);
+Exames *examesResultados(void)

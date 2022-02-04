@@ -138,7 +138,7 @@ char moduloPaciente(void) {
 };
 
 void menuCadastroPaciente(struct Paciente *pac) {
-
+  char *nome;
   pac = (Paciente *)malloc(sizeof(Paciente));
 
   // struct paciente {
@@ -310,7 +310,7 @@ void telaErroArquivoPaciente(void) {
 }
 
 void menuAlterarPaciente(struct Paciente *pac) {
-
+  char *nome;
   pac = (Paciente *)malloc(sizeof(Paciente));
 
   limpaTela();

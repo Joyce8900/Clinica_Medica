@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 
 /* baseado no código de Flávius Gorgonio
 github.com/flgorgonio/linguasolta
@@ -13,7 +14,7 @@ void delay(int segundos) {
   clock_t inicio = clock();
   while (clock() < inicio + tempo) {
     // não faz nada, apenas gasta tempo
-  }
+  };
 }
 
 int ehDigito(char c) {

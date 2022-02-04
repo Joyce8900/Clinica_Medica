@@ -16,8 +16,8 @@ struct Funcionarios {
   char *ref;
 } * Func;
 
-typedef struct menucurriculo;
-struct curriculo {
+typedef struct menucurriculo *Curriculo;
+struct Curriculo {
   char *nome;
   char *cargo;
   char *atribuicoes;

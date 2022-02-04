@@ -1,5 +1,5 @@
 // validação de dígitos
-int ehDigito(char c *);
+int ehDigito(char c);
 
 // validação de letras
 int ehLetra(char c);
