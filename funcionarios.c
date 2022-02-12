@@ -44,7 +44,7 @@ void menuPesquisarFuncionario(void) {
   Funcionarios *func;
   char *nome;
 
-  cpf = menuCfuncionario();
+  nome = menuCfuncionario();
   func = buscarFuncionarios(nome);
   exibirFuncionario(func);
   free(func);

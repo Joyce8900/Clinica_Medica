@@ -87,7 +87,7 @@ void excluirPaciente(void) {
     printf("\n\n Paciente não encontrado \n\n");
   } else {
     pac->status = False;
-    regrabarPaciente(pac);
+    regravarPaciente(pac);
     free(pac);
   }
   free(nome);
