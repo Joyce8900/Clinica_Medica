@@ -8,11 +8,11 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct funcionarios *Func;
-typedef struct menucurriculo;
+// typedef struct funcionarios *Func;
+// typedef struct menucurriculo;
 
 // Funcao Funcionarios
-char moduloFuncionarios(void) {
+void moduloFuncionarios(void) {
   char opcao;
   do {
     opcao = moduloFuncionarios();
