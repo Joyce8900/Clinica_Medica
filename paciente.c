@@ -8,8 +8,8 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-// typedef struct paciente *Paciente;
-// typedef struct consulta *Consulta;
+typedef struct paciente *Paciente;
+typedef struct consulta *Consulta;
 
 char moduloCadastro(void) {
   char opcao;
@@ -452,7 +452,7 @@ Paciente *buscarPaciente(char *nome) {
   }
   fclose(fp);
   return NULL;
-}
+};
 
 void exibirPaciente(Struct Paciente *pac) {
   if (pac == NULL) {
