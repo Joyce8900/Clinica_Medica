@@ -19,7 +19,7 @@ struct Consulta {
   char *especialista;
 } * cons;
 
-char moduloCadastro(void);
+void moduloCadastro(void);
 void cadastrarPaciente(void);
 void gravarPaciente(Paciente *pac);
 char cadastroPaciente(void);

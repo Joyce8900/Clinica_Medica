@@ -11,7 +11,7 @@
 // typedef struct paciente *Paciente;
 // typedef struct consulta *Consulta;
 
-char moduloCadastro(void) {
+void moduloCadastro(void) {
   char opcao;
   do {
     opcao = moduloCadastro();
@@ -119,7 +119,7 @@ char menuCadastro(void) {
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-  return 0;
+  return opc;
 };
 
 void menuPaciente(void) {
