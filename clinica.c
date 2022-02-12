@@ -43,10 +43,11 @@ int main(void) {
   printf("Fim!\n");
   // char modulo;
   return 0;
-}
+};
 
 void menuProjeto(void) {
-  system("clear||cls");
+
+  limpaTela();
   printf("                                                               \n");
   printf("###############################################################\n");
   printf("                                                               \n");
@@ -60,10 +61,11 @@ void menuProjeto(void) {
   printf("###############################################################\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-}
+};
 
 void menuEquipe(void) {
-  system("clear||cls");
+
+  limpaTela();
   printf("                                                                                      \n");
   printf("######################################################################################\n");
   printf("                                                                                      \n");
@@ -89,10 +91,11 @@ void menuEquipe(void) {
   printf("                                                                                      \n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-}
+};
 
 void menuSobre(void) {
-  system("clear||cls");
+
+  limpaTela();
   printf("                                                                                    \n");
   printf("####################################################################################\n");
   printf("                                                                                    \n");
@@ -109,12 +112,12 @@ void menuSobre(void) {
   printf("                                                                                    \n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-}
+};
 
 char menuPrincipal(void) {
   char opc[2];
 
-  system("clear||cls");
+  limpaTela();
   printf("\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                         ///\n");
@@ -141,7 +144,7 @@ char menuPrincipal(void) {
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
   return 0;
-}
+};
 
 // Função Principal
 char moduloPrincipal(void) {
@@ -161,4 +164,4 @@ char moduloPrincipal(void) {
     }
   } while (opcao != '0');
   return 0;
-}
+};
