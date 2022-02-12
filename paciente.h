@@ -19,10 +19,22 @@ struct Consulta {
   char *especialista;
 } * cons;
 
-char menuPrincipal(void);
-char menuCadastro(void);
-void menuPaciente(void);
+char moduloCadastro(void);
+void cadastrarPaciente(void);
+void gravarPaciente(Paciente *pac);
 char menuCadastroPaciente(void);
 char menuPesquisarPaciente(void);
+void atualizarPaciente(void);
+void excluirPaciente(void);
+char menuCadastro(void);
+void menuPaciente(void);
+char moduloPaciente(void);
+Paciente *menuCadastroPaciente(void);
+void menuPesquisarPaciente(void);
+void telaErroArquivoPaciente(void);
 void menuAlterarPaciente(struct Paciente *pac);
+char *menuExcluirPaciente(void);
 void cadastrarConsulta(struct Consulta *cons);
+Paciente *buscarPaciente(char *);
+void exibirPaciente(Paciente *pac);
+void regravarPaciente(Paciente *pac);
