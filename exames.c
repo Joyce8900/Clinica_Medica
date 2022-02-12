@@ -9,7 +9,7 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct exames *Exames;
+//  typedef struct exames *Exames;
 
 char menuExames(void) {
   char opc;
@@ -52,10 +52,10 @@ char menuExames(void) {
 
 // Funções exames
 void moduloExames(void) {
-  char opcao;
+  char opc;
   do {
     opcao = moduloExames();
-    switch (opcao) {
+    switch (opc) {
     case '1':
       examesDisponiveis();
       break;
@@ -70,10 +70,10 @@ void moduloExames(void) {
       break;
     }
 
-  } while (opcao != '0');
+  } while (opc != '0');
 }
 
-char examesDisponiveis(void) {
+void examesDisponiveis(void) {
   char opc;
 
   limpaTela();
@@ -91,31 +91,62 @@ char examesDisponiveis(void) {
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
   printf("///        = = = = = = = = = Exames Disponiveis      = = = = = = =        ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = = =           ///\n");
+  printf("///                                                                      //////");
+  printf("///           -> Exames de sangue                                         ///\n");
   printf("///                                                                       ///\n");
-  printf("///           1. Exames de sangue                                         ///\n");
-  printf("///           2. Exames patologicos                                       ///\n");
-  printf("///           3. exames neurológicos                                      ///\n");
-  printf("///           4. Exames de imagem                                         ///\n");
+  printf("/// HEMOGRAMA, GLICEMIA EM JEJUM, COLESTEROL, TRIGLICERÍDEOS, T4 livre    ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           ->  Exames de urina e fezes                                 ///\n");
+  printf("///                                                                       ///\n");
+  printf("///              EAS, UROCULTURA,   COPROCULTURA                          ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           -> Exames neurológicos                                      ///\n");
+  printf("///                                                                       ///\n");
+  printf("///   Eletroencefalograma, Angiografia por ressonância magnética          ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           -> Exames de imagem                                         ///\n");
+  printf("///                                                                       ///\n");
+  printf("///       Ultrassonografia, raio X, ressonância magnética                 ///\n");
+  printf("///                                                                       ///\n");
+  printf("///           1. Deseja marcar um exame:                                  ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
   printf("///           Escolha a opção desejada: ");
-
   do {
-    scanf("%c", &opc);
-    getchar();
+     scanf("%c", &opc);
+     getchar();
   } while (!ehDigito(opc));
-
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
-  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  // printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
   return opc;
 }
 
+//Opções exames disponiveis.
+
+void examesDisponiveis(void) {
+  char opc;
+  do {
+    opcao = examesSolicitar();
+    switch (opc) {
+    case '1':
+      examesSolicitar();
+      break;
+    }
+
+  } while (opc != '0');
+}
+
+
+
 Exames *examesSolicitar(void) {
   Exames *exa;
   exa = (Exames *)malloc(sizeof(Exames));
+ 
+  char nome;
+  char escolhar;
 
   limpaTela();
   printf("\n");
@@ -140,6 +171,12 @@ Exames *examesSolicitar(void) {
     scanf("%[^\n]", exa->nome);
     getchar();
   } while (!validarNome(exa->nome));
+
+    do {
+    printf("///           Qual exame deseja solicitar: (apenas letras): ");
+    scanf("%[^\n]", exa->escolhar);
+    getchar();
+  } while (!validarExame(exa->escolhar));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -225,4 +262,14 @@ Exames *examesResultados(void) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
   return exa;
+}
+
+
+
+char examesSolicitar(void) {
+  Exames *exa;
+
+  pac = ();
+  gravarExame(pac);
+  free(pac);
 }
