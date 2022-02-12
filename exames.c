@@ -71,7 +71,6 @@ void moduloExames(void) {
     }
 
   } while (opcao != '0');
-  return 0;
 }
 
 char examesDisponiveis(void) {
@@ -114,8 +113,8 @@ char examesDisponiveis(void) {
   return opc;
 }
 
-Exames *examesSolicitar(char *) {
-  char *nome;
+Exames *examesSolicitar(void) {
+  Exames *exa;
   exa = (Exames *)malloc(sizeof(Exames));
 
   limpaTela();
@@ -138,9 +137,9 @@ Exames *examesSolicitar(char *) {
 
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", Exames->nome);
+    scanf("%[^\n]", exa->nome);
     getchar();
-  } while (!validarNome(Exames->nome));
+  } while (!validarNome(exa->nome));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -152,8 +151,8 @@ Exames *examesSolicitar(char *) {
   return exa;
 }
 
-Exames *examesAcompanhar(char *) {
-  char *nome;
+Exames *examesAcompanhar(void) {
+  Exames *exa;
   exa = (Exames *)malloc(sizeof(Exames));
 
   limpaTela();
@@ -176,9 +175,9 @@ Exames *examesAcompanhar(char *) {
 
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", Exames->nome);
+    scanf("%[^\n]", exa->nome);
     getchar();
-  } while (!validarNome(Exames->nome));
+  } while (!validarNome(exa->nome));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -190,8 +189,8 @@ Exames *examesAcompanhar(char *) {
   return exa;
 }
 
-Exames *examesResultados(char *) {
-  char *nome;
+Exames *examesResultados(void) {
+  Exames *exa;
   exa = (Exames *)malloc(sizeof(Exames));
 
   limpaTela();
@@ -214,9 +213,9 @@ Exames *examesResultados(char *) {
 
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", Exames->nome);
+    scanf("%[^\n]", exa->nome);
     getchar();
-  } while (!validarNome(Exames->nome));
+  } while (!validarNome(exa->nome));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
