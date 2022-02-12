@@ -8,8 +8,8 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct paciente *Paciente;
-typedef struct consulta *Consulta;
+// typedef struct paciente *Paciente;
+// typedef struct consulta *Consulta;
 
 char moduloCadastro(void) {
   char opcao;
@@ -377,7 +377,7 @@ char *menuExcluirPaciente(void) {
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
   printf("///                                                                       ///\n");
   printf("///           Informe o nome do paciente:      ");
-  scanf("%[0-9]", nome);
+  scanf("%[^\n]", nome);
   getchar();
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -413,19 +413,19 @@ void cadastrarConsulta(Consulta *cons) {
 
   do {
     printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
-    scanf("%[0-9]", cons->consulta);
+    scanf("%[^\n]", cons->consulta);
     getchar();
   } while (!ehDigito(cons->consulta));
 
   do {
     printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ///\n");
-    scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", cons->especialidade);
+    scanf("%[^\n]", cons->especialidade);
     getchar();
   } while (!validarConsulta(cons->especialidade));
 
   do {
     printf("///        Qual o especialista que o Sr.(a) deseja consultar?             ///\n");
-    scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", cons->especialista);
+    scanf("%[^\n]", cons->especialista);
     getchar();
   } while (!validarEspecialidade(cons->especialista));
   printf("\n");
