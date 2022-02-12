@@ -11,7 +11,7 @@
 typedef struct paciente *Paciente;
 typedef struct consulta *Consulta;
 
-char moduloCadastro(void) {
+void moduloCadastro(void) {
   char opcao;
   do {
     opcao = moduloCadastro();
@@ -25,15 +25,7 @@ char moduloCadastro(void) {
     }
   } while (opcao != '0');
   return 0;
-}
-
-void cadastrarPaciente(void) {
-  Paciente *pac;
-
-  pac = menuCadastroPaciente();
-  gravarPaciente(pac);
-  free(pac);
-}
+};
 
 void gravarPaciente(Paciente *pac) {
   FILE *fp;
@@ -46,7 +38,7 @@ void gravarPaciente(Paciente *pac) {
   fclose(fp);
 }
 
-char menuCadastroPaciente(void) {
+char cadastroPaciente(void) {
   Paciente *pac;
 
   pac = menuCadastroPaciente();
@@ -54,19 +46,19 @@ char menuCadastroPaciente(void) {
   free(pac);
 }
 
-char menuPesquisarPaciente(void) {
+char pesquisarPaciente(void) {
   Paciente *pac;
   char *nome;
 
-  nome = ();
+  nome = menuPesquisarPaciente();
   pac = buscarPaciente(nome);
   exibirPaciente(pac);
   free(pac);
-  free(pac);
+  free(nome);
 }
 
 void atualizarPaciente(void) {
-  Paciete *pac;
+  Paciente *pac;
   char *nome;
 
   nome = menuAlterarPaciente();
@@ -85,7 +77,7 @@ void atualizarPaciente(void) {
 }
 
 void excluirPaciente(void) {
-  Paciete *pac;
+  Paciente *pac;
   char *nome;
 
   nome = menuExcluirPaciente();
@@ -195,6 +187,7 @@ char moduloPaciente(void) {
 Paciente *menuCadastroPaciente(void) {
   Paciente *pac;
   pac = (Paciente *)malloc(sizeof(Paciente));
+
   limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -269,16 +262,6 @@ Paciente *menuCadastroPaciente(void) {
   getchar();
   delay(1);
 };
-// void menuPesquisarPaciente(void) {
-// 	Paciente* pac;
-// 	char* nome;
-
-// 	nome = ();
-// 	pac = buscarPaciente(nome);
-// 	exibirPaciente(pac);
-// 	free(pac);
-// 	free(pac);
-// }
 
 void menuPesquisarPaciente(void) {
   char *nome;
@@ -344,7 +327,7 @@ void telaErroArquivoPaciente(void) {
   exit(1);
 }
 
-void menuAlterarPaciente(struct Paciente *pac) {
+void menuAlterarPaciente(Struct Paciente *pac) {
   char *nome;
   pac = (Paciente *)malloc(sizeof(Paciente));
 
@@ -404,7 +387,7 @@ char *menuExcluirPaciente(void) {
   return nome;
 }
 
-void cadastrarConsulta(struct Consulta *cons) {
+void cadastrarConsulta(Consulta *cons) {
 
   limpaTela();
   printf("\n");
@@ -471,7 +454,7 @@ Paciente *buscarPaciente(char *nome) {
   return NULL;
 }
 
-void exibirPaciente(Paciente *pac) {
+void exibirPaciente(Struct Paciente *pac) {
   if (pac == NULL) {
     printf("\n Paciente não encontrado \n");
   } else {
@@ -486,7 +469,7 @@ void exibirPaciente(Paciente *pac) {
   getchar();
 }
 
-void regravarPaciente(Paciente *pac) {
+void regravarPaciente(Struct Paciente *pac) {
   int achou;
   FILE *fp;
   Paciente *pacLido;
