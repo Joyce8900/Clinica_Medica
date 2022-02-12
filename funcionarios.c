@@ -186,7 +186,7 @@ void cadastrarCurriculo(void) {
   } while (!validarFone(curriculo->celular));
 
   printf("///              Endereço:                                                ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", endereco);
+  scanf("%[^\n]", endereco);
   // printf("///              E-mail:                                                  ///\n");
   // scanf("%[A-Za-z@-_. 0-9]", email);
   do {
@@ -205,7 +205,7 @@ void cadastrarCurriculo(void) {
   // printf("///              Registro Geral:                                          ///\n");
   // scanf("%[0-9]", rg);
   do {
-    scanf("%[0-9]", curriculo->rg);
+    scanf("%[^\n]", curriculo->rg);
     getchar();
   } while (!ehDigito(curriculo->rg));
 
@@ -228,7 +228,7 @@ void cadastrarCurriculo(void) {
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior:                                  ///\n");
 
-  scanf("%[A-Z a-z]", curriculo->vma);
+  scanf("%[^\n]", curriculo->vma);
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -278,22 +278,22 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///              Nome completo:                                           ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", func->nome);
+  scanf("%[^\n]", func->nome);
   printf("///              Cargo Ocupado:                                           ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", func->cargo);
+  scanf("%[^\n]", func->cargo);
   printf("///              Atribuições:                                             ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", func->atribuicoes);
+  scanf("%[^\n]", func->atribuicoes);
   printf("///              Endereço:                                                ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", func->endereco);
+  scanf("%[^\n]", func->endereco);
   printf("///              E-mail:                                                  ///\n");
-  scanf("%[A-Za-z@!-_. 0-9]", func->email);
+  scanf("%[^\n]", func->email);
   printf("///              CPF:                                                     ///\n");
-  scanf("%[0-9]", func->cpf);
+  scanf("%[^\n]", func->cpf);
   printf("///              Histórico:                                               ///\n");
-  scanf("%[0-12A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç,.]", func->historico);
+  scanf("%[^\n]", func->historico);
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior;                                  ///\n");
-  scanf("%[A-Z a-z]", func->vma);
+  scanf("%[^\n]", func->vma);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -354,7 +354,7 @@ void menuAtualizarF(void) {
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  scanf("%[^\n]", nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -384,7 +384,7 @@ char *telaPesquisarFuncionarios(void) {
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
+  scanf("%[^\n]", nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
