@@ -143,7 +143,7 @@ char menuPrincipal(void) {
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-  return 0;
+  return opc;
 };
 
 // Função Principal
