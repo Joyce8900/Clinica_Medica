@@ -15,7 +15,7 @@
 void moduloFuncionarios(void) {
   char opcao;
   do {
-    opcao = moduloFuncionarios();
+    opcao = menuCurriculo();
     switch (opcao) {
     case '1':
       menuCurriculo();
@@ -29,7 +29,7 @@ void moduloFuncionarios(void) {
     }
 
   } while (opcao != '0');
-  return 0;
+  return opc;
 }
 
 void menuCfuncionario(void) {
@@ -88,6 +88,7 @@ void menuFuncionarios(void) {
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
+  return opc;
 };
 
 // void menuCurriculo(void) {

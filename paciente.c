@@ -14,7 +14,7 @@
 void moduloCadastro(void) {
   char opcao;
   do {
-    opcao = moduloCadastro();
+    opcao = cadastro();
     switch (opcao) {
     case '1':
       menuPaciente();
@@ -356,6 +356,13 @@ void menuAlterarPaciente(Struct Paciente *pac) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
 };
+
+
+
+
+
+
+
 
 char *menuExcluirPaciente(void) {
   char *nome;
