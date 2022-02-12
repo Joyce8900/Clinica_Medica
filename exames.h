@@ -1,8 +1,8 @@
-//typedef struct exames *Exames;
-// struct Exames {
-//   char *nome;
-//   char *escolhar;
-// } * exa;
+// typedef struct exames *Exames;
+//  struct Exames {
+//    char *nome;
+//    char *escolhar;
+//  } * exa;
 
 typedef struct exames *Exames;
 
@@ -11,16 +11,14 @@ typedef struct examesSolicitar *Solicitar;
 struct examesSolicitar {
   char *nome;
   char *escolhar;
-} * cons;
+} * exa;
 
 // Assinatura das funções
 char menuExames(void);
 void moduloExames(void);
 char examesDisponiveis(void);
-//void examesSolicitar(Solicitar*);
+// void examesSolicitar(Solicitar*);
 
 Exames *examesSolicitar(void);
 // Exames *examesAcompanhar(void);
 Exames *examesResultados(void);
-
-

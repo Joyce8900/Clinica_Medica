@@ -45,7 +45,6 @@ char menuExames(void) {
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
-  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
   return opc;
 }
@@ -113,18 +112,17 @@ void examesDisponiveis(void) {
   printf("///                                                                       ///\n");
   printf("///           Escolha a opção desejada: ");
   do {
-     scanf("%c", &opc);
-     getchar();
+    scanf("%c", &opc);
+    getchar();
   } while (!ehDigito(opc));
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
-  // printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
   return opc;
 }
 
-//Opções exames disponiveis.
+// Opções exames disponiveis.
 
 void examesDisponiveis(void) {
   char opc;
@@ -139,12 +137,10 @@ void examesDisponiveis(void) {
   } while (opc != '0');
 }
 
-
-
 Exames *examesSolicitar(void) {
   Exames *exa;
   exa = (Exames *)malloc(sizeof(Exames));
- 
+
   char nome;
   char escolhar;
 
@@ -172,7 +168,7 @@ Exames *examesSolicitar(void) {
     getchar();
   } while (!validarNome(exa->nome));
 
-    do {
+  do {
     printf("///           Qual exame deseja solicitar: (apenas letras): ");
     scanf("%[^\n]", exa->escolhar);
     getchar();
@@ -263,8 +259,6 @@ Exames *examesResultados(void) {
   getchar();
   return exa;
 }
-
-
 
 char examesSolicitar(void) {
   Exames *exa;
