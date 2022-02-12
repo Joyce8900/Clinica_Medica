@@ -19,7 +19,7 @@ void menuEquipe(void);
 void menuSobre(void);
 
 // Programa principal
-int main(void) {
+void main(void) {
   char modulo;
 
   do {
