@@ -15,7 +15,7 @@
 void moduloFuncionarios(void) {
   char opcao;
   do {
-    opcao = menuCurriculo();
+    opcao = menuFuncionario();
     switch (opcao) {
     case '1':
       menuCurriculo();
@@ -355,7 +355,7 @@ void menuAtualizarF(void) {
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo:                                              ///\n");
-  scanf("%[^\n]", nome);
+  scanf("%[^\n]", &nome);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -363,6 +363,13 @@ void menuAtualizarF(void) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
 };
+
+
+
+
+
+
+
 
 char *telaPesquisarFuncionarios(void) {
   char *nome;

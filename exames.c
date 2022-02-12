@@ -62,9 +62,9 @@ void moduloExames(void) {
     case '2':
       examesSolicitar();
       break;
-    case '3':
-      examesAcompanhar();
-      break;
+    // case '3':
+    //   examesAcompanhar();
+    //   break;
     case '4':
       examesResultados();
       break;
@@ -188,43 +188,43 @@ Exames *examesSolicitar(void) {
   return exa;
 }
 
-Exames *examesAcompanhar(void) {
-  Exames *exa;
-  exa = (Exames *)malloc(sizeof(Exames));
+// Exames *examesAcompanhar(void) {
+//   Exames *exa;
+//   exa = (Exames *)malloc(sizeof(Exames));
 
-  limpaTela();
-  printf("\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("///                                                                       ///\n");
-  printf("///        ========================================================       ///\n");
-  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
-  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-  printf("///        ========================================================       ///\n");
-  printf("///                                                                       ///\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("///                                                                       ///\n");
-  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
-  printf("///          = = = = = = = Acompanhar andamento = = = = = = = =           ///\n");
-  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
-  printf("///                                                                       ///\n");
-  printf("///                                                                       ///\n");
+//   limpaTela();
+//   printf("\n");
+//   printf("/////////////////////////////////////////////////////////////////////////////\n");
+//   printf("///                                                                       ///\n");
+//   printf("///        ========================================================       ///\n");
+//   printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+//   printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+//   printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+//   printf("///        ========================================================       ///\n");
+//   printf("///                                                                       ///\n");
+//   printf("/////////////////////////////////////////////////////////////////////////////\n");
+//   printf("///                                                                       ///\n");
+//   printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+//   printf("///          = = = = = = = Acompanhar andamento = = = = = = = =           ///\n");
+//   printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+//   printf("///                                                                       ///\n");
+//   printf("///                                                                       ///\n");
 
-  do {
-    printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", exa->nome);
-    getchar();
-  } while (!validarNome(exa->nome));
+//   do {
+//     printf("///           Nome completo: (apenas letras): ");
+//     scanf("%[^\n]", exa->nome);
+//     getchar();
+//   } while (!validarNome(exa->nome));
 
-  printf("///                                                                       ///\n");
-  printf("///                                                                       ///\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("\n");
-  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
-  getchar();
-  return exa;
-}
+//   printf("///                                                                       ///\n");
+//   printf("///                                                                       ///\n");
+//   printf("/////////////////////////////////////////////////////////////////////////////\n");
+//   printf("\n");
+//   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+//   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+//   getchar();
+//   return exa;
+// }
 
 Exames *examesResultados(void) {
   Exames *exa;
@@ -269,7 +269,7 @@ Exames *examesResultados(void) {
 char examesSolicitar(void) {
   Exames *exa;
 
-  pac = ();
-  gravarExame(pac);
-  free(pac);
+  exa = ();
+  gravarExame(exa);
+  free(exa);
 }

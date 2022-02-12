@@ -20,7 +20,7 @@ char examesDisponiveis(void);
 //void examesSolicitar(Solicitar*);
 
 Exames *examesSolicitar(void);
-Exames *examesAcompanhar(void);
+// Exames *examesAcompanhar(void);
 Exames *examesResultados(void);
 
 
