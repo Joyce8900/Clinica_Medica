@@ -1,13 +1,15 @@
-#include "funcionarios.h"
-#include "bibliotecaCM.h"
-#include "exames.h"
-#include "paciente.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <unistd.h>
 
-typedef struct funcionarios Func;
-typedef struct menucurriculo;
+#include "bibliotecaCM.h"
+#include "exames.h"
+#include "funcionarios.h"
+#include "paciente.h"
+
+// typedef struct funcionarios Func;
+// typedef struct menucurriculo;
 
 // Funcao Funcionarios
 char moduloFuncionarios(void) {

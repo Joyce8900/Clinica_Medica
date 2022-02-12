@@ -8,10 +8,10 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct paciente *Paciente;
-typedef struct consulta *Consulta;
+// typedef struct paciente *Paciente;
+// typedef struct consulta *Consulta;
 
-void moduloCadastro(void) {
+char moduloCadastro(void) {
   char opcao;
   do {
     opcao = moduloCadastro();

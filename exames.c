@@ -9,7 +9,7 @@
 #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct exames *Exames;
+// typedef struct exames *Exames;
 
 char menuExames(void) {
   char opc;
