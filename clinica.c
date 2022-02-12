@@ -156,7 +156,7 @@ char moduloPrincipal(void) {
       menuCadastro();
       break;
     case '2':
-      equipe();
+      menuFuncionarios();
       break;
     case '3':
       menuExames();
