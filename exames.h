@@ -5,6 +5,9 @@
 // } * exa;
 
 typedef struct exames *Exames;
+
+typedef struct examesSolicitar *Solicitar;
+
 struct examesSolicitar {
   char *nome;
   char *escolhar;
@@ -14,7 +17,7 @@ struct examesSolicitar {
 char menuExames(void);
 void moduloExames(void);
 char examesDisponiveis(void);
-void examesSolicitar(Solicitar*);
+//void examesSolicitar(Solicitar*);
 
 Exames *examesSolicitar(void);
 Exames *examesAcompanhar(void);
