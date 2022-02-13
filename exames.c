@@ -9,7 +9,8 @@
 // #include "funcionarios.h"
 // #include "paciente.h"
 
-//  typedef struct exames *Exames;
+typedef struct exames Exames;
+typedef struct examesSolicitar Solicitar;
 
 char menuExames(void) {
   char opc;
@@ -49,7 +50,7 @@ char menuExames(void) {
 }
 
 // Funções exames
-void moduloExames(void) {
+char moduloExames(void) {
   char opc;
   do {
     opc = moduloExames();
@@ -63,9 +64,10 @@ void moduloExames(void) {
     case '3':
       examesResultados();
       break;
-    }
+    };
 
   } while (opc != '0');
+  return 0;
 }
 
 char exameDisponivel(void) {
@@ -120,7 +122,7 @@ char exameDisponivel(void) {
 
 // Opções exames disponiveis.
 
-void examesDisponiveis(void) {
+char examesDisponiveis(void) {
   char opc;
   do {
     opc = examesSolicitar();
@@ -131,6 +133,7 @@ void examesDisponiveis(void) {
     }
 
   } while (opc != '0');
+  return 0;
 }
 
 Exames *examesSolicitar(void) {

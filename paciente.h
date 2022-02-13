@@ -1,6 +1,6 @@
 // Assinatura das funções
- typedef struct paciente *Paciente;
-struct Paciente {
+typedef struct paciente Paciente;
+struct paciente {
   char *nome;
   char *data;
   char *celular;
@@ -11,8 +11,8 @@ struct Paciente {
   char *exame;
 } * pac;
 
- typedef struct consulta *Consulta;
-struct Consulta {
+typedef struct consulta Consulta;
+struct consulta {
   char *nome;
   char *consulta;
   char *especialidade;
