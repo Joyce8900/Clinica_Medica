@@ -8,8 +8,8 @@
 // #include "funcionarios.h"
 #include "paciente.h"
 
-typedef struct paciente Paciente;
-typedef struct consulta Consulta;
+// typedef struct paciente Paciente;
+// typedef struct consulta Consulta;
 
 void moduloCadastro(void) {
   char opc;
@@ -189,6 +189,9 @@ char moduloPaciente(void);
 Paciente *menuCadastroPaciente(void) {
   Paciente *pac;
   pac = (Paciente *)malloc(sizeof(Paciente));
+
+  gravarPaciente(pac);
+  free(pac);
 
   limpaTela();
   printf("\n");

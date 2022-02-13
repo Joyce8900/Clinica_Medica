@@ -21,7 +21,7 @@ struct consulta {
 
 void moduloCadastro(void);
 void cadastrarPaciente(void);
-void gravarPaciente(Paciente *pac);
+void gravarPaciente(Paciente *);
 char cadastroPaciente(void);
 char pesquisarPaciente(void);
 void atualizarPaciente(void);
