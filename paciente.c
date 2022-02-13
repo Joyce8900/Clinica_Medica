@@ -4,17 +4,17 @@
 #include <unistd.h>
 
 #include "bibliotecaCM.h"
-#include "exames.h"
-#include "funcionarios.h"
+// #include "exames.h"
+// #include "funcionarios.h"
 #include "paciente.h"
 
 // typedef struct paciente *Paciente;
 // typedef struct consulta *Consulta;
 
-void moduloCadastro(void) {
+void moduloCadastro(void); {
   char opcao;
   do {
-    opcao = cadastro();
+    opcao = ModuloCadastro();
     switch (opcao) {
     case '1':
       menuPaciente();
@@ -27,7 +27,7 @@ void moduloCadastro(void) {
   return 0;
 };
 
-void gravarPaciente(Paciente *pac) {
+void gravarPaciente(Paciente *pac); {
   FILE *fp;
 
   fp = fopen("paciente.dat", "ab");
@@ -122,7 +122,7 @@ char menuCadastro(void) {
   return opc;
 };
 
-void menuPaciente(void) {
+void menuPaciente(void); {
   char opc;
 
   limpaTela();
@@ -161,7 +161,7 @@ void menuPaciente(void) {
 };
 
 // Funcao Paciente
-char moduloPaciente(void) {
+char moduloPaciente(void); {
   char opcao;
   do {
     opcao = moduloPaciente();
@@ -184,7 +184,7 @@ char moduloPaciente(void) {
   return 0;
 };
 
-Paciente *menuCadastroPaciente(void) {
+Paciente *menuCadastroPaciente(void); {
   Paciente *pac;
   pac = (Paciente *)malloc(sizeof(Paciente));
 

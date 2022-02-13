@@ -6,8 +6,8 @@
 #include "bibliotecaCM.c"
 #include "bibliotecaCM.h"
 #include "exames.h"
-#include "funcionarios.h"
-#include "paciente.h"
+// #include "funcionarios.h"
+// #include "paciente.h"
 
 //  typedef struct exames *Exames;
 
@@ -53,7 +53,7 @@ char menuExames(void) {
 void moduloExames(void) {
   char opc;
   do {
-    opcao = moduloExames();
+    opc = moduloExames();
     switch (opc) {
     case '1':
       examesDisponiveis();
@@ -127,7 +127,7 @@ void examesDisponiveis(void) {
 void examesDisponiveis(void) {
   char opc;
   do {
-    opcao = examesSolicitar();
+    opc = examesSolicitar();
     switch (opc) {
     case '1':
       examesSolicitar();
