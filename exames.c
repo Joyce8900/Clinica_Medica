@@ -6,8 +6,8 @@
 #include "bibliotecaCM.c"
 #include "bibliotecaCM.h"
 #include "exames.h"
-#include "funcionarios.h"
-#include "paciente.h"
+// #include "funcionarios.h"
+// #include "paciente.h"
 
 //  typedef struct exames *Exames;
 

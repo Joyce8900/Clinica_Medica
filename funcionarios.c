@@ -4,9 +4,9 @@
 #include <unistd.h>
 
 #include "bibliotecaCM.h"
-#include "exames.h"
+// #include "exames.h"
 #include "funcionarios.h"
-#include "paciente.h"
+// #include "paciente.h"
 
 // typedef struct funcionarios *Func;
 // typedef struct menucurriculo;
@@ -15,7 +15,7 @@
 void moduloFuncionarios(void) {
   char opcao;
   do {
-    opcao = menuFuncionario();
+    opcao = menuFuncionarios();
     switch (opcao) {
     case '1':
       menuCurriculo();
@@ -29,11 +29,11 @@ void moduloFuncionarios(void) {
     }
 
   } while (opcao != '0');
-  return opc;
+  return opcao;
 }
 
 void menuCfuncionario(void) {
-  Func *func;
+  Func *Func;
 
   func = telaCadastrarFuncionarios();
   gravarFuncionarios(func);
@@ -164,7 +164,7 @@ void cadastrarCurriculo(void) {
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", curriculo->nome);
+    scanf("%[^\n]", Curriculo->nome);
     getchar();
   } while (!validarNome(curriculo->nome));
 
@@ -173,63 +173,63 @@ void cadastrarCurriculo(void) {
 
   do {
     printf("///           Idade (apenas números): ");
-    scanf("%[^\n]", curriculo->idade);
+    scanf("%[^\n]", Curriculo->idade);
     getchar();
-  } while (!validarData(curriculo->idade));
+  } while (!validarData(Curriculo->idade));
 
   // printf("///              Celular:                                                 ///\n");
   // scanf("%[0-9/]", celular);
 
   do {
     printf("///           Telefone (apenas números): ");
-    scanf("%[^\n]", curriculo->celular);
+    scanf("%[^\n]", Curriculo->celular);
     getchar();
   } while (!validarFone(curriculo->celular));
 
   printf("///              Endereço:                                                ///\n");
-  scanf("%[^\n]", endereco);
+  scanf("%[^\n]", Curriculo->endereco);
   // printf("///              E-mail:                                                  ///\n");
   // scanf("%[A-Za-z@-_. 0-9]", email);
   do {
     printf("///           Email : ");
-    scanf("%[^\n]", curriculo->email);
+    scanf("%[^\n]", Curriculo->email);
     getchar();
-  } while (!validarEmail(curriculo->email));
+  } while (!validarEmail(Curriculo->email));
   // printf("///              Histórico Educacional:                                   ///\n");
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", he);
   do {
     printf("/// Historico educacional (Apenas letras!)                                              ");
-    scanf("%[^\n]", curriculo->he);
+    scanf("%[^\n]", Curriculo->he);
     getchar();
-  } while (!ehLetra(curriculo->he));
+  } while (!ehLetra(Curriculo->he));
 
   // printf("///              Registro Geral:                                          ///\n");
   // scanf("%[0-9]", rg);
   do {
-    scanf("%[^\n]", curriculo->rg);
+    scanf("%[^\n]", Curriculo->rg);
     getchar();
-  } while (!ehDigito(curriculo->rg));
+  } while (!ehDigito(Curriculo->rg));
 
   // printf("///              Cargos Ocupados:                                         ///\n");
   // scanf("%[[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", co);
 
   do {
     printf("/// Cargos Ocupados (Apenas letras!)                                              ");
-    scanf("%[^\n]", curriculo->cargos);
+    scanf("%[^\n]", Curriculo->cargos);
     getchar();
-  } while (!ehLetra(curriculo->cargos));
+  } while (!ehLetra(Curriculo->cargos));
 
   // printf("///              Referência:                                              ///\n");
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", ref);
   do {
     printf("/// Referencia: (Apenas letras!)                                              ");
-    scanf("%[^\n]", curriculo->ref);
+    scanf("%[^\n]", Curriculo->ref);
     getchar();
-  } while (!ehLetra(curriculo->ref));
+  } while (!ehLetra(Curriculo->ref));
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior:                                  ///\n");
 
-  scanf("%[^\n]", curriculo->vma);
+  scanf("%[^\n]", Curriculo->vma);
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
@@ -420,47 +420,48 @@ void equipe(void) {
   printf("///                                                                         ///\n");
   printf("///         = = = = = = = =     Equipe médica      = = = = = = = = =        ///\n");
   printf("///                                                                         ///\n");
-  printf("///            1. Clínico Geral                                             ///\n");
+  printf("///            -> Clínico Geral                                             ///\n");
   printf("///               Dr. Gustavo Santos                                        ///\n");
   printf("///               Dra. Vivian Duarte                                        ///\n");
   printf("///               Dra. Débora Queiroz                                       ///\n");
-  printf("///            2. Dermatologista                                            ///\n");
+  printf("///            -> Dermatologista                                            ///\n");
   printf("///               Dr. Fábio Guedes                                          ///\n");
   printf("///               Dra. Yana Léda                                            ///\n");
-  printf("///            3. Cardiologista                                             ///\n");
+  printf("///            -> Cardiologista                                             ///\n");
   printf("///               Dr. Thiago Midlej                                         ///\n");
   printf("///               Dra. Kamilla Morbeck                                      ///\n");
-  printf("///            4. Pediatra                                                  ///\n");
+  printf("///            -> Pediatra                                                  ///\n");
   printf("///               Dra. Isabelly Lopes                                       ///\n");
   printf("///               Dr. Reginaldo Freire                                      ///\n");
-  printf("///            5. Endocrinologista                                          ///\n");
+  printf("///            -> Endocrinologista                                          ///\n");
   printf("///               Dra. Marília Cardoso                                      ///\n");
   printf("///               Dr. Octávio Neto                                          ///\n");
-  printf("///            6. Oftalmologista                                            ///\n");
+  printf("///            -> Oftalmologista                                            ///\n");
   printf("///               Dra. Débora Fernandes                                     ///\n");
   printf("///               Dr. Cláudio Albuquerque                                   ///\n");
-  printf("///            7. Otorrinolaringologista                                    ///\n");
+  printf("///            -> Otorrinolaringologista                                    ///\n");
   printf("///               Dra. Juliana Simões                                       ///\n");
   printf("///               Dr. Marcus Galvão                                         ///\n");
-  printf("///            8. Psiquiatria                                               ///\n");
+  printf("///            -> Psiquiatria                                               ///\n");
   printf("///               Dr. Marcelo Modesto                                       ///\n");
   printf("///               Dr. Lucas Farnese                                         ///\n");
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///            Escolha a opção desejada:                                    ///\n");
-  scanf("%[0-9]", opc);
+  scanf("%[^\n]", opc);
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-};
+  return opc;
+}
 
 void gravarFuncionarios(Funcionarios *func) {
   FILE *fp;
 
   fp = fopen("funcionarios.dat", "ab");
   if (fp == NULL) {
-    telaErroArquivoFuncionarios();
+    telaErroArquivoFuncionario();
   }
   fwrite(prf, sizeof(Funcionarios), 1, fp);
   fclose(fp);

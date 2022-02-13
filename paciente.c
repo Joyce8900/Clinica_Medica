@@ -4,8 +4,8 @@
 #include <unistd.h>
 
 #include "bibliotecaCM.h"
-#include "exames.h"
-#include "funcionarios.h"
+// #include "exames.h"
+// #include "funcionarios.h"
 #include "paciente.h"
 
 // typedef struct paciente *Paciente;
