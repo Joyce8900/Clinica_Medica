@@ -54,7 +54,7 @@ char menuExames(void) {
 void moduloExames(void) {
   char opc;
   do {
-    opcao = moduloExames();
+    opc = moduloExames();
     switch (opc) {
     case '1':
       examesDisponiveis();
@@ -129,7 +129,7 @@ void examesDisponiveis(void) {
 void examesDisponiveis(void) {
   char opc;
   do {
-    opcao = examesSolicitar();
+    opc = examesSolicitar();
     switch (opc) {
     case '1':
       examesSolicitar();
