@@ -21,7 +21,7 @@ char moduloFuncionarios(void) {
       cadastrarCurriculo();
       break;
     case '2':
-      menuCFuncionario();
+      menuCfuncionario();
       break;
     case '3':
       menuPesquisarFuncionario();
@@ -39,7 +39,7 @@ void menuCfuncionario(void) {
   free(func);
 };
 
-char menuPesquisarFuncionario(void) {
+void menuPesquisarFuncionario(void) {
   Funcionarios *func;
   char *nome;
 
@@ -207,8 +207,8 @@ Curriculo *cadastrarCurriculo(void) {
   Curriculo *cv;
   cv = (Curriculo *)malloc(sizeof(Curriculo));
 
-  gravarCurriculo(cv);
-  free(cv);
+  // gravarCurriculo(cv);
+  // free(cv);
 
   limpaTela();
   printf("\n");
