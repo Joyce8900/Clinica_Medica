@@ -190,9 +190,6 @@ Paciente *menuCadastroPaciente(void) {
   Paciente *pac;
   pac = (Paciente *)malloc(sizeof(Paciente));
 
-  gravarPaciente(pac);
-  free(pac);
-
   limpaTela();
   printf("\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -265,6 +262,8 @@ Paciente *menuCadastroPaciente(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  gravarPaciente(pac);
+  free(pac);
   delay(1);
 };
 
@@ -332,9 +331,9 @@ void telaErroArquivoPaciente(void) {
   exit(1);
 }
 
-void menuAlterarPaciente(Struct Paciente *pac) {
+void menuAlterarPaciente(void) {
+  Paciente *pac;
   char *nome;
-  pac = (Paciente *)malloc(sizeof(Paciente));
 
   limpaTela();
   printf("\n");
@@ -392,7 +391,9 @@ char *menuExcluirPaciente(void) {
   return nome;
 }
 
-void cadastrarConsulta(Consulta *cons) {
+Consulta *cadastrarConsulta(Consulta *cons) {
+  Consulta *cons;
+  cons = (Consulta *)malloc(sizeof(Consulta));
 
   limpaTela();
   printf("\n");

@@ -8,8 +8,8 @@
 #include "funcionarios.h"
 // #include "paciente.h"
 
-typedef struct funcionarios Funcionarios;
-typedef struct curriculo Curriculo;
+// typedef struct funcionarios Funcionarios;
+// typedef struct curriculo Curriculo;
 
 // Funcao Funcionarios
 char moduloFuncionarios(void) {
@@ -102,12 +102,12 @@ char menuFuncionarios(void) {
   return opc;
 }
 
-Curriculo cadastrarCurriculo(void) {
-  Curriculo *cv;
-  cv = (Curriculo *)malloc(sizeof(Curriculo));
+Funcionarios *telaCadastrarFuncionarios(void) {
+  Funcionarios *func;
+  func = (Funcionarios *)malloc(sizeof(Funcionarios));
 
-  gravarCurriculo(cv);
-  free(cv);
+  // gravarFuncionarios(func);
+  // free(func);
 
   limpaTela();
   printf("\n");
@@ -129,84 +129,86 @@ Curriculo cadastrarCurriculo(void) {
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", nome);
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", cv->nome);
+    scanf("%[^\n]", func->nome);
     getchar();
-  } while (!validarNome(cv->nome));
+  } while (!validarNome(func->nome));
 
   // printf("///              Idade:                                                   ///\n");
   // scanf("%[0-9]", idade);
 
   do {
     printf("///           Idade (apenas números): ");
-    scanf("%[^\n]", cv->idade);
+    scanf("%[^\n]", func->idade);
     getchar();
-  } while (!validarData(cv->idade));
+  } while (!validarData(func->idade));
 
   // printf("///              Celular:                                                 ///\n");
   // scanf("%[0-9/]", celular);
 
   do {
     printf("///           Telefone (apenas números): ");
-    scanf("%[^\n]", cv->celular);
+    scanf("%[^\n]", func->celular);
     getchar();
-  } while (!validarFone(cv->celular));
+  } while (!validarFone(func->celular));
 
   printf("///              Endereço:                                                ///\n");
-  scanf("%[^\n]", cv->endereco);
+  scanf("%[^\n]", func->endereco);
   // printf("///              E-mail:                                                  ///\n");
   // scanf("%[A-Za-z@-_. 0-9]", email);
   do {
     printf("///           Email : ");
-    scanf("%[^\n]", cv->email);
+    scanf("%[^\n]", func->email);
     getchar();
-  } while (!validarEmail(cv->email));
+  } while (!validarEmail(func->email));
   // printf("///              Histórico Educacional:                                   ///\n");
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç]", he);
   do {
     printf("/// Historico educacional (Apenas letras!)                                              ");
-    scanf("%[^\n]", cv->he);
+    scanf("%[^\n]", func->he);
     getchar();
-  } while (!ehLetra(cv->he));
+  } while (!ehLetra(func->he));
 
   // printf("///              Registro Geral:                                          ///\n");
   // scanf("%[0-9]", rg);
   do {
-    scanf("%[^\n]", cv->rg);
+    scanf("%[^\n]", func->rg);
     getchar();
-  } while (!ehDigito(cv->rg));
+  } while (!ehDigito(func->rg));
 
   // printf("///              Cargos Ocupados:                                         ///\n");
   // scanf("%[[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", co);
 
   do {
     printf("/// Cargos Ocupados (Apenas letras!)                                              ");
-    scanf("%[^\n]", cv->cargos);
+    scanf("%[^\n]", func->cargos);
     getchar();
-  } while (!ehLetra(cv->cargos));
+  } while (!ehLetra(func->cargos));
 
   // printf("///              Referência:                                              ///\n");
   // scanf("%[A-ZÁÂÀÃÉÊÍÔÓÕÚÇ a-záâàãéêíôóõúç 0-9]", ref);
   do {
     printf("/// Referencia: (Apenas letras!)                                              ");
-    scanf("%[^\n]", cv->ref);
+    scanf("%[^\n]", func->ref);
     getchar();
-  } while (!ehLetra(cv->ref));
+  } while (!ehLetra(func->ref));
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior:                                  ///\n");
 
-  scanf("%[^\n]", cv->vma);
+  scanf("%[^\n]", func->vma);
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-  // delay(1);
   return func;
 };
 
-Funcionarios *telaCadastrarFuncionarios(void) {
-  Funcionarios *func;
-  func = (Funcionarios *)malloc(sizeof(Funcionarios));
+Curriculo *cadastrarCurriculo(void) {
+  Curriculo *cv;
+  cv = (Curriculo *)malloc(sizeof(Curriculo));
+
+  gravarCurriculo(cv);
+  free(cv);
 
   limpaTela();
   printf("\n");
@@ -221,26 +223,26 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///           = = = = = = = Cadastro Funcionarios  = = = = = =            ///\n");
+  printf("///           = = = = = = = Cadastro Currículos  = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///              Nome completo:                                           ///\n");
-  scanf("%[^\n]", func->nome);
+  scanf("%[^\n]", cv->nome);
   printf("///              Cargo Ocupado:                                           ///\n");
-  scanf("%[^\n]", func->cargo);
+  scanf("%[^\n]", cv->cargo);
   printf("///              Atribuições:                                             ///\n");
-  scanf("%[^\n]", func->atribuicoes);
+  scanf("%[^\n]", cv->atribuicoes);
   printf("///              Endereço:                                                ///\n");
-  scanf("%[^\n]", func->endereco);
+  scanf("%[^\n]", cv->endereco);
   printf("///              E-mail:                                                  ///\n");
-  scanf("%[^\n]", func->email);
+  scanf("%[^\n]", cv->email);
   printf("///              CPF:                                                     ///\n");
-  scanf("%[^\n]", func->cpf);
+  scanf("%[^\n]", cv->cpf);
   printf("///              Histórico:                                               ///\n");
-  scanf("%[^\n]", func->historico);
+  scanf("%[^\n]", cv->historico);
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior;                                  ///\n");
-  scanf("%[^\n]", func->vma);
+  scanf("%[^\n]", cv->vma);
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -248,7 +250,7 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
   // delay(1);
-  return func;
+  return cv;
 }
 
 void telaErroArquivoFuncionario(void) {
@@ -300,8 +302,11 @@ char menuAtualizarF(void) {
   printf("///           = = = = Atualizar cadastro do funcionario  = = = =          ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
-  printf("///           Nome completo:                                              ///\n");
-  scanf("%[^\n]", &nome);
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", func->nome);
+    getchar();
+  } while (!validarNome(func->nome));
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -330,8 +335,11 @@ char *telaPesquisarFuncionarios(void) {
   printf("///           = = = = = = = Pesquisar Funcionario  = = = = = = =          ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = = =          ///\n");
   printf("///                                                                       ///\n");
-  printf("///           Nome completo:                                              ///\n");
-  scanf("%[^\n]", nome);
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", func->nome);
+    getchar();
+  } while (!validarNome(func->nome));
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -422,13 +430,13 @@ void exibirFuncionarios(Funcionarios *func) {
   getchar();
 }
 
-void gravarCurriculo(Funcionarios *func) {
+void gravarCurriculo(Curriculo *cv) {
   FILE *fp;
 
   fp = fopen("curriculos.dat", "ab");
   if (fp == NULL) {
     telaErroArquivoFuncionario();
   }
-  fwrite(func, sizeof(Funcionarios), 1, fp);
+  fwrite(cv, sizeof(Funcionarios), 1, fp);
   fclose(fp);
 }

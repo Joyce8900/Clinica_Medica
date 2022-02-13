@@ -9,6 +9,7 @@ struct paciente {
   char *doenca;
   char *trat;
   char *exame;
+  int status;
 } * pac;
 
 typedef struct consulta Consulta;
@@ -34,9 +35,9 @@ Paciente *menuCadastroPaciente(void);
 void menuPesquisarPaciente(void);
 void telaErroArquivoPaciente(void);
 
-void menuAlterarPaciente(Paciente *);
+void menuAlterarPaciente(void);
 char *menuExcluirPaciente(void);
-void cadastrarConsulta(Consulta *);
+Consulta *cadastrarConsulta(Consulta *);
 Paciente *buscarPaciente(char *;
 void exibirPaciente(Paciente *);
 Paciente *regravarPaciente(Paciente *);
