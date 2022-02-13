@@ -459,7 +459,7 @@ Paciente *buscarPaciente(char *nome) {
   return NULL;
 };
 
-void exibirPaciente(Struct Paciente *pac) {
+void exibirPaciente(Paciente *pac) {
   if (pac == NULL) {
     printf("\n Paciente não encontrado \n");
   } else {
@@ -467,7 +467,6 @@ void exibirPaciente(Struct Paciente *pac) {
     printf(" Nome do paciente: %s\n", pac->nome);
     printf(" Data de nascimento: %s\n", pac->data);
     printf(" Celular: %s\n", pac->celular);
-    printf(" CPF: %s\n", pac->cpf);
     printf(" E-mail: %s\n", pac->email);
   }
   printf("\n\n\n>>> Tecle <ENTER> para continuar...\n");

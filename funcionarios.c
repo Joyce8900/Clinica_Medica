@@ -50,8 +50,20 @@ char menuPesquisarFuncionario(void) {
   free(nome);
 };
 
-char menuFuncionarios(void) {
+void exibirFuncionario(Funcionarios *func) {
+  if (func == NULL) {
+    printf("\n Funcionário não encontrado \n");
+  } else {
+    printf(" Funcionário encontrado \n");
+    printf(" Nome do funcionário: %s\n", func->nome);
+    printf(" Data de nascimento: %s\n", func->data);
+    printf(" E-mail: %s\n", func->email);
+  }
+  printf("\n\n\n>>> Tecle <ENTER> para continuar...\n");
+  getchar();
+}
 
+char menuFuncionarios(void) {
   char opc;
 
   limpaTela();
