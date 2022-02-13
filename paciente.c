@@ -11,11 +11,11 @@
 // typedef struct paciente *Paciente;
 // typedef struct consulta *Consulta;
 
-void moduloCadastro(void); {
-  char opcao;
+void moduloCadastro(void) {
+  char opc;
   do {
-    opcao = ModuloCadastro();
-    switch (opcao) {
+    opcao = mdouloCadastro();
+    switch (opc) {
     case '1':
       menuPaciente();
       break;
@@ -23,11 +23,11 @@ void moduloCadastro(void); {
       menuFuncionarios();
       break;
     }
-  } while (opcao != '0');
+  } while (opc != '0');
   return 0;
 };
 
-void gravarPaciente(Paciente *pac); {
+void gravarPaciente(Paciente *pac) {
   FILE *fp;
 
   fp = fopen("paciente.dat", "ab");
@@ -122,7 +122,8 @@ char menuCadastro(void) {
   return opc;
 };
 
-void menuPaciente(void); {
+void menuPaciente(void);
+{
   char opc;
 
   limpaTela();
@@ -161,7 +162,8 @@ void menuPaciente(void); {
 };
 
 // Funcao Paciente
-char moduloPaciente(void); {
+char moduloPaciente(void);
+{
   char opcao;
   do {
     opcao = moduloPaciente();
@@ -184,7 +186,7 @@ char moduloPaciente(void); {
   return 0;
 };
 
-Paciente *menuCadastroPaciente(void); {
+Paciente *menuCadastroPaciente(void) {
   Paciente *pac;
   pac = (Paciente *)malloc(sizeof(Paciente));
 
@@ -316,7 +318,7 @@ void telaErroArquivoPaciente(void) {
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
   printf("///           = = = = = = =  Ops! Ocorreu em erro = = = = = =             ///\n");
   printf("///           = = =  Não foi possível acessar o arquivo = = =             ///\n");
-  printf("///           = = = com informações sobre os professores  = =             ///\n");
+  printf("///           = = = com informações sobre os pacientes  = = =           ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
   printf("///           = =  Pedimos desculpas pelos inconvenientes = =             ///\n");
   printf("///           = = =  mas este programa será finalizado! = = =             ///\n");
@@ -356,13 +358,6 @@ void menuAlterarPaciente(Struct Paciente *pac) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
 };
-
-
-
-
-
-
-
 
 char *menuExcluirPaciente(void) {
   char *nome;

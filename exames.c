@@ -32,8 +32,7 @@ char menuExames(void) {
   printf("///                                                                       ///\n");
   printf("///           1. Exames disponiveis                                       ///\n");
   printf("///           2. Solicitar exames médicos                                 ///\n");
-  printf("///           3. Acompanhar andamento e prazos                            ///\n");
-  printf("///           4. Resultados                                               ///\n");
+  printf("///           3. Resultados                                               ///\n");
   printf("///                                                                       ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
   printf("///                                                                       ///\n");
@@ -56,15 +55,12 @@ void moduloExames(void) {
     opc = moduloExames();
     switch (opc) {
     case '1':
-      examesDisponiveis();
+      exameDisponivel();
       break;
     case '2':
       examesSolicitar();
       break;
-    // case '3':
-    //   examesAcompanhar();
-    //   break;
-    case '4':
+    case '3':
       examesResultados();
       break;
     }
@@ -72,7 +68,7 @@ void moduloExames(void) {
   } while (opc != '0');
 }
 
-void examesDisponiveis(void) {
+char exameDisponivel(void) {
   char opc;
 
   limpaTela();
@@ -138,11 +134,8 @@ void examesDisponiveis(void) {
 }
 
 Exames *examesSolicitar(void) {
-  Exames *exa;
-  exa = (Exames *)malloc(sizeof(Exames));
-
-  char nome;
-  char escolhar;
+  Exames *sol;
+  sol = (Exames *)malloc(sizeof(Exames));
 
   limpaTela();
   printf("\n");
@@ -164,15 +157,15 @@ Exames *examesSolicitar(void) {
 
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", exa->nome);
+    scanf("%[^\n]", sol->nome);
     getchar();
-  } while (!validarNome(exa->nome));
+  } while (!validarNome(sol->nome));
 
   do {
     printf("///           Qual exame deseja solicitar: (apenas letras): ");
-    scanf("%[^\n]", exa->escolhar);
+    scanf("%[^\n]", sol->escolher);
     getchar();
-  } while (!validarExame(exa->escolhar));
+  } while (!validarExame(sol->escolher));
 
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
@@ -181,7 +174,7 @@ Exames *examesSolicitar(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-  return exa;
+  return sol;
 }
 
 // Exames *examesAcompanhar(void) {
@@ -260,10 +253,50 @@ Exames *examesResultados(void) {
   return exa;
 }
 
-char examesSolicitar(void) {
+void gravarExame(Exames *exa) {
+  FILE *fp;
+
+  fp = fopen("exemes.dat", "ab");
+  if (fp == NULL) {
+    telaErrorArquivoExames();
+  }
+  fwrite(exa, sizeof(Exames), 1, fp);
+  fclose(fp);
+}
+
+char exameSolicitar(void) {
   Exames *exa;
 
-  exa = ();
+  exa = examesSolicitar();
   gravarExame(exa);
   free(exa);
+}
+
+void telaErrorArquivoExames(void) {
+
+  limpaTela();
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///          ===================================================          ///\n");
+  printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+  printf("///          Sistema de Agendamento para Clínicas Médicas                 ///\n");
+  printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+  printf("///          ===================================================          ///\n");
+  printf("///           Developed by  @ @isazvdd e  @Joyce8900 - Out, 2021          ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///           = = = = = = =  Ops! Ocorreu em erro = = = = = =             ///\n");
+  printf("///           = = =  Não foi possível acessar o arquivo = = =             ///\n");
+  printf("///           = = = = com informações sobre os exames = = = =           ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///           = =  Pedimos desculpas pelos inconvenientes = =             ///\n");
+  printf("///           = = =  mas este programa será finalizado! = = =             ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///                                                                       ///\n");
+  printf("\n\nTecle ENTER para continuar!\n\n");
+  getchar();
+  exit(1);
 }
