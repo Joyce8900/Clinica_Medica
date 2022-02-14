@@ -53,7 +53,7 @@ char menuExames(void) {
 char moduloExames(void) {
   char opc;
   do {
-    opc = moduloExames();
+    opc = menuExames();
     switch (opc) {
     case '1':
       exameDisponivel();
@@ -70,8 +70,8 @@ char moduloExames(void) {
   return 0;
 }
 
-char exameDisponivel(void) {
-  char opc;
+void exameDisponivel(void) {
+  // char opc;
 
   limpaTela();
   printf("\n");
@@ -105,36 +105,37 @@ char exameDisponivel(void) {
   printf("///                                                                       ///\n");
   printf("///       Ultrassonografia, raio X, ressonância magnética                 ///\n");
   printf("///                                                                       ///\n");
-  printf("///           1. Deseja marcar um exame:                                  ///\n");
-  printf("///           0. Voltar ao menu anterior                                  ///\n");
+  // printf("///           1. Deseja marcar um exame:                                  ///\n");
+  // printf("///           0. Voltar ao menu anterior                                  ///\n");
+  // printf("///                                                                       ///\n");
+  // printf("///           Escolha a opção desejada: ");
+  // do {
+  //   scanf("%c", &opc);
+  //   getchar();
+  // } while (!ehDigito(opc));
   printf("///                                                                       ///\n");
-  printf("///           Escolha a opção desejada: ");
-  do {
-    scanf("%c", &opc);
-    getchar();
-  } while (!ehDigito(opc));
-  printf("///                                                                       ///\n");
+  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   getchar();
-  return opc;
+  // return opc;
 }
 
 // Opções exames disponiveis.
 
-char examesDisponiveis(void) {
-  char opc;
-  do {
-    opc = examesSolicitar();
-    switch (opc) {
-    case '1':
-      examesSolicitar();
-      break;
-    }
+// char examesDisponiveis(void) {
+//   char opc;
+//   do {
+//     opc = examesSolicitar();
+//     switch (opc) {
+//     case '1':
+//       examesSolicitar();
+//       break;
+//     }
 
-  } while (opc != '0');
-  return 0;
-}
+//   } while (opc != '0');
+//   return 0;
+
 
 Exames *examesSolicitar(void) {
   Exames *sol;

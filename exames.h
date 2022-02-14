@@ -14,7 +14,7 @@ struct examesSolicitar {
 // Assinatura das funções
 char menuExames(void);
 char moduloExames(void);
-char exameDisponivel(void);
+void exameDisponivel(void);
 char examesDisponiveis(void);
 // void examesSolicitar(Solicitar*);
 

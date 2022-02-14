@@ -1,3 +1,4 @@
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -31,7 +32,7 @@ char moduloFuncionarios(void) {
   } while (opcao != '0');
 }
 
-void menuCfuncionario(void) {
+char menuCfuncionario(void) {
   Funcionarios *func;
 
   func = telaCadastrarFuncionarios();
@@ -39,7 +40,7 @@ void menuCfuncionario(void) {
   free(func);
 };
 
-void menuPesquisarFuncionario(void) {
+char menuPesquisarFuncionario(void) {
   Funcionarios *func;
   char *nome;
 
@@ -403,7 +404,7 @@ void equipe(void) {
   return 0;
 }
 
-void gravarFuncionarios(Funcionarios *func) {
+char gravarFuncionarios(Funcionarios *func) {
   FILE *fp;
 
   fp = fopen("funcionarios.dat", "ab");
@@ -414,7 +415,7 @@ void gravarFuncionarios(Funcionarios *func) {
   fclose(fp);
 }
 
-void exibirFuncionarios(Funcionarios *func) {
+char exibirFuncionarios(Funcionarios *func) {
 
   if (func == NULL) {
     printf("\n= = = Funcionario Inexistente = = =\n");
@@ -424,13 +425,13 @@ void exibirFuncionarios(Funcionarios *func) {
     printf("Nome: %s\n", func->nome);
     printf("Endereço eletrônico: %s\n", func->email);
     printf("Atribuicoes: %s\n", func->atribuicoes);
-    printf("Cargo: %s\n", func->cargo);
+    printf("Cargo: %s\n", func->cargos);
   }
   printf("\n\nTecle ENTER para continuar!\n\n");
   getchar();
 }
 
-void gravarCurriculo(Curriculo *cv) {
+char gravarCurriculo(Curriculo *cv) {
   FILE *fp;
 
   fp = fopen("curriculos.dat", "ab");

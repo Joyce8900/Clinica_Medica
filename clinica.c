@@ -146,22 +146,3 @@ char menuPrincipal(void) {
   return opc;
 };
 
-// Função Principal
-char moduloPrincipal(void) {
-  char opcao;
-  do {
-    opcao = moduloPrincipal();
-    switch (opcao) {
-    case '1':
-      menuCadastro();
-      break;
-    case '2':
-      menuFuncionarios();
-      break;
-    case '3':
-      menuExames();
-      break;
-    }
-  } while (opcao != '0');
-  return 0;
-};
