@@ -40,3 +40,7 @@ int validarEspecialidade(char *);
 
 // validação de Especilista
 int validarEspecialista(char *);
+
+void limpaTela(void) 
+
+void delay(int segundos)

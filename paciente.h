@@ -20,7 +20,7 @@ struct consulta {
   char especialista[21];
 } 
 
-void moduloCadastro(void);
+char moduloCadastro(void);
 void cadastrarPaciente(void);
 void gravarPaciente(Paciente *);
 char cadastroPaciente(void);
@@ -29,10 +29,10 @@ void atualizarPaciente(void);
 void excluirPaciente(void);
 
 char menuCadastro(void);
-void menuPaciente(void);
+char menuPaciente(void);
 char moduloPaciente(void);
 Paciente *menuCadastroPaciente(void);
-void menuPesquisarPaciente(void);
+char menuPesquisarPaciente(void);
 void telaErroArquivoPaciente(void);
 
 void menuAlterarPaciente(void);

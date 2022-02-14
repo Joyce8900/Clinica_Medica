@@ -1,25 +1,24 @@
 typedef struct exames Exames;
 struct exames {
-  char *nome;
-  char *escolher;
-} * exa;
+  char nome;
+  char escolher;
+} 
 
-typedef struct examesSolicitar Solicitar;
+typedef struct examesSolicitar exames;
 
 struct examesSolicitar {
-  char *nome;
-  char *escolher;
-} * sol;
+  char nome [30];
+  char escolher[2];
+}
 
 // Assinatura das funções
 char menuExames(void);
 char moduloExames(void);
 void exameDisponivel(void);
 char examesDisponiveis(void);
-// void examesSolicitar(Solicitar*);
 
 Exames *examesSolicitar(void);
 Exames *examesResultados(void);
-void gravarExame(Exames *);
+char gravarExame(Exames *);
 char exameSolicitar(void);
 void telaErrorArquivoExames(void);

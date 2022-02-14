@@ -105,20 +105,12 @@ void exameDisponivel(void) {
   printf("///                                                                       ///\n");
   printf("///       Ultrassonografia, raio X, ressonância magnética                 ///\n");
   printf("///                                                                       ///\n");
-  // printf("///           1. Deseja marcar um exame:                                  ///\n");
-  // printf("///           0. Voltar ao menu anterior                                  ///\n");
-  // printf("///                                                                       ///\n");
-  // printf("///           Escolha a opção desejada: ");
-  // do {
-  //   scanf("%c", &opc);
-  //   getchar();
-  // } while (!ehDigito(opc));
   printf("///                                                                       ///\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   getchar();
-  // return opc;
+  return 0;
 }
 
 // Opções exames disponiveis.
@@ -257,7 +249,7 @@ Exames *examesResultados(void) {
   return exa;
 }
 
-void gravarExame(Exames *exa) {
+char gravarExame(Exames *exa) {
   FILE *fp;
 
   fp = fopen("exemes.dat", "ab");

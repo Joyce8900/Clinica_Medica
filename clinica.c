@@ -19,7 +19,7 @@ void menuEquipe(void);
 void menuSobre(void);
 
 // Programa principal
-void main(void) {
+int main(void) {
   char modulo;
 
   do {
@@ -43,7 +43,7 @@ void main(void) {
   printf("Fim!\n");
   // char modulo;
   return 0;
-};
+}
 
 void menuProjeto(void) {
 
@@ -61,7 +61,7 @@ void menuProjeto(void) {
   printf("###############################################################\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-};
+}
 
 void menuEquipe(void) {
 
@@ -91,7 +91,7 @@ void menuEquipe(void) {
   printf("                                                                                      \n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-};
+}
 
 void menuSobre(void) {
 
@@ -112,7 +112,7 @@ void menuSobre(void) {
   printf("                                                                                    \n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
-};
+}
 
 char menuPrincipal(void) {
   char opc[2];
@@ -144,5 +144,5 @@ char menuPrincipal(void) {
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
   return opc;
-};
+}
 

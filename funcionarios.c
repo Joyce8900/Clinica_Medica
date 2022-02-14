@@ -38,7 +38,7 @@ char menuCfuncionario(void) {
   func = telaCadastrarFuncionarios();
   gravarFuncionarios(func);
   free(func);
-};
+}
 
 char menuPesquisarFuncionario(void) {
   Funcionarios *func;
@@ -49,7 +49,7 @@ char menuPesquisarFuncionario(void) {
   exibirFuncionario(func); // criar tela para exibir funcionario ao buscar
   free(func);
   free(nome);
-};
+}
 
 void exibirFuncionario(Funcionarios *func) {
   if (func == NULL) {
@@ -202,7 +202,7 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
   return func;
-};
+}
 
 Curriculo *cadastrarCurriculo(void) {
   Curriculo *cv;
@@ -349,7 +349,7 @@ char *telaPesquisarFuncionarios(void) {
   getchar();
   // delay(1);
   return 0;
-};
+}
 
 void equipe(void) {
   // char opc;

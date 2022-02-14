@@ -25,7 +25,7 @@ void moduloCadastro(void) {
     }
   } while (opc != '0');
   return 0;
-};
+}
 
 void gravarPaciente(Paciente *pac) {
   FILE *fp;
@@ -120,9 +120,9 @@ char menuCadastro(void) {
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
   getchar();
   return opc;
-};
+}
 
-void menuPaciente(void);
+char menuPaciente(void);
 {
   char opc;
 
@@ -159,7 +159,7 @@ void menuPaciente(void);
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
   return opc;
-};
+}
 
 // Funcao Paciente
 char moduloPaciente(void);
@@ -184,7 +184,7 @@ char moduloPaciente(void);
 
   } while (opcao != '0');
   return 0;
-};
+}
 
 Paciente *menuCadastroPaciente(void) {
   Paciente *pac;
@@ -265,9 +265,9 @@ Paciente *menuCadastroPaciente(void) {
   gravarPaciente(pac);
   free(pac);
   delay(1);
-};
+}
 
-void menuPesquisarPaciente(void) {
+char menuPesquisarPaciente(void) {
   char *nome;
   nome = (char *)malloc(29 * sizeof(char));
 
@@ -300,7 +300,7 @@ void menuPesquisarPaciente(void) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
   delay(1);
-};
+}
 
 void telaErroArquivoPaciente(void) {
 
@@ -359,7 +359,7 @@ void menuAlterarPaciente(void) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-};
+}
 
 char *menuExcluirPaciente(void) {
   char *nome;
@@ -439,7 +439,7 @@ Consulta *cadastrarConsulta(Consulta *cons) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
   delay(1);
-};
+}
 
 Paciente *buscarPaciente(char *nome) {
   FILE *fp;
@@ -458,7 +458,7 @@ Paciente *buscarPaciente(char *nome) {
   }
   fclose(fp);
   return NULL;
-};
+}
 
 void exibirPaciente(Paciente *pac) {
   if (pac == NULL) {
@@ -474,7 +474,7 @@ void exibirPaciente(Paciente *pac) {
   getchar();
 }
 
-void regravarPaciente(Struct Paciente *pac) {
+void regravarPaciente(struct Paciente *pac) {
   int achou;
   FILE *fp;
   Paciente *pacLido;
