@@ -29,7 +29,7 @@ void gravarPaciente(Paciente *pac) {
   fclose(fp);
 }
 
-char cadastroPaciente(void) {
+void cadastroPaciente(void) {
   Paciente *pac;
 
   pac = menuCadastroPaciente();
@@ -37,12 +37,12 @@ char cadastroPaciente(void) {
   free(pac);
 }
 
-char pesquisarPaciente(void) {
+void menuPesquisarPaciente(void) {
   Paciente *pac;
   char *nome;
 
-  nome = menuPesquisarPaciente();
-  pac = buscarPaciente(nome);
+  nome = telaPesquisarPaciente();
+  pac = pesquisarPaciente(nome);
   exibirPaciente(pac);
   free(pac);
   free(nome);
@@ -53,15 +53,13 @@ void atualizarPaciente(void) {
   char *nome;
 
   nome = menuAlterarPaciente();
-  pac = buscarPaciente(nome);
+  pac = pesquisarPaciente(nome);
   if (pac == NULL) {
     printf("\n\n Paciente não encontrado \n\n");
   } else {
     pac = menuCadastroPaciente();
     strcpy(pac->nome, nome);
     regravarPaciente(pac);
-    excluirPaciente(pac);
-    gravarPaciente(pac);
     free(pac);
   }
   free(nome);
@@ -73,7 +71,7 @@ void excluirPaciente(void) {
 
   nome = menuExcluirPaciente();
   pac = (Paciente *)malloc(sizeof(Paciente));
-  pac = buscarPaciente(nome);
+  pac = pesquisarPaciente(nome);
   if (pac == NULL) {
     printf("\n\n Paciente não encontrado \n\n");
   } else {
@@ -112,7 +110,7 @@ char menuCadastro(void) {
   return opc;
 }
 
-char menuPaciente(void);{
+char menuPaciente(void) {
   char opc;
 
   limpaTela();
@@ -151,10 +149,10 @@ char menuPaciente(void);{
 }
 
 // Funcao Paciente
-char moduloPaciente(void){
+void moduloPaciente(void) {
   char opcao;
   do {
-    opcao = moduloPaciente();
+    opcao = menuPaciente();
     switch (opcao) {
     case '1':
       menuCadastroPaciente();
@@ -163,15 +161,13 @@ char moduloPaciente(void){
       menuAlterarPaciente();
       break;
     case '3':
-      menuPesquisarPaciente();
+      telaPesquisarPaciente();
       break;
     case '4':
       cadastrarConsulta();
       break;
-    };
-
+    }
   } while (opcao != '0');
-  // return 0;
 }
 
 Paciente *menuCadastroPaciente(void) {
@@ -208,9 +204,9 @@ Paciente *menuCadastroPaciente(void) {
 
   do {
     printf("///           Telefone (apenas números): ");
-    scanf("%[^\n]", pac->telefone);
+    scanf("%[^\n]", pac->celular);
     getchar();
-  } while (!validarFone(pac->telefone));
+  } while (!validarFone(pac->celular));
 
   do {
     printf("///           CPF (apenas números): ");
@@ -243,20 +239,16 @@ Paciente *menuCadastroPaciente(void) {
   } while (!validarExame(pac->exame));
   getchar();
   pac->status = True;
-
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-  gravarPaciente(pac);
-  free(pac);
-  delay(1);
   return pac;
 }
 
-char menuPesquisarPaciente(void) {
+char *telaPesquisarPaciente(void) {
   char *nome;
   nome = (char *)malloc(29 * sizeof(char));
 
@@ -324,7 +316,7 @@ void telaErroArquivoPaciente(void) {
 // void menuAlterarPaciente(void) {
 //   Paciente *pac;
 //   char *nome;
-char* menuAlterarPaciente(void) {
+char *menuAlterarPaciente(void) {
   char *nome;
   nome = (char *)malloc(39 * sizeof(char));
 
@@ -355,7 +347,7 @@ char* menuAlterarPaciente(void) {
   return nome;
 }
 
-Paciente *menuExcluirPaciente(void) {
+char *menuExcluirPaciente(void) {
   char *nome;
   nome = (char *)malloc(12 * sizeof(char));
 
@@ -385,7 +377,7 @@ Paciente *menuExcluirPaciente(void) {
   return nome;
 }
 
-Consulta *cadastrarConsulta(Consulta *cons) {
+Consulta *cadastrarConsulta(void) {
   Consulta *cons;
   cons = (Consulta *)malloc(sizeof(Consulta));
 
@@ -432,11 +424,10 @@ Consulta *cadastrarConsulta(Consulta *cons) {
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
-  delay(1);
   return cons;
 }
 
-Paciente *buscarPaciente(char *nome) {
+Paciente *pesquisarPaciente(char *nome) {
   FILE *fp;
   Paciente *pac;
 

@@ -23,22 +23,22 @@ struct consulta {
 void moduloCadastro(void);
 void cadastrarPaciente(void);
 void gravarPaciente(Paciente *);
-char cadastroPaciente(void);
-char pesquisarPaciente(void);
+void cadastroPaciente(void);
+void menuPesquisarPaciente(void);
+Paciente *pesquisarPaciente(char *);
 void atualizarPaciente(void);
 void excluirPaciente(void);
 
 char menuCadastro(void);
 char menuPaciente(void);
-char moduloPaciente(void);
+void moduloPaciente(void);
 Paciente *menuCadastroPaciente(void);
-char menuPesquisarPaciente(void);
+char *telaPesquisarPaciente(void);
 void telaErroArquivoPaciente(void);
 
-char* menuAlterarPaciente(void);
+char *menuAlterarPaciente(void);
 char *menuExcluirPaciente(void);
-Consulta *cadastrarConsulta(Consulta *);
-Paciente *buscarPaciente(char *);
+Consulta *cadastrarConsulta(void);
+Paciente *pesquisarPaciente(char *);
 void exibirPaciente(Paciente *);
 Paciente *regravarPaciente(Paciente *);
-
