@@ -9,8 +9,6 @@
 // #include "funcionarios.h"
 // #include "paciente.h"
 
-typedef struct exames Exames;
-typedef struct examesSolicitar Solicitar;
 
 char menuExames(void) {
   char opc;
@@ -110,7 +108,6 @@ void exameDisponivel(void) {
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   getchar();
-  return 0;
 }
 
 // Opções exames disponiveis.
@@ -249,7 +246,7 @@ Exames *examesResultados(void) {
   return exa;
 }
 
-char gravarExame(Exames *exa) {
+void gravarExame(Exames *exa) {
   FILE *fp;
 
   fp = fopen("exemes.dat", "ab");
@@ -260,7 +257,7 @@ char gravarExame(Exames *exa) {
   fclose(fp);
 }
 
-char exameSolicitar(void) {
+void exameSolicitar(void) {
   Exames *exa;
 
   exa = examesSolicitar();

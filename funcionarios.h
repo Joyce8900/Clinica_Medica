@@ -13,8 +13,9 @@ struct funcionarios {
   char atribuicoes[26];
   char historico[500];
   char vma[2];
+  
   //char co;
-}
+};
 
 typedef struct curriculo Curriculo;
 struct curriculo {
@@ -26,19 +27,19 @@ struct curriculo {
   char cpf[12];
   char historico[100];
   char vma[2];
-}
+};
 
-char moduloFuncionarios(void);
-char menuCfuncionario(void);
-char menuPesquisarFuncionario(void);
-char exibirFuncionario(Funcionarios *);
+void moduloFuncionarios(void);
+void menuCfuncionario(void);
 char menuFuncionarios(void);
 Curriculo *cadastrarCurriculo(void);
 Funcionarios *telaCadastrarFuncionarios(void);
 void telaErroArquivoFuncionario(void);
-char menuAtualizarF(void);
+char* menuAtualizarF(void);
 char *telaPesquisarFuncionarios(void);
 void equipe(void);
-char gravarFuncionarios(Funcionarios *);
-void exibirFuncionarios(Funcionarios *);
-char gravarCurriculo(Curriculo*);
+void gravarFuncionarios(Funcionarios *);
+void exibirFuncionario(Funcionarios *);
+void gravarCurriculo(Curriculo*);
+void menuPesquisarFuncionario(void);
+Funcionarios* pesquisarFuncionario (char*);
