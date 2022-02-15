@@ -13,8 +13,6 @@ struct funcionarios {
   char atribuicoes[26];
   char historico[500];
   char vma[2];
-  
-  //char co;
 };
 
 typedef struct curriculo Curriculo;

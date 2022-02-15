@@ -4,27 +4,18 @@
 #include <unistd.h>
 
 #include "bibliotecaCM.h"
-// #include "exames.h"
-// #include "funcionarios.h"
 #include "paciente.h"
-
-// typedef struct paciente Paciente;
-// typedef struct consulta Consulta;
 
 void moduloCadastro(void) {
   char opc;
   do {
-    opcao = mdouloCadastro();
+    opc = menuCadastro();
     switch (opc) {
     case '1':
       menuPaciente();
       break;
-    case '2':
-      menuFuncionarios();
-      break;
     }
   } while (opc != '0');
-  return 0;
 }
 
 void gravarPaciente(Paciente *pac) {
@@ -107,7 +98,6 @@ char menuCadastro(void) {
   printf("///                                                                         ///\n");
   printf("///                                                                         ///\n");
   printf("///             1. Cadastro de novo paciente                                ///\n");
-  printf("///             2. Cadastro de novo funcionario                             ///\n");
   printf("///                                                                         ///\n");
   printf("///             0. Sair                                                     ///\n");
   printf("///             Escolha a opção desejada: ");
@@ -122,8 +112,7 @@ char menuCadastro(void) {
   return opc;
 }
 
-char menuPaciente(void);
-{
+char menuPaciente(void);{
   char opc;
 
   limpaTela();
@@ -162,8 +151,7 @@ char menuPaciente(void);
 }
 
 // Funcao Paciente
-char moduloPaciente(void);
-{
+char moduloPaciente(void){
   char opcao;
   do {
     opcao = moduloPaciente();
@@ -183,7 +171,7 @@ char moduloPaciente(void);
     };
 
   } while (opcao != '0');
-  return 0;
+  // return 0;
 }
 
 Paciente *menuCadastroPaciente(void) {
@@ -238,7 +226,7 @@ Paciente *menuCadastroPaciente(void) {
 
   do {
     printf("///           Possui alguma doença? (apenas letras): ");
-    scanf("%[^\n]", paciente->doenca);
+    scanf("%[^\n]", pac->doenca);
     getchar();
   } while (!validarDoenca(pac->doenca));
 
@@ -265,6 +253,7 @@ Paciente *menuCadastroPaciente(void) {
   gravarPaciente(pac);
   free(pac);
   delay(1);
+  return pac;
 }
 
 char menuPesquisarPaciente(void) {
@@ -289,9 +278,9 @@ char menuPesquisarPaciente(void) {
   printf("///                                                                       ///\n");
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", pac->nome);
+    scanf("%[^\n]", nome);
     getchar();
-  } while (!validarNome(pac->nome));
+  } while (!validarNome(nome));
 
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -300,6 +289,7 @@ char menuPesquisarPaciente(void) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
   delay(1);
+  return nome;
 }
 
 void telaErroArquivoPaciente(void) {
@@ -320,7 +310,7 @@ void telaErroArquivoPaciente(void) {
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
   printf("///           = = = = = = =  Ops! Ocorreu em erro = = = = = =             ///\n");
   printf("///           = = =  Não foi possível acessar o arquivo = = =             ///\n");
-  printf("///           = = = com informações sobre os pacientes  = = =           ///\n");
+  printf("///           = = = com informações sobre os pacientes  = = =             ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
   printf("///           = =  Pedimos desculpas pelos inconvenientes = =             ///\n");
   printf("///           = = =  mas este programa será finalizado! = = =             ///\n");
@@ -331,9 +321,12 @@ void telaErroArquivoPaciente(void) {
   exit(1);
 }
 
-void menuAlterarPaciente(void) {
-  Paciente *pac;
+// void menuAlterarPaciente(void) {
+//   Paciente *pac;
+//   char *nome;
+char* menuAlterarPaciente(void) {
   char *nome;
+  nome = (char *)malloc(39 * sizeof(char));
 
   limpaTela();
   printf("\n");
@@ -353,15 +346,16 @@ void menuAlterarPaciente(void) {
   printf("///                                                                       ///\n");
   do {
     printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", (pac->nome));
-  } while (!validarNome(pac->nome));
+    scanf("%[^\n]", nome);
+  } while (!validarNome(nome));
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
+  return nome;
 }
 
-char *menuExcluirPaciente(void) {
+Paciente *menuExcluirPaciente(void) {
   char *nome;
   nome = (char *)malloc(12 * sizeof(char));
 
@@ -421,7 +415,7 @@ Consulta *cadastrarConsulta(Consulta *cons) {
     printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
     scanf("%[^\n]", cons->consulta);
     getchar();
-  } while (!ehDigito(cons->consulta));
+  } while (!validarConsulta(cons->consulta));
 
   do {
     printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ///\n");
@@ -439,6 +433,7 @@ Consulta *cadastrarConsulta(Consulta *cons) {
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
   delay(1);
+  return cons;
 }
 
 Paciente *buscarPaciente(char *nome) {
@@ -474,26 +469,26 @@ void exibirPaciente(Paciente *pac) {
   getchar();
 }
 
-void regravarPaciente(struct Paciente *pac) {
-  int achou;
-  FILE *fp;
-  Paciente *pacLido;
+// Paciente regravarPaciente(struct Paciente *pac) {
+//   int achou;
+//   FILE *fp;
+//   Paciente *pacLido;
 
-  pacLido = (Paciente *)malloc(sizeof(Paciente));
-  if (fp == NULL) {
-    telaErroArquivoPaciente();
-  }
-  // while(!feof(fp))
-  achou = False;
-  while (fread(pacLido, sizeof(Paciente), 1, fp) && !achou) {
-    // fread(pacLido, sizeof(Paciente), 1, fp);
-    if (strcmp(pacLido->nome, pac->nome) == 0) {
-      achou = True;
-      fseek(fp, -1 * sizeof(Paciente), SEEK_CUR);
-      fwrite(pac, sizeof(Paciente), 1, fp);
-      // break;
-    }
-  }
-  fclose(fp);
-  free(pacLido);
-}
+//   pacLido = (Paciente *)malloc(sizeof(Paciente));
+//   if (fp == NULL) {
+//     telaErroArquivoPaciente();
+//   }
+//   // while(!feof(fp))
+//   achou = False;
+//   while (fread(pacLido, sizeof(Paciente), 1, fp) && !achou) {
+//     // fread(pacLido, sizeof(Paciente), 1, fp);
+//     if (strcmp(pacLido->nome, pac->nome) == 0) {
+//       achou = True;
+//       fseek(fp, -1 * sizeof(Paciente), SEEK_CUR);
+//       fwrite(pac, sizeof(Paciente), 1, fp);
+//       // break;
+//     }
+//   }
+//   fclose(fp);
+//   free(pacLido);
+// }

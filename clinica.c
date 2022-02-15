@@ -10,8 +10,8 @@
 
 // Assinatura das funções
 char moduloPrincipal(void);
-char moduloCadastro(void);
-char moduloFuncionarios(void);
+void moduloCadastro(void);
+void moduloFuncionarios(void);
 char moduloExames(void);
 
 void menuProjeto(void);
@@ -115,7 +115,7 @@ void menuSobre(void) {
 }
 
 char menuPrincipal(void) {
-  char opc[2];
+  char opc;
 
   limpaTela();
   printf("\n");
@@ -138,7 +138,10 @@ char menuPrincipal(void) {
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///            Escolha a opção desejada: ");
-  scanf("%[0-9]", opc);
+  do {
+    scanf("%c", &opc);
+    getchar();
+  } while (!ehDigito(opc));
   printf("///                                                                         ///\n");
   printf("///////////////////////////////////////////////////////////////////////////////\n");
   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
