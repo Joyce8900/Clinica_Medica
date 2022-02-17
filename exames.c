@@ -247,7 +247,7 @@ Exames *examesResultados(void) {
 void gravarExame(Exames *exa) {
   FILE *fp;
 
-  fp = fopen("exemes.dat", "ab");
+  fp = fopen("exames.dat", "ab");
   if (fp == NULL) {
     telaErrorArquivoExames();
   }

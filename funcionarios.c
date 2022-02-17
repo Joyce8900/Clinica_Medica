@@ -130,12 +130,12 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("///           Telefone (apenas números): ");
   scanf("%[^\n]", func->celular);
   getchar();
-  printf("///              Endereço:                                                ///\n");
+  printf("///              Endereço:                                              ");
   scanf("%[^\n]", func->endereco);
   printf("///           Email : ///\n");      
   scanf("%[^\n]", func->email);
   getchar();
-  printf("/// Historico educacional (Apenas letras!)                                              ");
+  printf("/// Historico educacional (Apenas letras!)                                           ");
   scanf("%[^\n]", func->he);
   getchar();
   scanf("%[^\n]", func->rg);
@@ -175,26 +175,34 @@ Curriculo *cadastrarCurriculo(void) {
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///           = = = = = = = Cadastro Currículos  = = = = = =            ///\n");
+  printf("///           = = = = = = = Cadastro Currículos  = = = = = =              ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///              Nome completo:                                           ///\n");
   scanf("%[^\n]", cv->nome);
+  getchar();
   printf("///              Cargo Ocupado:                                           ///\n");
   scanf("%[^\n]", cv->cargo);
+  getchar();
   printf("///              Atribuições:                                             ///\n");
   scanf("%[^\n]", cv->atribuicoes);
+  getchar();
   printf("///              Endereço:                                                ///\n");
   scanf("%[^\n]", cv->endereco);
+  getchar();
   printf("///              E-mail:                                                  ///\n");
   scanf("%[^\n]", cv->email);
+  getchar();
   printf("///              CPF:                                                     ///\n");
   scanf("%[^\n]", cv->cpf);
+  getchar();
   printf("///              Histórico:                                               ///\n");
   scanf("%[^\n]", cv->historico);
+  getchar();
   printf("///                                                                       ///\n");
   printf("///              Volta ao menu anterior;                                  ///\n");
   scanf("%[^\n]", cv->vma);
+  getchar();
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
@@ -364,7 +372,7 @@ void gravarFuncionarios(Funcionarios *func) {
 void gravarCurriculo(Curriculo *cv) {
   FILE *fp;
 
-  fp = fopen("curriculos.dat", "ab");
+  fp = fopen("curriculos.dat", "rb");
   if (fp == NULL) {
     telaErroArquivoFuncionario();
   }
