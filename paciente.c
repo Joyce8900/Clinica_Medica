@@ -9,10 +9,10 @@
 void moduloCadastro(void) {
   char opc;
   do {
-    opc = menuCadastro();
+    opc = menuPaciente();
     switch (opc) {
     case '1':
-      menuPaciente();
+      menuCadastroPaciente();
       break;
     }
   } while (opc != '0');
@@ -180,7 +180,7 @@ Paciente *menuCadastroPaciente(void) {
   printf("///                                                                       ///\n");
   printf("///        ========================================================       ///\n");
   printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clinicas Medicas = = =       ///\n");
   printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
   printf("///        ========================================================       ///\n");
   printf("///                                                                       ///\n");
@@ -197,19 +197,19 @@ Paciente *menuCadastroPaciente(void) {
   } while (!validarNome(pac->nome));
 
   do {
-    printf("///           Data (apenas números): ");
+    printf("///           Data de nascimento (apenas numeros): ");
     scanf("%[^\n]", pac->data);
     getchar();
   } while (!validarData(pac->data));
 
   do {
-    printf("///           Telefone (apenas números): ");
+    printf("///           Telefone (apenas numeros): ");
     scanf("%[^\n]", pac->celular);
     getchar();
   } while (!validarFone(pac->celular));
 
   do {
-    printf("///           CPF (apenas números): ");
+    printf("///           CPF (apenas numeros): ");
     scanf("%[^\n]", pac->cpf);
     getchar();
   } while (!validarCPF(pac->cpf));
@@ -221,7 +221,7 @@ Paciente *menuCadastroPaciente(void) {
   } while (!validarEmail(pac->email));
 
   do {
-    printf("///           Possui alguma doença? (apenas letras): ");
+    printf("///           Possui alguma doenca? (apenas letras): ");
     scanf("%[^\n]", pac->doenca);
     getchar();
   } while (!validarDoenca(pac->doenca));
