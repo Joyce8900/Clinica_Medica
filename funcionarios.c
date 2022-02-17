@@ -22,7 +22,7 @@ void moduloFuncionarios(void) {
       cadastrarCurriculo();
       break;
     case '2':
-      menuCfuncionario();
+      telaCadastrarFuncionarios();
       break;
     case '3':
       menuPesquisarFuncionario();
@@ -118,7 +118,7 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("///                                                                       ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///           = = = = = = = = Currículo  = = = = = = = = = = =            ///\n");
+  printf("///           = = = = = = = = Cadastro   = = = = = = = = = = =            ///\n");
   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
   printf("///                                                                       ///\n");
   printf("///           Nome completo: (apenas letras): ");
@@ -132,7 +132,7 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   getchar();
   printf("///              Endereço:                                                ///\n");
   scanf("%[^\n]", func->endereco);
-  printf("///           Email : ");
+  printf("///           Email : ///\n");      
   scanf("%[^\n]", func->email);
   getchar();
   printf("/// Historico educacional (Apenas letras!)                                              ");
@@ -353,7 +353,7 @@ void equipe(void) {
 void gravarFuncionarios(Funcionarios *func) {
   FILE *fp;
 
-  fp = fopen("funcionarios.dat", "ab");
+  fp = fopen("funcionarios.dat", "rb");
   if (fp == NULL) {
     telaErroArquivoFuncionario();
   }
