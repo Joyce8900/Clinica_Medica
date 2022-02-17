@@ -113,14 +113,14 @@ github.com/flgorgonio/linguasolta
 */
 
 int validarNome(char *nome) {
-  for (int i = 0; nome[i] != '\0'; i++) {
-    if (!ehLetra(nome[i])) {
-      printf("Nome válido!");
-      return 0;
-    } else {
-      printf("Nome não é valido");
-    }
-  }
+  // for (int i = 0; nome[i] != '\0'; i++) {
+  //   if (!ehLetra(nome[i])) {
+  //     printf("Nome válido!");
+  //     return 0;
+  //   } else {
+  //     printf("Nome não é valido");
+  //   }
+  // }
   return 1;
 }
 
@@ -164,15 +164,15 @@ int validarCPF(char *cpf) {
 }
 
 int validarEmail(char *email) {
-  int tam = strlen(email);
-  char *eMail;
-  for (int i = 0; i < tam; i++) {
-    if (((eMail) = "[a-z A-Z 0-9 _ @ . \n]")) {
-      return 0;
-    } else {
-      return 0;
-    }
-  }
+  // int tam = strlen(email);
+  // char *eMail;
+  // for (int i = 0; i < tam; i++) {
+  //   if (((eMail) = "[a-z A-Z 0-9 _ @ . \n]")) {
+  //     return 0;
+  //   } else {
+  //     return 0;
+  //   }
+  // }
   return 1;
 }
 

@@ -466,6 +466,9 @@ void regravarPaciente(Paciente *pac) {
   Paciente *pacLido;
 
   pacLido = (Paciente *)malloc(sizeof(Paciente));
+
+  fp = fopen("paciente.dat", "ab");
+
   if (fp == NULL) {
     telaErroArquivoPaciente();
   }
