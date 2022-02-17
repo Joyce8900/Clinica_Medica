@@ -45,8 +45,9 @@ int bissexto(int ano) {
   }
 }
 
-int validarDat(int dia, int mes, int ano) {
+int ehData(int dia, int mes, int ano) {
   int maiorDia;
+
   if (ano < 0 || mes < 1 || mes > 12)
     return 0;
   if (mes == 2) {
@@ -65,6 +66,27 @@ int validarDat(int dia, int mes, int ano) {
   if (dia < 1 || dia > maiorDia)
     return 0;
 
+  return 1;
+}
+
+int validarData(char *data) {
+  int tam, dia, mes, ano;
+  tam = strlen(data);
+  if (tam != 8) {
+    return 0;
+  }
+  for (int i = 0; i < tam; i++) {
+    if (!ehDigito(data[i])) {
+      return 0;
+    }
+  }
+  dia = (data[0] - '0') * 10 + (data[1] - '0');
+  mes = (data[2] - '0') * 10 + (data[3] - '0');
+  ano = (data[4] - '0') * 1000 + (data[5] - '0') * 100 +
+        (data[6] - '0') * 10 + (data[7] - '0');
+  if (!ehData(dia, mes, ano)) {
+    return 0;
+  }
   return 1;
 }
 
@@ -104,9 +126,7 @@ int validarNome(char *nome) {
 
 //*Baseado em http://wurthmann.blogspot.com/2012/12/funcao-em-linguagem-c-validador-de-cpf.html
 
-int validarCPF(char *cpf)
-
-{
+int validarCPF(char *cpf) {
   int i, j, digito1 = 0, digito2 = 0;
   if (strlen(cpf) != 11)
     return 0;

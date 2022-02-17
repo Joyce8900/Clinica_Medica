@@ -9,6 +9,7 @@ int ehLetra(char c);
 
 // validação de datas
 int bissexto(int);
+int ehData(int, int, int);
 int validarData(char *);
 
 // validação de telefone
@@ -43,4 +44,4 @@ int validarEspecialista(char *);
 
 void limpaTela(void);
 
-void delay(int segundos);
+void delay(int);

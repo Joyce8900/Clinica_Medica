@@ -460,26 +460,26 @@ void exibirPaciente(Paciente *pac) {
   getchar();
 }
 
-// Paciente regravarPaciente(struct Paciente *pac) {
-//   int achou;
-//   FILE *fp;
-//   Paciente *pacLido;
+void regravarPaciente(Paciente *pac) {
+  int achou;
+  FILE *fp;
+  Paciente *pacLido;
 
-//   pacLido = (Paciente *)malloc(sizeof(Paciente));
-//   if (fp == NULL) {
-//     telaErroArquivoPaciente();
-//   }
-//   // while(!feof(fp))
-//   achou = False;
-//   while (fread(pacLido, sizeof(Paciente), 1, fp) && !achou) {
-//     // fread(pacLido, sizeof(Paciente), 1, fp);
-//     if (strcmp(pacLido->nome, pac->nome) == 0) {
-//       achou = True;
-//       fseek(fp, -1 * sizeof(Paciente), SEEK_CUR);
-//       fwrite(pac, sizeof(Paciente), 1, fp);
-//       // break;
-//     }
-//   }
-//   fclose(fp);
-//   free(pacLido);
-// }
+  pacLido = (Paciente *)malloc(sizeof(Paciente));
+  if (fp == NULL) {
+    telaErroArquivoPaciente();
+  }
+  // while(!feof(fp))
+  achou = False;
+  while (fread(pacLido, sizeof(Paciente), 1, fp) && !achou) {
+    // fread(pacLido, sizeof(Paciente), 1, fp);
+    if (strcmp(pacLido->nome, pac->nome) == 0) {
+      achou = True;
+      fseek(fp, -1 * sizeof(Paciente), SEEK_CUR);
+      fwrite(pac, sizeof(Paciente), 1, fp);
+      // break;
+    }
+  }
+  fclose(fp);
+  free(pacLido);
+}

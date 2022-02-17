@@ -3,12 +3,11 @@
 #include <string.h>
 #include <unistd.h>
 
-#include "bibliotecaCM.c"
+// #include "bibliotecaCM.c"
 #include "bibliotecaCM.h"
 #include "exames.h"
 // #include "funcionarios.h"
 // #include "paciente.h"
-
 
 char menuExames(void) {
   char opc;
@@ -124,7 +123,6 @@ void exameDisponivel(void) {
 
 //   } while (opc != '0');
 //   return 0;
-
 
 Exames *examesSolicitar(void) {
   Exames *sol;

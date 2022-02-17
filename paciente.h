@@ -41,4 +41,4 @@ char *menuExcluirPaciente(void);
 Consulta *cadastrarConsulta(void);
 Paciente *pesquisarPaciente(char *);
 void exibirPaciente(Paciente *);
-Paciente *regravarPaciente(Paciente *);
+void regravarPaciente(Paciente *);

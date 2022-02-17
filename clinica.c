@@ -9,7 +9,7 @@
 #include "paciente.h"
 
 // Assinatura das funções
-char moduloPrincipal(void);
+char menuPrincipal(void);
 void moduloCadastro(void);
 void moduloFuncionarios(void);
 char moduloExames(void);
@@ -23,7 +23,7 @@ int main(void) {
   char modulo;
 
   do {
-    modulo = moduloPrincipal();
+    modulo = menuPrincipal();
     switch (modulo) {
     case '1':
       moduloCadastro();
@@ -148,4 +148,3 @@ char menuPrincipal(void) {
   getchar();
   return opc;
 }
-
