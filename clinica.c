@@ -26,7 +26,7 @@ int main(void) {
     modulo = menuPrincipal();
     switch (modulo) {
     case '1':
-      moduloCadastro();
+      moduloPaciente();
       break;
     case '2':
       moduloFuncionarios();

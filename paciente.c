@@ -6,16 +6,40 @@
 #include "bibliotecaCM.h"
 #include "paciente.h"
 
-void moduloCadastro(void) {
-  char opc;
+// void moduloCadastro(void) {
+//   char opc;
+//   do {
+//     opc = menuPaciente();
+//     switch (opc) {
+//     case '1':
+//       cadastroPaciente();
+//       break;
+    
+//     }
+//   } while (opc != '0');
+// }
+
+
+// Funcao Paciente
+void moduloPaciente(void) {
+  char opcao;
   do {
-    opc = menuPaciente();
-    switch (opc) {
+    opcao = menuPaciente();
+    switch (opcao) {
     case '1':
       cadastroPaciente();
       break;
+    case '2':
+      atualizarPaciente();
+      break;
+    case '3':
+      //telaPesquisarPaciente();
+      break;
+    case '4':
+      //cadastrarConsulta();
+      break;
     }
-  } while (opc != '0');
+  } while (opcao != '0');
 }
 
 void gravarPaciente(Paciente *pac) {
@@ -54,14 +78,15 @@ void atualizarPaciente(void) {
 
   nome = menuAlterarPaciente();
   pac = pesquisarPaciente(nome);
+  printf("Pesquisei e achei a pessoa |%s| \n", pac->nome); getchar();
   if (pac == NULL) {
     printf("\n\n Paciente não encontrado \n\n");
   } else {
     pac = menuCadastroPaciente();
-    strcpy(pac->nome, nome);
+    //strcpy(pac->nome, nome);
     regravarPaciente(pac);
-    free(pac);
   }
+  free(pac);
   free(nome);
 }
 
@@ -148,27 +173,7 @@ char menuPaciente(void) {
   return opc;
 }
 
-// Funcao Paciente
-void moduloPaciente(void) {
-  char opcao;
-  do {
-    opcao = menuPaciente();
-    switch (opcao) {
-    case '1':
-      menuCadastroPaciente();
-      break;
-    case '2':
-      menuAlterarPaciente();
-      break;
-    case '3':
-      telaPesquisarPaciente();
-      break;
-    case '4':
-      cadastrarConsulta();
-      break;
-    }
-  } while (opcao != '0');
-}
+
 
 Paciente *menuCadastroPaciente(void) {
   Paciente *pac;
@@ -313,9 +318,7 @@ void telaErroArquivoPaciente(void) {
   exit(1);
 }
 
-// void menuAlterarPaciente(void) {
-//   Paciente *pac;
-//   char *nome;
+
 char *menuAlterarPaciente(void) {
   char *nome;
   nome = (char *)malloc(39 * sizeof(char));
@@ -437,7 +440,7 @@ Paciente *pesquisarPaciente(char *nome) {
     telaErroArquivoPaciente();
   }
   while (fread(pac, sizeof(Paciente), 1, fp)) {
-    if ((strcmp(pac->cpf, nome) == 0) && (pac->status == True)) {
+    if ((strcmp(pac->nome, nome) == 0) && (pac->status == True)) {
       fclose(fp);
       return pac;
     }
@@ -467,22 +470,24 @@ void regravarPaciente(Paciente *pac) {
 
   pacLido = (Paciente *)malloc(sizeof(Paciente));
 
-  fp = fopen("paciente.dat", "ab");
-
+  fp = fopen("paciente.dat", "r+b");
+  fseek(fp, 0, SEEK_SET);
   if (fp == NULL) {
     telaErroArquivoPaciente();
-  }
-  // while(!feof(fp))
-  achou = False;
-  while (fread(pacLido, sizeof(Paciente), 1, fp) && !achou) {
-    // fread(pacLido, sizeof(Paciente), 1, fp);
-    if (strcmp(pacLido->nome, pac->nome) == 0) {
-      achou = True;
-      fseek(fp, -1 * sizeof(Paciente), SEEK_CUR);
-      fwrite(pac, sizeof(Paciente), 1, fp);
-      // break;
+  } else {
+
+    printf("\n Estou procurando |%s| \n", pac->nome); getchar();
+
+    while (fread(pacLido, sizeof(Paciente), 1, fp)) {
+      printf("\n Achei |%s| \n", pacLido->nome); getchar();
+      if (strcmp(pacLido->nome, pac->nome) == 0) {
+        printf("\n Achei quem estava procurando \n"); getchar();
+        fseek(fp, -1 * sizeof(Paciente), SEEK_CUR);
+        fwrite(pac, sizeof(Paciente), 1, fp);
+        break;
+      }
     }
+    fclose(fp);
   }
-  fclose(fp);
   free(pacLido);
 }
