@@ -22,7 +22,7 @@ void moduloFuncionarios(void) {
       cadastrarCurriculo();
       break;
     case '2':
-      telaCadastrarFuncionarios();
+      //telaCadastrarFuncionarios();
       break;
     case '3':
       menuPesquisarFuncionario();
@@ -32,7 +32,7 @@ void moduloFuncionarios(void) {
   } while (opcao != '0');
 }
 
-void menuCfuncionario(void) {
+void cadastrarCurriculo(void) {
   Funcionarios *func;
 
   func = telaCadastrarFuncionarios();
@@ -158,60 +158,60 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   return func;
 }
 
-Curriculo *cadastrarCurriculo(void) {
-  Curriculo *cv;
-  cv = (Curriculo *)malloc(sizeof(Curriculo));
+// Curriculo *cadastrarCurriculo(void) {
+//   Curriculo *cv;
+//   cv = (Curriculo *)malloc(sizeof(Curriculo));
 
-  limpaTela();
-  printf("\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("///                                                                       ///\n");
-  printf("///        ========================================================       ///\n");
-  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
-  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-  printf("///        ========================================================       ///\n");
-  printf("///                                                                       ///\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("///                                                                       ///\n");
-  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///           = = = = = = = Cadastro Currículos  = = = = = =              ///\n");
-  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///                                                                       ///\n");
-  printf("///              Nome completo:                                           ///\n");
-  scanf("%[^\n]", cv->nome);
-  getchar();
-  printf("///              Cargo Ocupado:                                           ///\n");
-  scanf("%[^\n]", cv->cargo);
-  getchar();
-  printf("///              Atribuições:                                             ///\n");
-  scanf("%[^\n]", cv->atribuicoes);
-  getchar();
-  printf("///              Endereço:                                                ///\n");
-  scanf("%[^\n]", cv->endereco);
-  getchar();
-  printf("///              E-mail:                                                  ///\n");
-  scanf("%[^\n]", cv->email);
-  getchar();
-  printf("///              CPF:                                                     ///\n");
-  scanf("%[^\n]", cv->cpf);
-  getchar();
-  printf("///              Histórico:                                               ///\n");
-  scanf("%[^\n]", cv->historico);
-  getchar();
-  printf("///                                                                       ///\n");
-  printf("///              Volta ao menu anterior;                                  ///\n");
-  scanf("%[^\n]", cv->vma);
-  getchar();
-  printf("///                                                                       ///\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("\n");
-  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
-  getchar();
-  // delay(1);
-  return cv;
-}
+//   limpaTela();
+//   printf("\n");
+//   printf("/////////////////////////////////////////////////////////////////////////////\n");
+//   printf("///                                                                       ///\n");
+//   printf("///        ========================================================       ///\n");
+//   printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+//   printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+//   printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+//   printf("///        ========================================================       ///\n");
+//   printf("///                                                                       ///\n");
+//   printf("/////////////////////////////////////////////////////////////////////////////\n");
+//   printf("///                                                                       ///\n");
+//   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+//   printf("///           = = = = = = = Cadastro Currículos  = = = = = =              ///\n");
+//   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+//   printf("///                                                                       ///\n");
+//   printf("///              Nome completo:                                           ///\n");
+//   scanf("%[^\n]", cv->nome);
+//   getchar();
+//   printf("///              Cargo Ocupado:                                           ///\n");
+//   scanf("%[^\n]", cv->cargo);
+//   getchar();
+//   printf("///              Atribuições:                                             ///\n");
+//   scanf("%[^\n]", cv->atribuicoes);
+//   getchar();
+//   printf("///              Endereço:                                                ///\n");
+//   scanf("%[^\n]", cv->endereco);
+//   getchar();
+//   printf("///              E-mail:                                                  ///\n");
+//   scanf("%[^\n]", cv->email);
+//   getchar();
+//   printf("///              CPF:                                                     ///\n");
+//   scanf("%[^\n]", cv->cpf);
+//   getchar();
+//   printf("///              Histórico:                                               ///\n");
+//   scanf("%[^\n]", cv->historico);
+//   getchar();
+//   printf("///                                                                       ///\n");
+//   printf("///              Volta ao menu anterior;                                  ///\n");
+//   scanf("%[^\n]", cv->vma);
+//   getchar();
+//   printf("///                                                                       ///\n");
+//   printf("/////////////////////////////////////////////////////////////////////////////\n");
+//   printf("\n");
+//   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+//   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
+//   getchar();
+//   // delay(1);
+//   return cv;
+// }
 
 void telaErroArquivoFuncionario(void) {
 
@@ -361,10 +361,12 @@ void equipe(void) {
 void gravarFuncionarios(Funcionarios *func) {
   FILE *fp;
 
-  fp = fopen("funcionarios.dat", "rb");
+  fp = fopen("funcionarios.dat", "ab");
   if (fp == NULL) {
     telaErroArquivoFuncionario();
   }
+  printf("Deu certo\n");
+  getchar();
   fwrite(func, sizeof(Funcionarios), 1, fp);
   fclose(fp);
 }
@@ -372,7 +374,7 @@ void gravarFuncionarios(Funcionarios *func) {
 void gravarCurriculo(Curriculo *cv) {
   FILE *fp;
 
-  fp = fopen("curriculos.dat", "rb");
+  fp = fopen("curriculos.dat", "ab");
   if (fp == NULL) {
     telaErroArquivoFuncionario();
   }

@@ -12,7 +12,7 @@ void moduloCadastro(void) {
     opc = menuPaciente();
     switch (opc) {
     case '1':
-      menuCadastroPaciente();
+      cadastroPaciente();
       break;
     }
   } while (opc != '0');

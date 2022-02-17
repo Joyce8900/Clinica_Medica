@@ -30,7 +30,7 @@ struct curriculo {
 void moduloFuncionarios(void);
 void menuCfuncionario(void);
 char menuFuncionarios(void);
-Curriculo *cadastrarCurriculo(void);
+void cadastrarCurriculo(void);
 Funcionarios *telaCadastrarFuncionarios(void);
 void telaErroArquivoFuncionario(void);
 char* menuAtualizarF(void);
