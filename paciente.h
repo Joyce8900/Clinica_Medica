@@ -24,7 +24,7 @@ void moduloCadastro(void);
 void cadastrarPaciente(void);
 void gravarPaciente(Paciente *);
 void cadastroPaciente(void);
-void menuPesquisarPaciente(void);
+void buscarPaciente(void);
 Paciente *pesquisarPaciente(char *);
 void atualizarPaciente(void);
 void excluirPaciente(void);

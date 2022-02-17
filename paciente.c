@@ -33,7 +33,7 @@ void moduloPaciente(void) {
       atualizarPaciente();
       break;
     case '3':
-      //telaPesquisarPaciente();
+      buscarPaciente();
       break;
     case '4':
       //cadastrarConsulta();
@@ -61,7 +61,7 @@ void cadastroPaciente(void) {
   free(pac);
 }
 
-void menuPesquisarPaciente(void) {
+void buscarPaciente(void) {
   Paciente *pac;
   char *nome;
 
