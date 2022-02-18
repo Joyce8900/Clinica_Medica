@@ -22,7 +22,7 @@ void moduloPaciente(void) {
       buscarPaciente();
       break;
     case '4':
-      cadastrarConsulta();
+      cadastroConsulta();
       break;
     }
   } while (opcao != '0');
