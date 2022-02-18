@@ -53,7 +53,7 @@ char moduloExames(void) {
       exameDisponivel();
       break;
     case '2':
-      examesSolicitar();
+      exameSolicitar();
       break;
     case '3':
       examesResultados();
