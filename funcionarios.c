@@ -22,7 +22,7 @@ void moduloFuncionarios(void) {
       cadastrarCurriculo();
       break;
     case '2':
-      //telaCadastrarFuncionarios();
+      cadastrarCurriculo();
       break;
     case '3':
       menuPesquisarFuncionario();
@@ -130,7 +130,7 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("///           Telefone (apenas números): ");
   scanf("%[^\n]", func->celular);
   getchar();
-  printf("///            Endereço:                                              ");
+  printf("///           Endereço:                                              ");
   scanf("%[^\n]", func->endereco);
   printf("///           Email : ");      
   scanf("%[^\n]", func->email);
@@ -146,7 +146,10 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("/// Referencia: (Apenas letras!)                                              ");
   scanf("%[^\n]", func->ref);
   getchar();
+  // printf("/// Cadastro ou Curriculo: (Apenas letras!)                                              ");
+  // scanf("%[^\n]", func->ref);
   printf("///                                                                       ///\n");
+
   printf("///              Volta ao menu anterior:                                  ///\n");
 
   scanf("%[^\n]", func->vma);
@@ -158,60 +161,6 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   return func;
 }
 
-// Curriculo *cadastrarCurriculo(void) {
-//   Curriculo *cv;
-//   cv = (Curriculo *)malloc(sizeof(Curriculo));
-
-//   limpaTela();
-//   printf("\n");
-//   printf("/////////////////////////////////////////////////////////////////////////////\n");
-//   printf("///                                                                       ///\n");
-//   printf("///        ========================================================       ///\n");
-//   printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-//   printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
-//   printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-//   printf("///        ========================================================       ///\n");
-//   printf("///                                                                       ///\n");
-//   printf("/////////////////////////////////////////////////////////////////////////////\n");
-//   printf("///                                                                       ///\n");
-//   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-//   printf("///           = = = = = = = Cadastro Currículos  = = = = = =              ///\n");
-//   printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-//   printf("///                                                                       ///\n");
-//   printf("///              Nome completo:                                           ///\n");
-//   scanf("%[^\n]", cv->nome);
-//   getchar();
-//   printf("///              Cargo Ocupado:                                           ///\n");
-//   scanf("%[^\n]", cv->cargo);
-//   getchar();
-//   printf("///              Atribuições:                                             ///\n");
-//   scanf("%[^\n]", cv->atribuicoes);
-//   getchar();
-//   printf("///              Endereço:                                                ///\n");
-//   scanf("%[^\n]", cv->endereco);
-//   getchar();
-//   printf("///              E-mail:                                                  ///\n");
-//   scanf("%[^\n]", cv->email);
-//   getchar();
-//   printf("///              CPF:                                                     ///\n");
-//   scanf("%[^\n]", cv->cpf);
-//   getchar();
-//   printf("///              Histórico:                                               ///\n");
-//   scanf("%[^\n]", cv->historico);
-//   getchar();
-//   printf("///                                                                       ///\n");
-//   printf("///              Volta ao menu anterior;                                  ///\n");
-//   scanf("%[^\n]", cv->vma);
-//   getchar();
-//   printf("///                                                                       ///\n");
-//   printf("/////////////////////////////////////////////////////////////////////////////\n");
-//   printf("\n");
-//   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-//   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
-//   getchar();
-//   // delay(1);
-//   return cv;
-// }
 
 void telaErroArquivoFuncionario(void) {
 
