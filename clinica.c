@@ -132,7 +132,7 @@ char menuPrincipal(void) {
   printf("///                                                                         ///\n");
   printf("///    = = = = = Sistema de Agendamento para Clínicas Médicas = = = = =     ///\n");
   printf("///                                                                         ///\n");
-  printf("///            1. Cadastro                                                  ///\n");
+  printf("///            1. Paciente                                                  ///\n");
   printf("///            2. Equipe médica e Especialidades                            ///\n");
   printf("///            3. Exames                                                    ///\n");
   printf("///            0. Sair                                                      ///\n");
