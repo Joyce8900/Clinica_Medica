@@ -17,7 +17,7 @@ struct consulta {
   char nome[52];
   char consulta[11];
   char especialidade[21];
-  char especialista[21];
+  char data[11];
 };
 
 void moduloCadastro(void);

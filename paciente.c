@@ -36,11 +36,12 @@ void moduloPaciente(void) {
       buscarPaciente();
       break;
     case '4':
-      //cadastrarConsulta();
+      cadastrarConsulta();
       break;
     }
   } while (opcao != '0');
 }
+
 
 void gravarPaciente(Paciente *pac) {
   FILE *fp;
@@ -107,33 +108,33 @@ void excluirPaciente(void) {
   free(nome);
 }
 
-char menuCadastro(void) {
-  char opc;
+// char menuCadastro(void) {
+//   char opc;
 
-  limpaTela();
-  printf("///////////////////////////////////////////////////////////////////////////////\n");
-  printf("///                                                                         ///\n");
-  printf("///         ========================================================        ///\n");
-  printf("///         = = = = = = = = = = = = = =  = = = = = = = = = = = = = =        ///\n");
-  printf("///         = = = Sistema de Agendamento para Clínicas Médicas = = =        ///\n");
-  printf("///         = = = = = = = = = = = = = =  = = = = = = = = = = = = = =        ///\n");
-  printf("///         ========================================================        ///\n");
-  printf("///                                                                         ///\n");
-  printf("///                                                                         ///\n");
-  printf("///             1. Cadastro de novo paciente                                ///\n");
-  printf("///                                                                         ///\n");
-  printf("///             0. Sair                                                     ///\n");
-  printf("///             Escolha a opção desejada: ");
-  do {
-    scanf("%c", &opc);
-    getchar();
-  } while (!ehDigito(opc));
-  printf("///                                                                         ///\n");
-  printf("///////////////////////////////////////////////////////////////////////////////\n");
-  printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
-  getchar();
-  return opc;
-}
+//   limpaTela();
+//   printf("///////////////////////////////////////////////////////////////////////////////\n");
+//   printf("///                                                                         ///\n");
+//   printf("///         ========================================================        ///\n");
+//   printf("///         = = = = = = = = = = = = = =  = = = = = = = = = = = = = =        ///\n");
+//   printf("///         = = = Sistema de Agendamento para Clínicas Médicas = = =        ///\n");
+//   printf("///         = = = = = = = = = = = = = =  = = = = = = = = = = = = = =        ///\n");
+//   printf("///         ========================================================        ///\n");
+//   printf("///                                                                         ///\n");
+//   printf("///                                                                         ///\n");
+//   printf("///             1. Cadastro de novo paciente                                ///\n");
+//   printf("///                                                                         ///\n");
+//   printf("///             0. Sair                                                     ///\n");
+//   printf("///             Escolha a opção desejada: ");
+//   do {
+//     scanf("%c", &opc);
+//     getchar();
+//   } while (!ehDigito(opc));
+//   printf("///                                                                         ///\n");
+//   printf("///////////////////////////////////////////////////////////////////////////////\n");
+//   printf("\t\t>>> Tecle <ENTER> para continuar...>>>\n");
+//   getchar();
+//   return opc;
+// }
 
 char menuPaciente(void) {
   char opc;
@@ -406,23 +407,23 @@ Consulta *cadastrarConsulta(void) {
     getchar();
   } while (!validarNome(cons->nome));
 
-  do {
-    printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
-    scanf("%[^\n]", cons->consulta);
-    getchar();
-  } while (!validarConsulta(cons->consulta));
+  // do {
+  //   printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
+  //   scanf("%[^\n]", cons->consulta);
+  //   getchar();
+  // } while (!validarConsulta(cons->consulta));
 
   do {
-    printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ///\n");
+    printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ");
     scanf("%[^\n]", cons->especialidade);
     getchar();
   } while (!validarConsulta(cons->especialidade));
 
   do {
-    printf("///        Qual o especialista que o Sr.(a) deseja consultar?             ///\n");
-    scanf("%[^\n]", cons->especialista);
+    printf("///        Qual a data que deseja realizar a consulta (APENAS NÚMEROS)?             ");
+    scanf("%[^\n]", (cons->data));
     getchar();
-  } while (!validarEspecialidade(cons->especialista));
+  } while (!validarData(cons->data));
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
