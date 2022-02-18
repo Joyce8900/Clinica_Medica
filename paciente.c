@@ -6,7 +6,6 @@
 #include "bibliotecaCM.h"
 #include "paciente.h"
 
-
 // Funcao Paciente
 void moduloPaciente(void) {
   char opcao;
@@ -28,7 +27,6 @@ void moduloPaciente(void) {
     }
   } while (opcao != '0');
 }
-
 
 void gravarPaciente(Paciente *pac) {
   FILE *fp;
@@ -66,12 +64,13 @@ void atualizarPaciente(void) {
 
   nome = menuAlterarPaciente();
   pac = pesquisarPaciente(nome);
-  printf("Pesquisei e achei a pessoa |%s| \n", pac->nome); getchar();
+  printf("Pesquisei e achei a pessoa |%s| \n", pac->nome);
+  getchar();
   if (pac == NULL) {
     printf("\n\n Paciente não encontrado \n\n");
   } else {
     pac = menuCadastroPaciente();
-    //strcpy(pac->nome, nome);
+    // strcpy(pac->nome, nome);
     regravarPaciente(pac);
   }
   free(pac);
@@ -94,26 +93,6 @@ void excluirPaciente(void) {
   }
   free(nome);
 }
-
-void gravarConsulta(Consulta *cons) {
-  FILE *fp;
-
-  fp = fopen("consultas.dat", "ab");
-  if (fp == NULL) {
-    telaErroArquivoPaciente();
-  }
-  fwrite(cons, sizeof(Consulta), 1, fp);
-  fclose(fp);
-}
-
-void cadastroConsulta(void) {
-  Consulta *cons;
-
-  cons = cadastrarConsulta();
-  gravarConsulta(cons);
-  free(cons);
-}
-
 
 // char menuCadastro(void) {
 //   char opc;
@@ -180,8 +159,6 @@ char menuPaciente(void) {
   getchar();
   return opc;
 }
-
-
 
 Paciente *menuCadastroPaciente(void) {
   Paciente *pac;
@@ -256,7 +233,6 @@ Paciente *menuCadastroPaciente(void) {
   printf("/////////////////////////////////////////////////////////////////////////////\n");
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
   getchar();
   return pac;
 }
@@ -326,7 +302,6 @@ void telaErroArquivoPaciente(void) {
   exit(1);
 }
 
-
 char *menuAlterarPaciente(void) {
   char *nome;
   nome = (char *)malloc(39 * sizeof(char));
@@ -388,50 +363,6 @@ char *menuExcluirPaciente(void) {
   return nome;
 }
 
-Consulta* cadastrarConsulta(void) {
-  Consulta *cons;
-  cons = (Consulta *)malloc(sizeof(Consulta));
-
-  limpaTela();
-  printf("\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("///                                                                       ///\n");
-  printf("///        ========================================================       ///\n");
-  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
-  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
-  printf("///        ========================================================       ///\n");
-  printf("///                                                                       ///\n");
-  printf("/////////////////////////////////////////////////////////////////////////////\n");
-  printf("///                                                                       ///\n");
-  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///           = = = = = = = = Cadastrar Consulta = = = = = = =            ///\n");
-  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
-  printf("///                                                                       ///\n");
-  do {
-    printf("///           Nome completo: (apenas letras): ");
-    scanf("%[^\n]", cons->nome);
-    getchar();
-  } while (!validarNome(cons->nome));
-
-  do {
-    printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ");
-    scanf("%[^\n]", cons->especialidade);
-    getchar();
-  } while (!validarConsulta(cons->especialidade));
-
-  do {
-    printf("///        Qual a data que deseja realizar a consulta (APENAS NÚMEROS)?             ");
-    scanf("%[^\n]", (cons->data));
-    getchar();
-  } while (!validarData(cons->data));
-  printf("\n");
-  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
-  printf("\t\t\t>>> Tecle <VOLTAR> para voltar ao menu anterior...\n");
-  getchar();
-  return cons;
-}
-
 Paciente *pesquisarPaciente(char *nome) {
   FILE *fp;
   Paciente *pac;
@@ -478,12 +409,15 @@ void regravarPaciente(Paciente *pac) {
     telaErroArquivoPaciente();
   } else {
 
-    printf("\n Estou procurando |%s| \n", pac->nome); getchar();
+    printf("\n Estou procurando |%s| \n", pac->nome);
+    getchar();
 
     while (fread(pacLido, sizeof(Paciente), 1, fp)) {
-      printf("\n Achei |%s| \n", pacLido->nome); getchar();
+      printf("\n Achei |%s| \n", pacLido->nome);
+      getchar();
       if (strcmp(pacLido->nome, pac->nome) == 0) {
-        printf("\n Achei quem estava procurando \n"); getchar();
+        printf("\n Achei quem estava procurando \n");
+        getchar();
         fseek(fp, -1 * sizeof(Paciente), SEEK_CUR);
         fwrite(pac, sizeof(Paciente), 1, fp);
         break;
@@ -492,4 +426,67 @@ void regravarPaciente(Paciente *pac) {
     fclose(fp);
   }
   free(pacLido);
+}
+
+// consultas
+void gravarConsulta(Consulta *cons) {
+  FILE *fp;
+
+  fp = fopen("consultas.dat", "ab");
+  if (fp == NULL) {
+    telaErroArquivoPaciente();
+  }
+  fwrite(cons, sizeof(Consulta), 1, fp);
+  fclose(fp);
+}
+
+void cadastroConsulta(void) {
+  Consulta *cons;
+
+  cons = cadastrarConsulta();
+  gravarConsulta(cons);
+  free(cons);
+}
+
+Consulta *cadastrarConsulta(void) {
+  Consulta *cons;
+  cons = (Consulta *)malloc(sizeof(Consulta));
+
+  limpaTela();
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        = = = Sistema de Agendamento para Clínicas Médicas = = =       ///\n");
+  printf("///        = = = = = = = = = = = = = =  = = = = = = = = = = = = = =       ///\n");
+  printf("///        ========================================================       ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///           = = = = = = = = Cadastrar Consulta = = = = = = =            ///\n");
+  printf("///           = = = = = = = = = = = =  = = = = = = = = = = = =            ///\n");
+  printf("///                                                                       ///\n");
+  do {
+    printf("///           Nome completo: (apenas letras): ");
+    scanf("%[^\n]", cons->nome);
+    getchar();
+  } while (!validarNome(cons->nome));
+
+  do {
+    printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ");
+    scanf("%[^\n]", cons->especialidade);
+    getchar();
+  } while (!validarConsulta(cons->especialidade));
+
+  do {
+    printf("///        Qual a data que deseja realizar a consulta (APENAS NÚMEROS)?             ");
+    scanf("%[^\n]", (cons->data));
+    getchar();
+  } while (!validarData(cons->data));
+  printf("\n");
+  printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
+  getchar();
+  return cons;
 }

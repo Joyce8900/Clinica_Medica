@@ -3,11 +3,8 @@
 #include <string.h>
 #include <unistd.h>
 
-// #include "bibliotecaCM.c"
 #include "bibliotecaCM.h"
 #include "exames.h"
-// #include "funcionarios.h"
-// #include "paciente.h"
 
 char menuExames(void) {
   char opc;
