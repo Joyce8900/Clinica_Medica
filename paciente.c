@@ -432,9 +432,9 @@ void regravarPaciente(Paciente *pac) {
 void gravarConsulta(Consulta *cons) {
   FILE *fp;
 
-  fp = fopen("consultas.dat", "ab");
+  fp = fopen("consulta.dat", "ab");
   if (fp == NULL) {
-    telaErroArquivoPaciente();
+    telaErroArquivoConsulta();
   }
   fwrite(cons, sizeof(Consulta), 1, fp);
   fclose(fp);
@@ -475,18 +475,48 @@ Consulta *cadastrarConsulta(void) {
   } while (!validarNome(cons->nome));
 
   do {
-    printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ");
+    printf("///        Qual a especialidade que o Sr.(a) deseja consultar? ");
     scanf("%[^\n]", cons->especialidade);
     getchar();
   } while (!validarConsulta(cons->especialidade));
 
   do {
-    printf("///        Qual a data que deseja realizar a consulta (APENAS NÚMEROS)?             ");
+    printf("///        Qual a data que deseja realizar a consulta (APENAS NÚMEROS)? ");
     scanf("%[^\n]", (cons->data));
     getchar();
   } while (!validarData(cons->data));
+  getchar();
   printf("\n");
   printf("\t\t\t>>> Tecle <ENTER> para continuar...\n");
   getchar();
   return cons;
+}
+
+void telaErroArquivoConsulta(void) {
+
+  limpaTela();
+  printf("\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///          ===================================================          ///\n");
+  printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+  printf("///              Sistema de Agendamento para Clínicas Médicas             ///\n");
+  printf("///          = = = = = = = = = = = = = = = = = = = = = = = = = =          ///\n");
+  printf("///          ===================================================          ///\n");
+  printf("///           Developed by  @ @isazvdd e  @Joyce8900 - Out, 2021          ///\n");
+  printf("///                                                                       ///\n");
+  printf("/////////////////////////////////////////////////////////////////////////////\n");
+  printf("///                                                                       ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///           = = = = = = =  Ops! Ocorreu em erro = = = = = =             ///\n");
+  printf("///           = = =  Não foi possível acessar o arquivo = = =             ///\n");
+  printf("///           = = = com informações sobre as consultas  = = =             ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///           = =  Pedimos desculpas pelo inconveniente = = =             ///\n");
+  printf("///           = = =  mas este programa será finalizado! = = =             ///\n");
+  printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
+  printf("///                                                                       ///\n");
+  printf("\n\nTecle ENTER para continuar!\n\n");
+  getchar();
+  exit(1);
 }

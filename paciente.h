@@ -47,3 +47,4 @@ void regravarPaciente(Paciente *);
 void gravarConsulta(Consulta *);
 void cadastroConsulta(void);
 Consulta *cadastrarConsulta(void);
+void telaErroArquivoConsulta(void);
