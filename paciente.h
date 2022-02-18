@@ -28,7 +28,8 @@ void buscarPaciente(void);
 Paciente *pesquisarPaciente(char *);
 void atualizarPaciente(void);
 void excluirPaciente(void);
-
+void gravarConsulta(Consulta*);
+void cadastroConsulta(void);
 char menuCadastro(void);
 char menuPaciente(void);
 void moduloPaciente(void);

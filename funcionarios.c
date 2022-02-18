@@ -130,9 +130,9 @@ Funcionarios *telaCadastrarFuncionarios(void) {
   printf("///           Telefone (apenas números): ");
   scanf("%[^\n]", func->celular);
   getchar();
-  printf("///              Endereço:                                              ");
+  printf("///            Endereço:                                              ");
   scanf("%[^\n]", func->endereco);
-  printf("///           Email : ///\n");      
+  printf("///           Email : ");      
   scanf("%[^\n]", func->email);
   getchar();
   printf("/// Historico educacional (Apenas letras!)                                           ");

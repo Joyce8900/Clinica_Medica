@@ -6,19 +6,6 @@
 #include "bibliotecaCM.h"
 #include "paciente.h"
 
-// void moduloCadastro(void) {
-//   char opc;
-//   do {
-//     opc = menuPaciente();
-//     switch (opc) {
-//     case '1':
-//       cadastroPaciente();
-//       break;
-    
-//     }
-//   } while (opc != '0');
-// }
-
 
 // Funcao Paciente
 void moduloPaciente(void) {
@@ -107,6 +94,26 @@ void excluirPaciente(void) {
   }
   free(nome);
 }
+
+void gravarConsulta(Consulta *cons) {
+  FILE *fp;
+
+  fp = fopen("consultas.dat", "ab");
+  if (fp == NULL) {
+    telaErroArquivoPaciente();
+  }
+  fwrite(cons, sizeof(Consulta), 1, fp);
+  fclose(fp);
+}
+
+void cadastroConsulta(void) {
+  Consulta *cons;
+
+  cons = cadastrarConsulta();
+  gravarConsulta(cons);
+  free(cons);
+}
+
 
 // char menuCadastro(void) {
 //   char opc;
@@ -381,7 +388,7 @@ char *menuExcluirPaciente(void) {
   return nome;
 }
 
-Consulta *cadastrarConsulta(void) {
+Consulta* cadastrarConsulta(void) {
   Consulta *cons;
   cons = (Consulta *)malloc(sizeof(Consulta));
 
@@ -406,12 +413,6 @@ Consulta *cadastrarConsulta(void) {
     scanf("%[^\n]", cons->nome);
     getchar();
   } while (!validarNome(cons->nome));
-
-  // do {
-  //   printf("///        Deseja cadastrar uma nova consulta? (1 para Sim ou 2 para Não) ///\n");
-  //   scanf("%[^\n]", cons->consulta);
-  //   getchar();
-  // } while (!validarConsulta(cons->consulta));
 
   do {
     printf("///        Qual a especialidade que o Sr.(a) deseja consultar?            ");
