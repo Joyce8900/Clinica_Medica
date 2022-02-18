@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
-
+#include "funcionarios.h"
 #include "bibliotecaCM.h"
 #include "paciente.h"
 #include "relatorios.h"
@@ -61,8 +61,23 @@ char menuRelatorio(void) {
   return opc;
 }
 
-void medicoDisponivel(void) {
-  //
+void medicoDisponivel(funcionarios*func) {
+ 
+  printf("\n\n");
+  printf("****************************************\n");
+	printf("*** Relatorio dos Alunos Cadastrados ***\n");
+  printf("****************************************\n");
+	printf("| Nome |\t| CPF |\t| E-mail|\n");
+  printf("\n");
+	while (aux != NULL)
+	{
+    	printf("%s\t\t\t",func->nome);
+    	printf("%d\t\t\t",aux->matr);
+    	printf("%s\n",aux->email);
+    	aux = aux->prox;
+	}
+	printf("\nFim da Lista! \n\n");
+}
 }
 
 void pacienteCadastrado(void) {
@@ -72,3 +87,5 @@ void pacienteCadastrado(void) {
 void examesLista(void) {
   //
 }
+
+
