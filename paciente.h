@@ -28,8 +28,7 @@ void buscarPaciente(void);
 Paciente *pesquisarPaciente(char *);
 void atualizarPaciente(void);
 void excluirPaciente(void);
-void gravarConsulta(Consulta*);
-void cadastroConsulta(void);
+
 char menuCadastro(void);
 char menuPaciente(void);
 void moduloPaciente(void);
@@ -39,7 +38,13 @@ void telaErroArquivoPaciente(void);
 
 char *menuAlterarPaciente(void);
 char *menuExcluirPaciente(void);
-Consulta *cadastrarConsulta(void);
+
 Paciente *pesquisarPaciente(char *);
 void exibirPaciente(Paciente *);
 void regravarPaciente(Paciente *);
+
+// funções de consultas
+void gravarConsulta(Consulta *);
+void cadastroConsulta(void);
+Consulta *cadastrarConsulta(void);
+void telaErroArquivoConsulta(void);
