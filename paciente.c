@@ -397,7 +397,7 @@ void exibirPaciente(Paciente *pac) {
 }
 
 void regravarPaciente(Paciente *pac) {
-  int achou;
+  // int achou;
   FILE *fp;
   Paciente *pacLido;
 

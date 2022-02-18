@@ -148,13 +148,13 @@ Exames *examesSolicitar(void) {
     scanf("%[^\n]", sol->nome);
     getchar();
   } while (!validarNome(sol->nome));
-  printf("///          = = = = = = = = = = = = =  = = = = = = = = = = = =           ///\n");
+
   do {
     printf("///           Qual exame deseja solicitar: (apenas letras): ");
     scanf("%[^\n]", sol->escolher);
     getchar();
   } while (!validarExame(sol->escolher));
-
+  getchar();
   printf("///                                                                       ///\n");
   printf("///                                                                       ///\n");
   printf("/////////////////////////////////////////////////////////////////////////////\n");
