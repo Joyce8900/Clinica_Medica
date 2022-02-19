@@ -2,10 +2,8 @@ typedef struct exames Exames;
 struct exames {
   char nome[31];
   char escolher[40];
-  *prox;
+  // *prox;
 };
-
-
 
 // Assinatura das funções
 char menuExames(void);

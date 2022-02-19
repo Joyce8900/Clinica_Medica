@@ -1,3 +1,7 @@
 {
-    "C_Cpp.errorSquiggles": "Disabled"
+    "C_Cpp.errorSquiggles": "Disabled",
+    "files.associations": {
+        "relatoriocorr.h": "c",
+        "relatorios.h": "c"
+    }
 }

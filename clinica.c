@@ -7,7 +7,7 @@
 #include "exames.h"
 #include "funcionarios.h"
 #include "paciente.h"
-#include "relatorios.h"
+#include "relatorioCorr.h"
 
 // Assinatura das funções
 char menuPrincipal(void);
