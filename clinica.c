@@ -7,12 +7,14 @@
 #include "exames.h"
 #include "funcionarios.h"
 #include "paciente.h"
+#include "relatorios.h"
 
 // Assinatura das funções
 char menuPrincipal(void);
 void moduloCadastro(void);
 void moduloFuncionarios(void);
 char moduloExames(void);
+void moduloRelatorios(void);
 
 void menuProjeto(void);
 void menuEquipe(void);
@@ -33,6 +35,9 @@ int main(void) {
       break;
     case '3':
       moduloExames();
+      break;
+    case '4':
+      moduloRelatorios();
       break;
     case 0:
       break;
@@ -135,6 +140,7 @@ char menuPrincipal(void) {
   printf("///            1. Paciente                                                  ///\n");
   printf("///            2. Equipe médica e Especialidades                            ///\n");
   printf("///            3. Exames                                                    ///\n");
+  printf("///            4. Relatórios                                                    ///\n");
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///            Escolha a opção desejada: ");

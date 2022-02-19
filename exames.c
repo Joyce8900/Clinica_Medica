@@ -288,3 +288,15 @@ void telaErrorArquivoExames(void) {
   getchar();
   exit(1);
 }
+
+void exibirExames(Exames* exa) {
+  if(exa == NULL) {
+    printf("\n Exame não encontrado \n");
+  } else {
+    printf(" Exame encontrado \n");
+    printf(" Nome do paciente: %s\n", exa ->nome);
+    printf(" Exame solicitado: %s\n", exa ->escolher);    
+  }
+  printf("\n\n\n>>> Tecle <ENTER> para continuar...\n");
+  getchar();
+}

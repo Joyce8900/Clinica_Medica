@@ -10,6 +10,7 @@ struct paciente {
   char trat[2000];
   char exame[30];
   int status;
+  *prox;
 };
 
 typedef struct consulta Consulta;
