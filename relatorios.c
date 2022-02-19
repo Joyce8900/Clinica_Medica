@@ -9,6 +9,7 @@
 #include "exames.h"
 #include "relatorios.h"
 
+
 void moduloRelatorio(void) {
   char opcao;
 	Paciente *pa;
