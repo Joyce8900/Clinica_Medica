@@ -25,7 +25,7 @@ void moduloFuncionarios(void) {
       cadastrarCurriculo();
       break;
     case '3':
-      menuPesquisarFuncionario();
+      menuPesquisarFuncionarios();
       break;
     }
 
@@ -40,7 +40,7 @@ void cadastrarCurriculo(void) {
   free(func);
 }
 
-void menuPesquisarFuncionario(void) {
+void menuPesquisarFuncionarios(void) {
   Funcionarios *func;
   char *nome;
 

@@ -50,7 +50,7 @@ char moduloExames(void) {
     opc = menuExames();
     switch (opc) {
     case '1':
-      exameDisponivel();
+      telaexamesDisponivel();
       break;
     case '2':
       exameSolicitar();
@@ -64,7 +64,7 @@ char moduloExames(void) {
   return 0;
 }
 
-void exameDisponivel(void) {
+void telaexamesDisponivel(void) {
   // char opc;
 
   limpaTela();

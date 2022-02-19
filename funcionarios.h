@@ -39,5 +39,5 @@ void equipe(void);
 void gravarFuncionarios(Funcionarios *);
 void exibirFuncionario(Funcionarios *);
 void gravarCurriculo(Curriculo*);
-void menuPesquisarFuncionario(void);
+void menuPesquisarFuncionarios(void);
 Funcionarios* pesquisarFuncionario (char*);

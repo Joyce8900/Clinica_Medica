@@ -140,7 +140,7 @@ char menuPrincipal(void) {
   printf("///            1. Paciente                                                  ///\n");
   printf("///            2. Equipe médica e Especialidades                            ///\n");
   printf("///            3. Exames                                                    ///\n");
-  printf("///            4. Relatórios                                                    ///\n");
+  printf("///            4. Relatórios                                                ///\n");
   printf("///            0. Sair                                                      ///\n");
   printf("///                                                                         ///\n");
   printf("///            Escolha a opção desejada: ");

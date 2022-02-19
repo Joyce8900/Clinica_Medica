@@ -16,7 +16,7 @@ void moduloRelatorios(void) {
     opcao = menuRelatorio();
     switch (opcao) {
     case '1':
-      medicoDisponivel();
+      funcionariosDisponivel();
       break;
     case '2':
       pacienteCadastrado();
@@ -48,7 +48,7 @@ char menuRelatorio(void) {
   printf("///           = = = = = = = =  Menu Relatório = = = = = = = =             ///\n");
   printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
   printf("///                                                                       ///\n");
-  printf("///           1. Exibir todos os médicos disponíveis                      ///\n");
+  printf("///           1. Exibir todos os funcionarios disponíveis                 ///\n");
   printf("///           2. Listar todos os pacientes já cadastrados                 ///\n");
   printf("///           3. Listar exames disponíveis                                ///\n");
   printf("///           0. Voltar ao menu anterior                                  ///\n");
@@ -64,7 +64,7 @@ char menuRelatorio(void) {
   return opc;
 }
 
-void medicoDisponivel(void) {
+void funcionariosDisponivel(void) {
   FILE *fp;
   Funcionarios *func;
   func = (Funcionarios *)malloc(sizeof(Funcionarios));

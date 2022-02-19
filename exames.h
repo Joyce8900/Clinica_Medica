@@ -8,7 +8,7 @@ struct exames {
 // Assinatura das funções
 char menuExames(void);
 char moduloExames(void);
-void exameDisponivel(void);
+void telaexamesDisponivel(void);
 char examesDisponiveis(void);
 
 Exames *examesSolicitar(void);

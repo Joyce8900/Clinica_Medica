@@ -2,6 +2,6 @@
 void moduloRelatorio(void);
 char menuRelatorio(void);
 
-void medicoDisponivel(void);
+void funcionariosDisponivel(void);
 void pacienteCadastrado(void);
 void examesLista(void);
