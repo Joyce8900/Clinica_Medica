@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <unistd.h>
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/main
 #include "funcionarios.h"
 #include "bibliotecaCM.h"
 #include "paciente.h"
@@ -71,6 +74,7 @@ char menuRelatorio(void) {
   return opc;
 }
 
+<<<<<<< HEAD
 void medicoDisponivel(Funcionarios*fun) {
  
   printf("\n\n");
@@ -107,6 +111,25 @@ void pacienteCadastro(Paciente *pac)
     	pac = pac->prox;
 	}
 	printf("\nFim da Lista! \n\n");
+=======
+void medicoDisponivel(funcionarios*func) {
+ 
+  printf("\n\n");
+  printf("****************************************\n");
+	printf("*** Relatorio dos Alunos Cadastrados ***\n");
+  printf("****************************************\n");
+	printf("| Nome |\t| CPF |\t| E-mail|\n");
+  printf("\n");
+	while (aux != NULL)
+	{
+    	printf("%s\t\t\t",func->nome);
+    	printf("%d\t\t\t",aux->matr);
+    	printf("%s\n",aux->email);
+    	aux = aux->prox;
+	}
+	printf("\nFim da Lista! \n\n");
+}
+>>>>>>> origin/main
 }
 
 
@@ -131,6 +154,7 @@ void pacienteCadastrado(void) {
 }
 
 void examesLista(void) {
+<<<<<<< HEAD
   FILE *fp;
   Exames *exa;
   exa = (Exames*)malloc(sizeof(Exames));
@@ -254,3 +278,9 @@ void relatorioExames(Exames **lista)
    	 fclose(fp);
     }    
 }
+=======
+  //
+}
+
+
+>>>>>>> origin/main
